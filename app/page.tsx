@@ -9,7 +9,6 @@ import {
   Search,
   Moon,
   ChevronRight,
-  ArrowRight,
   Users,
   BookMarked,
   Landmark,
@@ -22,19 +21,16 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import logo from "@/public/logo.png"
-// import myVideo from "@/public/"
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
-  { label: "Quran", href: "/quran" },
-  { label: "Dinyaat", href: "/dinyaat", dropdown: true },
-  { label: "Ziyarat", href: "/ziyarat" },
   { label: "Courses", href: "/courses" },
-  { label: "Library", href: "/library" },
-  { label: "Kids", href: "/kids" },
-  { label: "Resources", href: "/resources", dropdown: true },
+  { label: "Ziyarat", href: "/ziyarat" },
+  { label: "Dinyaat", href: "/dinyaat", dropdown: true },
+  { label: "Teachers", href: "/about" },
+  { label: "Blogs", href: "/resources", dropdown: true },
   { label: "About", href: "/about" },
 ];
 
@@ -51,38 +47,38 @@ const ZIYARATS = [
   {
     title: "Ziyarat e Ashura",
     sub: "Imam Hussain (ع)",
-    bg: "from-amber-900/80 to-black/60",
-    imgBg: "bg-gradient-to-br from-amber-950 via-stone-900 to-amber-900",
+    bg: "from-amber-900/80 not-hover:via-black/20 to-transparent",
+    image: "/images/zyarat-e-ashura.jpg"
   },
   {
     title: "Ziyarat e Warith",
     sub: "Imam Hussain (ع)",
-    bg: "from-emerald-900/80 to-black/60",
-    imgBg: "bg-gradient-to-br from-emerald-950 via-stone-900 to-emerald-800",
+    bg: "from-emerald-900/80 not-hover:via-black/20 to-transparent",
+    image: "/images/warisa.jpg"
   },
   {
     title: "Ziyarat e Nahiya",
     sub: "Ahlulbayt (ع)",
-    bg: "from-sky-900/80 to-black/60",
-    imgBg: "bg-gradient-to-br from-sky-950 via-stone-900 to-sky-800",
+    bg: "from-sky-900/80 not-hover:via-black/20 to-transparent",
+    image: "/images/nahiya.jpg"
   },
   {
     title: "Ziyarat e Ameenullah",
     sub: "Imam Ali (ع)",
-    bg: "from-yellow-900/80 to-black/60",
-    imgBg: "bg-gradient-to-br from-yellow-950 via-stone-900 to-yellow-800",
+    bg: "from-yellow-900/80 not-hover:via-black/20 to-transparent",
+    image: "/images/ameenullah.jpg"
   },
   {
     title: "Ziyarat e Imam Hussain (ع)",
     sub: "Full Ziyarat",
-    bg: "from-red-900/80 to-black/60",
-    imgBg: "bg-gradient-to-br from-red-950 via-stone-900 to-red-900",
+    bg: "from-red-900/80 not-hover:via-black/20 to-transparent",
+    image: "/images/imamhussain.jpg"
   },
   {
-    title: "Ziyarat e Makkah",
-    sub: "Makkah Mukarramah",
-    bg: "from-stone-900/80 to-black/60",
-    imgBg: "bg-gradient-to-br from-stone-800 via-stone-900 to-stone-700",
+    title: "Ziyarat e Imam Ali Raza (ع)",
+    sub: "Mashhad e Muqaddas",
+    bg: "from-stone-900/80 not-hover:via-black/20 to-transparent",
+    image: "/images/mashhad.jpg"
   },
 ];
 
@@ -113,8 +109,8 @@ const COURSES = [
     emoji: "⚖️",
   },
   {
-    title: "Life of Imam Ali (ع)",
-    sub: "From Birth to Martyrdom",
+    title: "Yassarnal Quran",
+    sub: "Qaida for Beginners",
     progress: 70,
     badge: "New",
     badgeColor: "bg-emerald-500",
@@ -243,9 +239,6 @@ export default function HomePage() {
           {/* Right controls */}
           <div className="flex items-center gap-2">
             <button className="hidden rounded-md p-2 text-gray-500 hover:bg-gray-100 lg:block">
-              <Search className="h-4 w-4" />
-            </button>
-            <button className="hidden rounded-md p-2 text-gray-500 hover:bg-gray-100 lg:block">
               <Moon className="h-4 w-4" />
             </button>
             <Link
@@ -327,7 +320,7 @@ export default function HomePage() {
                 <Image src={"/karbala-bg.jpg"} alt="Karbala image" width={1200} height={1200} className="w-full opacity-100 pointer-events-none select-none" />
               </div>
               {/* Right — Arabic Ayah */}
-              <div className="flex flex-col items-end relative z-10 justify-center text-right">
+              <div className="flex flex-col items-end relative z-10 justify-center text-right z-20">
                 <p
                   className="mb-3 font-arabic text-4xl leading-loose text-amber-300 lg:text-5xl"
                   dir="rtl"
@@ -384,15 +377,18 @@ export default function HomePage() {
                 className="group relative overflow-hidden rounded-xl"
               >
                 {/* Image placeholder */}
-                <div className={`h-40 w-full ${z.imgBg} flex items-center justify-center text-4xl`}>
-                  🏛️
+                <div className={`h-40 w-full flex items-center justify-center text-4xl`}>
+                  {
+                    z.image &&
+                    <Image src={z.image} alt="" width={200} height={200} className="w-full h-full object-cover" />
+                  }
                 </div>
                 {/* Overlay */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-t ${z.bg} flex flex-col justify-end p-3`}
+                  className={`absolute inset-0 bg-linear-to-t transition-all ${z.bg} flex flex-col justify-end p-3`}
                 >
-                  <p className="text-xs font-bold leading-tight text-white">{z.title}</p>
-                  <p className="text-[10px] text-gray-300">{z.sub}</p>
+                  <p className="text-xs group-hover:-translate-y-1 transition-all font-bold leading-tight text-white">{z.title}</p>
+                  <p className="text-[10px] text-gray-300 group-hover:-translate-y-1 transition-all">{z.sub}</p>
                 </div>
                 {/* Arrow */}
                 <div className="absolute bottom-3 right-3 flex h-6 w-6 items-center justify-center rounded-full bg-white/20 opacity-0 backdrop-blur-sm transition group-hover:opacity-100">
@@ -434,7 +430,6 @@ export default function HomePage() {
                 <div className="p-3">
                   <p className="text-sm font-semibold text-gray-900 leading-tight">{c.title}</p>
                   <p className="mt-0.5 text-[11px] text-gray-500">{c.sub}</p>
-                  <ProgressBar value={c.progress} />
                 </div>
               </Link>
             ))}
@@ -469,11 +464,6 @@ export default function HomePage() {
                 >
                   Start Now
                 </Link>
-                {i < 2 && (
-                  <div className="absolute hidden sm:block" style={{ right: 0, top: "50%", transform: "translateY(-50%)" }}>
-                    <ArrowRight className="h-4 w-4 text-gray-300" />
-                  </div>
-                )}
               </div>
             ))}
           </div>
@@ -538,8 +528,8 @@ export default function HomePage() {
             {/* Brand */}
             <div className="lg:col-span-1">
               <div className="mb-3 flex items-center gap-2">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-700 to-emerald-900 text-base font-bold text-amber-300">
-                  ن
+                <div className="flex h-9 w-9 items-center justify-center">
+                  <Image src={logo} alt="Logo" width={100} height={100} />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-white">Shia Dinyaat</p>
@@ -604,7 +594,7 @@ export default function HomePage() {
         <div className="border-t border-gray-800">
           <div className="mx-auto max-w-7xl px-4 py-4 text-center">
             <p className="text-xs text-gray-700">
-              © 2024 Shia Dinyaat. All Rights Reserved.
+              © 2024 Agha Naveed. All Rights Reserved.
             </p>
           </div>
         </div>
