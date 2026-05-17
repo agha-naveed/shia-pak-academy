@@ -10,6 +10,7 @@ import {
   Menu,
   X,
   Moon,
+  Sun,
   Search,
   Users,
   BookMarked,
@@ -85,13 +86,16 @@ const ARTICLES = [
 
 // ─── SUB-COMPONENTS ───────────────────────────────────────────────────────────
 
-function ProgressBar({ value }: { value: number }) {
+function ProgressBar({ value, dark }: { value: number; dark: boolean }) {
   return (
     <div className="mt-2">
-      <div className="h-1 w-full rounded-full bg-gray-200">
-        <div className="h-1 rounded-full bg-emerald-600 transition-all" style={{ width: `${value}%` }} />
+      <div className={`h-1 w-full rounded-full ${dark ? "bg-gray-700" : "bg-gray-200"}`}>
+        <div
+          className="h-1 rounded-full bg-emerald-600 transition-all"
+          style={{ width: `${value}%` }}
+        />
       </div>
-      <p className="mt-1 text-xs text-gray-500">{value}% Complete</p>
+      <p className={`mt-1 text-xs ${dark ? "text-gray-500" : "text-gray-500"}`}>{value}% Complete</p>
     </div>
   );
 }
@@ -100,14 +104,31 @@ function ProgressBar({ value }: { value: number }) {
 
 export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [dark, setDark] = useState(false);
+
+  // ── helpers so class strings stay readable ──
+  const bg    = dark ? "bg-gray-950" : "bg-white";
+  const bgAlt = dark ? "bg-gray-900" : "bg-gray-50";
+  const border = dark ? "border-gray-800" : "border-gray-100";
+  const border2 = dark ? "border-gray-700" : "border-gray-200";
+  const text  = dark ? "text-gray-100" : "text-gray-900";
+  const textMd = dark ? "text-gray-300" : "text-gray-600";
+  const textSm = dark ? "text-gray-400" : "text-gray-500";
+  const card  = dark ? "bg-gray-900 border-gray-700" : "bg-white border-gray-200";
+  const cardHover = dark ? "hover:bg-gray-800" : "hover:bg-emerald-50";
+  const inputBg = dark ? "bg-gray-800 border-gray-700 text-gray-200 placeholder-gray-500" : "bg-gray-50 border-gray-200 text-gray-700 placeholder-gray-400";
+  const divider = dark ? "divide-gray-800" : "divide-gray-50";
+  const pathCard = dark ? "bg-gray-900 border-gray-700 divide-gray-800" : "bg-gray-50 border-gray-200 divide-gray-100";
+  const iconBg = dark ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200";
 
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-900 antialiased">
+    // Root: we drive dark mode purely by toggling classes on this wrapper
+    <div className={`min-h-screen font-sans antialiased transition-colors duration-300 ${bg} ${text}`}>
 
       {/* ══════════════════════════════════════════
           NAVBAR
       ══════════════════════════════════════════ */}
-      <header className="sticky top-0 z-50 border-b border-gray-100 bg-white shadow-sm">
+      <header className={`sticky top-0 z-50 border-b ${border} ${dark ? "bg-gray-950" : "bg-white"} shadow-sm transition-colors duration-300`}>
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
 
           {/* Logo */}
@@ -116,18 +137,18 @@ export default function HomePage() {
               <Image src={logo} alt="Logo" width={200} height={200} />
             </div>
             <div className="leading-tight">
-              <p className="text-sm font-bold text-gray-900">Shia Dinyaat</p>
-              <p className="text-[10px] text-gray-400">Learn. Believe. Practice.</p>
+              <p className={`text-sm font-bold ${text}`}>Shia Dinyaat</p>
+              <p className={`text-[10px] ${textSm}`}>Learn. Believe. Practice.</p>
             </div>
           </Link>
 
-          {/* Desktop nav — hidden below lg */}
+          {/* Desktop nav */}
           <ul className="hidden items-center gap-1 lg:flex">
             {NAV_ITEMS.map((item) => (
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className="flex items-center gap-0.5 rounded-md px-3 py-1.5 text-sm text-gray-600 transition hover:bg-gray-50 hover:text-gray-900"
+                  className={`flex items-center gap-0.5 rounded-md px-3 py-1.5 text-sm ${textMd} transition ${dark ? "hover:bg-gray-800 hover:text-gray-100" : "hover:bg-gray-50 hover:text-gray-900"}`}
                 >
                   {item.label}
                   {item.dropdown && <ChevronDown className="h-3 w-3 opacity-50" />}
@@ -138,20 +159,27 @@ export default function HomePage() {
 
           {/* Right controls */}
           <div className="flex items-center gap-2">
-            {/* Dark mode icon — desktop only */}
-            <button className="hidden rounded-md p-2 text-gray-500 hover:bg-gray-100 lg:block">
-              <Moon className="h-4 w-4" />
+            {/* 🌙 / ☀️ Theme toggle — always visible */}
+            <button
+              onClick={() => setDark((d) => !d)}
+              aria-label="Toggle theme"
+              className={`flex items-center justify-center rounded-md p-2 transition ${dark ? "bg-gray-800 text-amber-400 hover:bg-gray-700" : "text-gray-500 hover:bg-gray-100"}`}
+            >
+              {dark
+                ? <Sun className="h-4 w-4" />
+                : <Moon className="h-4 w-4" />
+              }
             </button>
 
             {/* Login — desktop only */}
             <Link
               href="/login"
-              className="hidden rounded-md border border-gray-200 px-4 py-1.5 text-sm font-medium text-gray-700 transition hover:bg-gray-50 lg:inline-flex"
+              className={`hidden rounded-md border ${border2} px-4 py-1.5 text-sm font-medium ${textMd} transition ${dark ? "hover:bg-gray-800" : "hover:bg-gray-50"} lg:inline-flex`}
             >
               Login
             </Link>
 
-            {/* Sign Up — always visible */}
+            {/* Sign Up */}
             <Link
               href="/signup"
               className="rounded-md bg-emerald-600 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-emerald-700 sm:px-4"
@@ -159,11 +187,11 @@ export default function HomePage() {
               Sign Up
             </Link>
 
-            {/* Hamburger — mobile only */}
+            {/* Hamburger */}
             <button
               onClick={() => setMobileMenuOpen((o) => !o)}
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-              className="flex items-center justify-center rounded-md p-2 text-gray-600 hover:bg-gray-100 lg:hidden"
+              className={`flex items-center justify-center rounded-md p-2 ${textMd} transition ${dark ? "hover:bg-gray-800" : "hover:bg-gray-100"} lg:hidden`}
             >
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -176,30 +204,30 @@ export default function HomePage() {
             mobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="border-t border-gray-100 bg-white px-4 pb-5 pt-3">
+          <div className={`border-t ${border} px-4 pb-5 pt-3 ${dark ? "bg-gray-950" : "bg-white"}`}>
             {/* Search */}
-            <div className="mb-4 flex items-center gap-2 rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5">
-              <Search className="h-4 w-4 flex-shrink-0 text-gray-400" />
+            <div className={`mb-4 flex items-center gap-2 rounded-xl border ${inputBg} px-3 py-2.5`}>
+              <Search className="h-4 w-4 flex-shrink-0 opacity-50" />
               <input
                 type="text"
                 placeholder="Search courses, ziyarat…"
-                className="flex-1 bg-transparent text-sm text-gray-700 placeholder-gray-400 outline-none"
+                className="flex-1 bg-transparent text-sm outline-none"
               />
             </div>
 
             {/* Links */}
-            <ul className="mb-4 divide-y divide-gray-50">
+            <ul className={`mb-4 divide-y ${divider}`}>
               {NAV_ITEMS.map((item) => (
                 <li key={item.label}>
                   <Link
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center justify-between py-3 text-sm font-medium text-gray-800 hover:text-emerald-600"
+                    className={`flex items-center justify-between py-3 text-sm font-medium ${text} hover:text-emerald-500`}
                   >
                     {item.label}
                     {item.dropdown
-                      ? <ChevronDown className="h-4 w-4 text-gray-400" />
-                      : <ChevronRight className="h-4 w-4 text-gray-300" />
+                      ? <ChevronDown className="h-4 w-4 opacity-40" />
+                      : <ChevronRight className="h-4 w-4 opacity-20" />
                     }
                   </Link>
                 </li>
@@ -211,7 +239,7 @@ export default function HomePage() {
               <Link
                 href="/login"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex-1 rounded-xl border border-gray-300 py-2.5 text-center text-sm font-semibold text-gray-700 hover:bg-gray-50"
+                className={`flex-1 rounded-xl border ${border2} py-2.5 text-center text-sm font-semibold ${text} ${dark ? "hover:bg-gray-800" : "hover:bg-gray-50"}`}
               >
                 Login
               </Link>
@@ -228,13 +256,10 @@ export default function HomePage() {
       </header>
 
       {/* ══════════════════════════════════════════
-          HERO SECTION
-          - Mobile:  image fills section as background (opacity layer)
-          - Desktop: image positioned to the right, bleeds off-screen
+          HERO — always dark bg (shrine night photo)
       ══════════════════════════════════════════ */}
       <section className="relative overflow-hidden bg-[#030102]">
-
-        {/* MOBILE background image — hidden on lg+ */}
+        {/* Mobile background image */}
         <div className="absolute inset-0 lg:hidden">
           <Image
             src="/karbala-bg.jpg"
@@ -244,18 +269,16 @@ export default function HomePage() {
             className="object-cover object-center opacity-50"
             sizes="100vw"
           />
-          {/* dark overlay so text stays readable */}
-          <div className="absolute inset-0 bg-linear-to-b from-black/75 via-black/60 to-black/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/80" />
         </div>
 
-        {/* Subtle amber glow — desktop only */}
-        <div className="pointer-events-none absolute right-0 z-20 top-0 hidden h-full w-1/2 bg-linear-to-l from-amber-900/20 via-transparent to-transparent lg:block" />
+        {/* Amber glow */}
+        <div className="pointer-events-none absolute right-0 top-0 z-10 hidden h-full w-1/2 bg-gradient-to-l from-amber-900/20 via-transparent to-transparent lg:block" />
 
-        {/* ── Content ── */}
         <div className="relative mx-auto max-w-7xl px-4 py-16 lg:py-24">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
 
-            {/* Left — headline + CTA */}
+            {/* Left */}
             <div className="relative z-10">
               <h1 className="mb-3 text-4xl font-extrabold leading-tight text-white sm:text-5xl">
                 Learn. Understand.
@@ -266,31 +289,20 @@ export default function HomePage() {
                 A complete platform to learn Quran, Shia Dinyaat, Ziyarat and
                 the teachings of Ahlulbayt&nbsp;(عليهم السلام).
               </p>
-
               <div className="flex flex-wrap gap-3">
-                <Link
-                  href="/courses"
-                  className="flex items-center gap-2 rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-emerald-700"
-                >
-                  <BookOpen className="h-4 w-4" />
-                  Start Learning
+                <Link href="/courses" className="flex items-center gap-2 rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-emerald-700">
+                  <BookOpen className="h-4 w-4" /> Start Learning
                 </Link>
-                <Link
-                  href="/ziyarat"
-                  className="flex items-center gap-2 rounded-lg border border-gray-500 px-5 py-2.5 text-sm font-semibold text-gray-200 transition hover:border-emerald-500 hover:text-emerald-400"
-                >
-                  <MapPin className="h-4 w-4" />
-                  Explore Ziyarat
+                <Link href="/ziyarat" className="flex items-center gap-2 rounded-lg border border-gray-500 px-5 py-2.5 text-sm font-semibold text-gray-200 transition hover:border-emerald-500 hover:text-emerald-400">
+                  <MapPin className="h-4 w-4" /> Explore Ziyarat
                 </Link>
               </div>
-
-              {/* Stats */}
               <div className="mt-10 flex flex-wrap gap-6 sm:gap-8">
                 {[
-                  { icon: Users,         value: "10K+", label: "Students" },
-                  { icon: BookMarked,    value: "500+", label: "Lessons" },
-                  { icon: Landmark,      value: "100+", label: "Ziyarats" },
-                  { icon: GraduationCap, value: "50+",  label: "Scholars" },
+                  { icon: Users, value: "10K+", label: "Students" },
+                  { icon: BookMarked, value: "500+", label: "Lessons" },
+                  { icon: Landmark, value: "100+", label: "Ziyarats" },
+                  { icon: GraduationCap, value: "50+", label: "Scholars" },
                 ].map((s) => (
                   <div key={s.label} className="flex items-center gap-2">
                     <s.icon className="h-5 w-5 text-emerald-500" />
@@ -303,65 +315,31 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right — DESKTOP image + ayah */}
+            {/* Right — Desktop image + ayah */}
             <div className="relative hidden lg:block">
-              {/*
-                The image container is positioned absolutely so it can
-                overflow the right boundary of the viewport while still
-                being scoped inside the section's overflow-hidden.
-              */}
               <div
-                aria-hidden className="xl:w-[170%] w-[210%]"
-                style={{
-                  position: "absolute",
-                  top: "-39%",
-                  right: "-18%",
-                  zIndex: 0,
-                  pointerEvents: "none",
-                  userSelect: "none",
-                }}
+                aria-hidden
+                className="xl:w-[170%] w-[210%]"
+                style={{ position: "absolute", top: "-39%", right: "-18%", zIndex: 0, pointerEvents: "none", userSelect: "none" }}
               >
-                <Image
-                  src="/karbala-bg.jpg"
-                  alt="Karbala"
-                  width={900}
-                  height={600}
-                  priority
-                  className="w-full opacity-80"
-                  sizes="60vw"
-                />
+                <Image src="/karbala-bg.jpg" alt="Karbala" width={900} height={600} priority className="w-full opacity-80" sizes="60vw" />
               </div>
-
-              {/* Arabic ayah on top of image */}
               <div className="relative z-10 flex flex-col items-end py-16 text-right">
-                <p
-                  className="mb-3 text-4xl leading-loose text-amber-300 lg:text-5xl"
-                  dir="rtl"
-                  style={{ fontFamily: "'Scheherazade New', 'Amiri', serif" }}
-                >
+                <p className="mb-3 text-4xl leading-loose text-amber-300 lg:text-5xl" dir="rtl" style={{ fontFamily: "'Scheherazade New', 'Amiri', serif" }}>
                   وَقُل رَّبِّ زِدۡنِي عِلۡمًا
                 </p>
-                <p className="text-sm italic text-gray-400">
-                  And say, "My Lord, increase me in knowledge."
-                </p>
+                <p className="text-sm italic text-gray-400">And say, "My Lord, increase me in knowledge."</p>
                 <p className="mt-1 text-xs text-gray-600">(Quran 20:114)</p>
               </div>
             </div>
 
-            {/* Ayah — MOBILE only, shown below text */}
+            {/* Ayah — Mobile */}
             <div className="relative z-10 text-center lg:hidden">
-              <p
-                className="mb-2 text-3xl leading-loose text-amber-300"
-                dir="rtl"
-                style={{ fontFamily: "'Scheherazade New', 'Amiri', serif" }}
-              >
+              <p className="mb-2 text-3xl leading-loose text-amber-300" dir="rtl" style={{ fontFamily: "'Scheherazade New', 'Amiri', serif" }}>
                 وَقُل رَّبِّ زِدۡنِي عِلۡمًا
               </p>
-              <p className="text-xs italic text-gray-400">
-                "My Lord, increase me in knowledge." — Quran 20:114
-              </p>
+              <p className="text-xs italic text-gray-400">"My Lord, increase me in knowledge." — Quran 20:114</p>
             </div>
-
           </div>
         </div>
       </section>
@@ -369,20 +347,20 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════
           CATEGORIES
       ══════════════════════════════════════════ */}
-      <section className="border-b border-gray-100 bg-white py-10">
+      <section className={`border-b ${border} ${bg} py-10 transition-colors duration-300`}>
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-3 gap-3 sm:grid-cols-6 sm:gap-4">
             {CATEGORIES.map((cat) => (
               <Link
                 key={cat.label}
                 href={cat.href}
-                className="group flex flex-col items-center gap-2 rounded-xl border border-gray-100 p-3 text-center transition hover:border-emerald-200 hover:bg-emerald-50 sm:p-4"
+                className={`group flex flex-col items-center gap-2 rounded-xl border ${border} p-3 text-center transition hover:border-emerald-500 ${cardHover} sm:p-4`}
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-50 text-2xl shadow-sm transition group-hover:bg-white sm:h-14 sm:w-14 sm:text-3xl">
+                <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${dark ? "bg-gray-800" : "bg-gray-50"} text-2xl shadow-sm transition group-hover:scale-105 sm:h-14 sm:w-14 sm:text-3xl`}>
                   {cat.emoji}
                 </div>
-                <p className="text-xs font-semibold text-gray-800 sm:text-sm">{cat.label}</p>
-                <p className="hidden text-[11px] leading-tight text-gray-400 sm:block">{cat.sub}</p>
+                <p className={`text-xs font-semibold sm:text-sm ${text}`}>{cat.label}</p>
+                <p className={`hidden text-[11px] leading-tight sm:block ${textSm}`}>{cat.sub}</p>
               </Link>
             ))}
           </div>
@@ -392,21 +370,17 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════
           EXPLORE ZIYARATS
       ══════════════════════════════════════════ */}
-      <section className="bg-white py-12">
+      <section className={`${bg} py-12 transition-colors duration-300`}>
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-6 flex items-center justify-between">
-            <h2 className="text-xl font-bold text-gray-900">Explore Ziyarats</h2>
-            <Link href="/ziyarat" className="flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-700">
+            <h2 className={`text-xl font-bold ${text}`}>Explore Ziyarats</h2>
+            <Link href="/ziyarat" className="flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-500">
               View All <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
             {ZIYARATS.map((z) => (
-              <Link
-                key={z.title}
-                href="/ziyarat"
-                className="group relative overflow-hidden rounded-xl"
-              >
+              <Link key={z.title} href="/ziyarat" className="group relative overflow-hidden rounded-xl">
                 <div className="relative h-40 w-full">
                   <Image
                     src={z.image}
@@ -432,11 +406,11 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════
           POPULAR COURSES
       ══════════════════════════════════════════ */}
-      <section className="bg-gray-50 py-12">
+      <section className={`${bgAlt} py-12 transition-colors duration-300`}>
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-6 flex items-center justify-between">
-            <h2 className="text-xl font-bold text-gray-900">Popular Courses</h2>
-            <Link href="/courses" className="flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-700">
+            <h2 className={`text-xl font-bold ${text}`}>Popular Courses</h2>
+            <Link href="/courses" className="flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-500">
               View All <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
@@ -445,7 +419,7 @@ export default function HomePage() {
               <Link
                 key={c.title}
                 href="/courses"
-                className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
+                className={`group overflow-hidden rounded-xl border ${dark ? "border-gray-700 bg-gray-900" : "border-gray-200 bg-white"} shadow-sm transition hover:shadow-md`}
               >
                 <div className={`relative h-32 w-full ${c.imgBg} flex items-center justify-center text-4xl sm:h-36 sm:text-5xl`}>
                   {c.emoji}
@@ -456,9 +430,9 @@ export default function HomePage() {
                   )}
                 </div>
                 <div className="p-3">
-                  <p className="text-xs font-semibold leading-tight text-gray-900 sm:text-sm">{c.title}</p>
-                  <p className="mt-0.5 text-[10px] text-gray-500 sm:text-[11px]">{c.sub}</p>
-                  <ProgressBar value={c.progress} />
+                  <p className={`text-xs font-semibold leading-tight sm:text-sm ${text}`}>{c.title}</p>
+                  <p className={`mt-0.5 text-[10px] sm:text-[11px] ${textSm}`}>{c.sub}</p>
+                  <ProgressBar value={c.progress} dark={dark} />
                 </div>
               </Link>
             ))}
@@ -469,25 +443,25 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════
           STRUCTURED LEARNING PATHS
       ══════════════════════════════════════════ */}
-      <section className="border-y border-gray-100 bg-white py-12">
+      <section className={`border-y ${border} ${bg} py-12 transition-colors duration-300`}>
         <div className="mx-auto max-w-7xl px-4">
-          <h2 className="text-xl font-bold text-gray-900">Structured Learning Paths</h2>
-          <p className="mt-1 text-sm text-gray-500">
+          <h2 className={`text-xl font-bold ${text}`}>Structured Learning Paths</h2>
+          <p className={`mt-1 text-sm ${textSm}`}>
             Follow step-by-step paths to build strong knowledge from basics to advanced levels.
           </p>
-          <div className="mt-8 grid grid-cols-1 divide-y divide-gray-100 rounded-2xl border border-gray-200 bg-gray-50 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          <div className={`mt-8 grid grid-cols-1 divide-y rounded-2xl border ${pathCard} sm:grid-cols-3 sm:divide-x sm:divide-y-0`}>
             {LEARNING_PATHS.map((p) => (
               <div key={p.title} className="flex flex-col items-start gap-3 p-5 sm:p-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-200 bg-white text-2xl shadow-sm">
+                <div className={`flex h-12 w-12 items-center justify-center rounded-xl border text-2xl shadow-sm ${iconBg}`}>
                   {p.icon}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-gray-900">{p.title}</p>
-                  <p className="mt-1 text-xs leading-relaxed text-gray-500">{p.desc}</p>
+                  <p className={`text-sm font-semibold ${text}`}>{p.title}</p>
+                  <p className={`mt-1 text-xs leading-relaxed ${textSm}`}>{p.desc}</p>
                 </div>
                 <Link
                   href={p.href}
-                  className="mt-auto rounded-lg border border-gray-300 px-4 py-1.5 text-xs font-semibold text-gray-700 transition hover:border-emerald-500 hover:text-emerald-600"
+                  className={`mt-auto rounded-lg border px-4 py-1.5 text-xs font-semibold transition hover:border-emerald-500 hover:text-emerald-500 ${border2} ${textMd}`}
                 >
                   Start Now
                 </Link>
@@ -500,18 +474,18 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════
           WHY LEARN WITH US
       ══════════════════════════════════════════ */}
-      <section className="bg-white py-12">
+      <section className={`${bg} py-12 transition-colors duration-300`}>
         <div className="mx-auto max-w-7xl px-4">
-          <h2 className="mb-8 text-xl font-bold text-gray-900">Why Learn with Shia Dinyaat?</h2>
+          <h2 className={`mb-8 text-xl font-bold ${text}`}>Why Learn with Shia Dinyaat?</h2>
           <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
             {FEATURES.map((f) => (
               <div key={f.title} className="flex flex-col items-start gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
+                <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${dark ? "bg-emerald-900/40 text-emerald-400" : "bg-emerald-50 text-emerald-600"}`}>
                   <f.icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-gray-800">{f.title}</p>
-                  <p className="mt-0.5 text-xs leading-relaxed text-gray-500">{f.desc}</p>
+                  <p className={`text-sm font-semibold ${text}`}>{f.title}</p>
+                  <p className={`mt-0.5 text-xs leading-relaxed ${textSm}`}>{f.desc}</p>
                 </div>
               </div>
             ))}
@@ -522,11 +496,11 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════
           LATEST ARTICLES
       ══════════════════════════════════════════ */}
-      <section className="bg-gray-50 py-12">
+      <section className={`${bgAlt} py-12 transition-colors duration-300`}>
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-6 flex items-center justify-between">
-            <h2 className="text-xl font-bold text-gray-900">Latest Articles & Resources</h2>
-            <Link href="/library" className="flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-700">
+            <h2 className={`text-xl font-bold ${text}`}>Latest Articles & Resources</h2>
+            <Link href="/library" className="flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-500">
               View All <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
@@ -534,15 +508,15 @@ export default function HomePage() {
             {ARTICLES.map((a) => (
               <div
                 key={a.title}
-                className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
+                className={`overflow-hidden rounded-xl border ${dark ? "border-gray-700 bg-gray-900" : "border-gray-200 bg-white"} shadow-sm transition hover:shadow-md`}
               >
                 <div className={`h-36 w-full ${a.imgBg} flex items-center justify-center text-5xl`}>
                   {a.emoji}
                 </div>
                 <div className="p-4">
-                  <p className="text-sm font-semibold leading-tight text-gray-900">{a.title}</p>
-                  <p className="mt-1 text-xs leading-relaxed text-gray-500">{a.desc}</p>
-                  <button className="mt-3 rounded-md border border-gray-200 px-3 py-1 text-xs font-medium text-gray-600 transition hover:border-emerald-400 hover:text-emerald-600">
+                  <p className={`text-sm font-semibold leading-tight ${text}`}>{a.title}</p>
+                  <p className={`mt-1 text-xs leading-relaxed ${textSm}`}>{a.desc}</p>
+                  <button className={`mt-3 rounded-md border px-3 py-1 text-xs font-medium transition hover:border-emerald-500 hover:text-emerald-500 ${border2} ${textMd}`}>
                     Read More
                   </button>
                 </div>
@@ -553,7 +527,7 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════
-          FOOTER
+          FOOTER — always dark
       ══════════════════════════════════════════ */}
       <footer className="bg-gray-950 text-gray-400">
         <div className="mx-auto max-w-7xl px-4 py-12">
@@ -580,18 +554,13 @@ export default function HomePage() {
               <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">Quick Links</h3>
               <div className="grid grid-cols-2 gap-x-4 gap-y-2">
                 {["Quran", "Dinyaat", "Ziyarat", "Courses", "Library", "Kids", "Resources", "About Us", "Contact Us"].map((l) => (
-                  <Link
-                    key={l}
-                    href={`/${l.toLowerCase().replace(" ", "-")}`}
-                    className="text-xs text-gray-600 transition hover:text-emerald-400"
-                  >
+                  <Link key={l} href={`/${l.toLowerCase().replace(" ", "-")}`} className="text-xs text-gray-600 transition hover:text-emerald-400">
                     {l}
                   </Link>
                 ))}
               </div>
             </div>
 
-            {/* Spacer — desktop only */}
             <div className="hidden lg:block" />
 
             {/* Need Help */}
@@ -604,12 +573,7 @@ export default function HomePage() {
                   </div>
                   <span className="text-xs font-medium text-white">Chat with us on WhatsApp</span>
                 </div>
-                <a
-                  href="https://wa.me/15551234567"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300"
-                >
+                <a href="https://wa.me/15551234567" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300">
                   <Phone className="h-4 w-4" />
                   +1 (555) 123-4567
                 </a>
@@ -618,7 +582,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="border-t border-gray-800">
           <div className="mx-auto max-w-7xl px-4 py-4 text-center">
             <p className="text-xs text-gray-700">© 2024 Agha Naveed. All Rights Reserved.</p>
