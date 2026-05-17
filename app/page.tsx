@@ -6,9 +6,11 @@ import {
   BookOpen,
   MapPin,
   ChevronDown,
-  Search,
-  Moon,
   ChevronRight,
+  Menu,
+  X,
+  Moon,
+  Search,
   Users,
   BookMarked,
   Landmark,
@@ -20,7 +22,7 @@ import {
   Phone,
 } from "lucide-react";
 import Image from "next/image";
-import logo from "@/public/logo.png"
+import logo from "@/public/logo.png";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -44,108 +46,26 @@ const CATEGORIES = [
 ];
 
 const ZIYARATS = [
-  {
-    title: "Ziyarat e Ashura",
-    sub: "Imam Hussain (ع)",
-    bg: "from-amber-900/80 not-hover:via-black/20 to-transparent",
-    image: "/images/zyarat-e-ashura.jpg"
-  },
-  {
-    title: "Ziyarat e Warith",
-    sub: "Imam Hussain (ع)",
-    bg: "from-emerald-900/80 not-hover:via-black/20 to-transparent",
-    image: "/images/warisa.jpg"
-  },
-  {
-    title: "Ziyarat e Nahiya",
-    sub: "Ahlulbayt (ع)",
-    bg: "from-sky-900/80 not-hover:via-black/20 to-transparent",
-    image: "/images/nahiya.jpg"
-  },
-  {
-    title: "Ziyarat e Ameenullah",
-    sub: "Imam Ali (ع)",
-    bg: "from-yellow-900/80 not-hover:via-black/20 to-transparent",
-    image: "/images/ameenullah.jpg"
-  },
-  {
-    title: "Ziyarat e Imam Hussain (ع)",
-    sub: "Full Ziyarat",
-    bg: "from-red-900/80 not-hover:via-black/20 to-transparent",
-    image: "/images/imamhussain.jpg"
-  },
-  {
-    title: "Ziyarat e Imam Ali Raza (ع)",
-    sub: "Mashhad e Muqaddas",
-    bg: "from-stone-900/80 not-hover:via-black/20 to-transparent",
-    image: "/images/mashhad.jpg"
-  },
+  { title: "Ziyarat e Ashura", sub: "Imam Hussain (ع)", bg: "from-amber-900/80 via-black/20 to-transparent", image: "/images/zyarat-e-ashura.jpg" },
+  { title: "Ziyarat e Warith", sub: "Imam Hussain (ع)", bg: "from-emerald-900/80 via-black/20 to-transparent", image: "/images/warisa.jpg" },
+  { title: "Ziyarat e Nahiya", sub: "Ahlulbayt (ع)", bg: "from-sky-900/80 via-black/20 to-transparent", image: "/images/nahiya.jpg" },
+  { title: "Ziyarat e Ameenullah", sub: "Imam Ali (ع)", bg: "from-yellow-900/80 via-black/20 to-transparent", image: "/images/ameenullah.jpg" },
+  { title: "Ziyarat e Imam Hussain (ع)", sub: "Full Ziyarat", bg: "from-red-900/80 via-black/20 to-transparent", image: "/images/imamhussain.jpg" },
+  { title: "Ziyarat e Imam Ali Raza (ع)", sub: "Mashhad e Muqaddas", bg: "from-stone-900/80 via-black/20 to-transparent", image: "/images/mashhad.jpg" },
 ];
 
 const COURSES = [
-  {
-    title: "Tafseer of Quran",
-    sub: "Learn Quran with Authentic Tafseer",
-    progress: 45,
-    badge: "Bestseller",
-    badgeColor: "bg-emerald-600",
-    imgBg: "bg-gradient-to-br from-emerald-950 via-stone-900 to-amber-900",
-    emoji: "📖",
-  },
-  {
-    title: "Aqaid (عقائد)",
-    sub: "Shia Beliefs Made Easy",
-    progress: 60,
-    badge: null,
-    imgBg: "bg-gradient-to-br from-stone-900 via-amber-950 to-stone-800",
-    emoji: "🌙",
-  },
-  {
-    title: "Fiqh for Beginners",
-    sub: "Practical Islamic Laws",
-    progress: 35,
-    badge: null,
-    imgBg: "bg-gradient-to-br from-amber-950 via-stone-900 to-yellow-950",
-    emoji: "⚖️",
-  },
-  {
-    title: "Yassarnal Quran",
-    sub: "Qaida for Beginners",
-    progress: 70,
-    badge: "New",
-    badgeColor: "bg-emerald-500",
-    imgBg: "bg-gradient-to-br from-stone-900 via-emerald-950 to-stone-800",
-    emoji: "✨",
-  },
-  {
-    title: "Ziyarat Studies",
-    sub: "Meaning & Benefits",
-    progress: 50,
-    badge: null,
-    imgBg: "bg-gradient-to-br from-yellow-950 via-stone-900 to-amber-950",
-    emoji: "🏛️",
-  },
+  { title: "Tafseer of Quran", sub: "Learn Quran with Authentic Tafseer", progress: 45, badge: "Bestseller", badgeColor: "bg-emerald-600", imgBg: "bg-gradient-to-br from-emerald-950 via-stone-900 to-amber-900", emoji: "📖" },
+  { title: "Aqaid (عقائد)", sub: "Shia Beliefs Made Easy", progress: 60, badge: null, imgBg: "bg-gradient-to-br from-stone-900 via-amber-950 to-stone-800", emoji: "🌙" },
+  { title: "Fiqh for Beginners", sub: "Practical Islamic Laws", progress: 35, badge: null, imgBg: "bg-gradient-to-br from-amber-950 via-stone-900 to-yellow-950", emoji: "⚖️" },
+  { title: "Yassarnal Quran", sub: "Qaida for Beginners", progress: 70, badge: "New", badgeColor: "bg-emerald-500", imgBg: "bg-gradient-to-br from-stone-900 via-emerald-950 to-stone-800", emoji: "✨" },
+  { title: "Ziyarat Studies", sub: "Meaning & Benefits", progress: 50, badge: null, imgBg: "bg-gradient-to-br from-yellow-950 via-stone-900 to-amber-950", emoji: "🏛️" },
 ];
 
 const LEARNING_PATHS = [
-  {
-    icon: "🌱",
-    title: "Beginner Path",
-    desc: "Start your journey with the basics of Islam and Shia Dinyaat.",
-    href: "/paths/beginner",
-  },
-  {
-    icon: "📘",
-    title: "Intermediate Path",
-    desc: "Strengthen your understanding of beliefs, fiqh, and Ahlulbayt teachings.",
-    href: "/paths/intermediate",
-  },
-  {
-    icon: "🎓",
-    title: "Advanced Path",
-    desc: "Deepen your knowledge with advanced topics and scholarly resources.",
-    href: "/paths/advanced",
-  },
+  { icon: "🌱", title: "Beginner Path", desc: "Start your journey with the basics of Islam and Shia Dinyaat.", href: "/paths/beginner" },
+  { icon: "📘", title: "Intermediate Path", desc: "Strengthen your understanding of beliefs, fiqh, and Ahlulbayt teachings.", href: "/paths/intermediate" },
+  { icon: "🎓", title: "Advanced Path", desc: "Deepen your knowledge with advanced topics and scholarly resources.", href: "/paths/advanced" },
 ];
 
 const FEATURES = [
@@ -157,42 +77,19 @@ const FEATURES = [
 ];
 
 const ARTICLES = [
-  {
-    title: "The Importance of Ziyarat",
-    desc: "Understand the spiritual benefits of visiting the Ahlulbayt (ع).",
-    imgBg: "bg-gradient-to-br from-stone-800 via-stone-700 to-stone-900",
-    emoji: "📿",
-  },
-  {
-    title: "Who are Ahlulbayt (ع)?",
-    desc: "A brief introduction to the blessed household of Prophet (ص).",
-    imgBg: "bg-gradient-to-br from-emerald-900 via-stone-800 to-amber-950",
-    emoji: "🕌",
-  },
-  {
-    title: "Dua in Daily Life",
-    desc: "How Dua connects us with Allah in every moment.",
-    imgBg: "bg-gradient-to-br from-amber-950 via-stone-800 to-stone-900",
-    emoji: "🤲",
-  },
-  {
-    title: "How to Understand Quran?",
-    desc: "Simple steps to build a strong connection with Quran.",
-    imgBg: "bg-gradient-to-br from-stone-900 via-amber-900 to-stone-800",
-    emoji: "📖",
-  },
+  { title: "The Importance of Ziyarat", desc: "Understand the spiritual benefits of visiting the Ahlulbayt (ع).", imgBg: "bg-gradient-to-br from-stone-800 via-stone-700 to-stone-900", emoji: "📿" },
+  { title: "Who are Ahlulbayt (ع)?", desc: "A brief introduction to the blessed household of Prophet (ص).", imgBg: "bg-gradient-to-br from-emerald-900 via-stone-800 to-amber-950", emoji: "🕌" },
+  { title: "Dua in Daily Life", desc: "How Dua connects us with Allah in every moment.", imgBg: "bg-gradient-to-br from-amber-950 via-stone-800 to-stone-900", emoji: "🤲" },
+  { title: "How to Understand Quran?", desc: "Simple steps to build a strong connection with Quran.", imgBg: "bg-gradient-to-br from-stone-900 via-amber-900 to-stone-800", emoji: "📖" },
 ];
 
-// ─── COMPONENTS ──────────────────────────────────────────────────────────────
+// ─── SUB-COMPONENTS ───────────────────────────────────────────────────────────
 
 function ProgressBar({ value }: { value: number }) {
   return (
     <div className="mt-2">
       <div className="h-1 w-full rounded-full bg-gray-200">
-        <div
-          className="h-1 rounded-full bg-emerald-600 transition-all"
-          style={{ width: `${value}%` }}
-        />
+        <div className="h-1 rounded-full bg-emerald-600 transition-all" style={{ width: `${value}%` }} />
       </div>
       <p className="mt-1 text-xs text-gray-500">{value}% Complete</p>
     </div>
@@ -207,11 +104,14 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900 antialiased">
 
-      {/* ─── NAVBAR ─── */}
+      {/* ══════════════════════════════════════════
+          NAVBAR
+      ══════════════════════════════════════════ */}
       <header className="sticky top-0 z-50 border-b border-gray-100 bg-white shadow-sm">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex flex-shrink-0 items-center gap-2">
             <div className="flex h-10 w-10 items-center">
               <Image src={logo} alt="Logo" width={200} height={200} />
             </div>
@@ -221,7 +121,7 @@ export default function HomePage() {
             </div>
           </Link>
 
-          {/* Desktop nav */}
+          {/* Desktop nav — hidden below lg */}
           <ul className="hidden items-center gap-1 lg:flex">
             {NAV_ITEMS.map((item) => (
               <li key={item.label}>
@@ -238,47 +138,135 @@ export default function HomePage() {
 
           {/* Right controls */}
           <div className="flex items-center gap-2">
+            {/* Dark mode icon — desktop only */}
             <button className="hidden rounded-md p-2 text-gray-500 hover:bg-gray-100 lg:block">
               <Moon className="h-4 w-4" />
             </button>
+
+            {/* Login — desktop only */}
             <Link
               href="/login"
               className="hidden rounded-md border border-gray-200 px-4 py-1.5 text-sm font-medium text-gray-700 transition hover:bg-gray-50 lg:inline-flex"
             >
               Login
             </Link>
+
+            {/* Sign Up — always visible */}
             <Link
               href="/signup"
-              className="rounded-md bg-emerald-600 px-4 py-1.5 text-sm font-semibold text-white transition hover:bg-emerald-700"
+              className="rounded-md bg-emerald-600 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-emerald-700 sm:px-4"
             >
               Sign Up
             </Link>
+
+            {/* Hamburger — mobile only */}
+            <button
+              onClick={() => setMobileMenuOpen((o) => !o)}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              className="flex items-center justify-center rounded-md p-2 text-gray-600 hover:bg-gray-100 lg:hidden"
+            >
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
           </div>
         </nav>
+
+        {/* ── Mobile drawer ── */}
+        <div
+          className={`overflow-hidden transition-all duration-300 ease-in-out lg:hidden ${
+            mobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="border-t border-gray-100 bg-white px-4 pb-5 pt-3">
+            {/* Search */}
+            <div className="mb-4 flex items-center gap-2 rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5">
+              <Search className="h-4 w-4 flex-shrink-0 text-gray-400" />
+              <input
+                type="text"
+                placeholder="Search courses, ziyarat…"
+                className="flex-1 bg-transparent text-sm text-gray-700 placeholder-gray-400 outline-none"
+              />
+            </div>
+
+            {/* Links */}
+            <ul className="mb-4 divide-y divide-gray-50">
+              {NAV_ITEMS.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center justify-between py-3 text-sm font-medium text-gray-800 hover:text-emerald-600"
+                  >
+                    {item.label}
+                    {item.dropdown
+                      ? <ChevronDown className="h-4 w-4 text-gray-400" />
+                      : <ChevronRight className="h-4 w-4 text-gray-300" />
+                    }
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            {/* CTA buttons */}
+            <div className="flex gap-3">
+              <Link
+                href="/login"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex-1 rounded-xl border border-gray-300 py-2.5 text-center text-sm font-semibold text-gray-700 hover:bg-gray-50"
+              >
+                Login
+              </Link>
+              <Link
+                href="/signup"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex-1 rounded-xl bg-emerald-600 py-2.5 text-center text-sm font-semibold text-white hover:bg-emerald-700"
+              >
+                Sign Up Free
+              </Link>
+            </div>
+          </div>
+        </div>
       </header>
 
-      {/* ─── HERO ─── */}
-      <section className="relative min-h-[420px] overflow-hidden bg-[#030102]">
-        {/* Background gradient (replace with actual shrine image via CSS background-image) */}
+      {/* ══════════════════════════════════════════
+          HERO SECTION
+          - Mobile:  image fills section as background (opacity layer)
+          - Desktop: image positioned to the right, bleeds off-screen
+      ══════════════════════════════════════════ */}
+      <section className="relative overflow-hidden bg-[#030102]">
 
-        {/* Decorative glow */}
-        <div className="absolute right-1 top-0 h-full w-1/2 z-20
-        bg-gradient-to-l from-amber-900/20 via-transparent to-transparent
-        " />
+        {/* MOBILE background image — hidden on lg+ */}
+        <div className="absolute inset-0 lg:hidden">
+          <Image
+            src="/karbala-bg.jpg"
+            alt="Karbala"
+            fill
+            priority
+            className="object-cover object-center opacity-50"
+            sizes="100vw"
+          />
+          {/* dark overlay so text stays readable */}
+          <div className="absolute inset-0 bg-linear-to-b from-black/75 via-black/60 to-black/80" />
+        </div>
 
+        {/* Subtle amber glow — desktop only */}
+        <div className="pointer-events-none absolute right-0 z-20 top-0 hidden h-full w-1/2 bg-linear-to-l from-amber-900/20 via-transparent to-transparent lg:block" />
+
+        {/* ── Content ── */}
         <div className="relative mx-auto max-w-7xl px-4 py-16 lg:py-24">
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
-            {/* Left */}
-            <div className="z-20">
-              <h1 className="mb-3 text-4xl font-extrabold leading-tight text-white lg:text-5xl">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
+
+            {/* Left — headline + CTA */}
+            <div className="relative z-10">
+              <h1 className="mb-3 text-4xl font-extrabold leading-tight text-white sm:text-5xl">
                 Learn. Understand.
                 <br />
                 <span className="text-emerald-400">Live the Truth.</span>
               </h1>
-              <p className="mb-8 max-w-md text-sm leading-relaxed text-gray-400">
+              <p className="mb-8 max-w-md text-sm leading-relaxed text-gray-300">
                 A complete platform to learn Quran, Shia Dinyaat, Ziyarat and
-                the teachings of Ahlulbayt (عليهم السلام).
+                the teachings of Ahlulbayt&nbsp;(عليهم السلام).
               </p>
+
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/courses"
@@ -289,7 +277,7 @@ export default function HomePage() {
                 </Link>
                 <Link
                   href="/ziyarat"
-                  className="flex items-center gap-2 rounded-lg border border-gray-600 px-5 py-2.5 text-sm font-semibold text-gray-200 transition hover:border-emerald-500 hover:text-emerald-400"
+                  className="flex items-center gap-2 rounded-lg border border-gray-500 px-5 py-2.5 text-sm font-semibold text-gray-200 transition hover:border-emerald-500 hover:text-emerald-400"
                 >
                   <MapPin className="h-4 w-4" />
                   Explore Ziyarat
@@ -297,32 +285,57 @@ export default function HomePage() {
               </div>
 
               {/* Stats */}
-              <div className="mt-10 flex flex-wrap gap-8">
+              <div className="mt-10 flex flex-wrap gap-6 sm:gap-8">
                 {[
-                  { icon: Users, value: "10K+", label: "Students" },
-                  { icon: BookMarked, value: "500+", label: "Lessons" },
-                  { icon: Landmark, value: "100+", label: "Ziyarats" },
-                  { icon: GraduationCap, value: "50+", label: "Scholars" },
+                  { icon: Users,         value: "10K+", label: "Students" },
+                  { icon: BookMarked,    value: "500+", label: "Lessons" },
+                  { icon: Landmark,      value: "100+", label: "Ziyarats" },
+                  { icon: GraduationCap, value: "50+",  label: "Scholars" },
                 ].map((s) => (
                   <div key={s.label} className="flex items-center gap-2">
                     <s.icon className="h-5 w-5 text-emerald-500" />
                     <div>
                       <p className="text-base font-bold text-white">{s.value}</p>
-                      <p className="text-xs text-gray-500">{s.label}</p>
+                      <p className="text-xs text-gray-400">{s.label}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-              
-            <div className="relative">
-              <div className="absolute top-[-27%] right-[-15%] z-0 w-[175%] pointer-events-none select-none">
-                <Image src={"/karbala-bg.jpg"} alt="Karbala image" width={1200} height={1200} className="w-full opacity-100 pointer-events-none select-none" />
+
+            {/* Right — DESKTOP image + ayah */}
+            <div className="relative hidden lg:block">
+              {/*
+                The image container is positioned absolutely so it can
+                overflow the right boundary of the viewport while still
+                being scoped inside the section's overflow-hidden.
+              */}
+              <div
+                aria-hidden className="xl:w-[170%] w-[210%]"
+                style={{
+                  position: "absolute",
+                  top: "-39%",
+                  right: "-18%",
+                  zIndex: 0,
+                  pointerEvents: "none",
+                  userSelect: "none",
+                }}
+              >
+                <Image
+                  src="/karbala-bg.jpg"
+                  alt="Karbala"
+                  width={900}
+                  height={600}
+                  priority
+                  className="w-full opacity-80"
+                  sizes="60vw"
+                />
               </div>
-              {/* Right — Arabic Ayah */}
-              <div className="flex flex-col items-end relative z-10 justify-center text-right z-20">
+
+              {/* Arabic ayah on top of image */}
+              <div className="relative z-10 flex flex-col items-end py-16 text-right">
                 <p
-                  className="mb-3 font-arabic text-4xl leading-loose text-amber-300 lg:text-5xl"
+                  className="mb-3 text-4xl leading-loose text-amber-300 lg:text-5xl"
                   dir="rtl"
                   style={{ fontFamily: "'Scheherazade New', 'Amiri', serif" }}
                 >
@@ -335,32 +348,50 @@ export default function HomePage() {
               </div>
             </div>
 
+            {/* Ayah — MOBILE only, shown below text */}
+            <div className="relative z-10 text-center lg:hidden">
+              <p
+                className="mb-2 text-3xl leading-loose text-amber-300"
+                dir="rtl"
+                style={{ fontFamily: "'Scheherazade New', 'Amiri', serif" }}
+              >
+                وَقُل رَّبِّ زِدۡنِي عِلۡمًا
+              </p>
+              <p className="text-xs italic text-gray-400">
+                "My Lord, increase me in knowledge." — Quran 20:114
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* ─── CATEGORIES ─── */}
+      {/* ══════════════════════════════════════════
+          CATEGORIES
+      ══════════════════════════════════════════ */}
       <section className="border-b border-gray-100 bg-white py-10">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="grid grid-cols-3 gap-4 sm:grid-cols-6">
+          <div className="grid grid-cols-3 gap-3 sm:grid-cols-6 sm:gap-4">
             {CATEGORIES.map((cat) => (
               <Link
                 key={cat.label}
                 href={cat.href}
-                className="group flex flex-col items-center gap-2 rounded-xl border border-gray-100 p-4 text-center transition hover:border-emerald-200 hover:bg-emerald-50"
+                className="group flex flex-col items-center gap-2 rounded-xl border border-gray-100 p-3 text-center transition hover:border-emerald-200 hover:bg-emerald-50 sm:p-4"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gray-50 text-3xl shadow-sm transition group-hover:bg-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-50 text-2xl shadow-sm transition group-hover:bg-white sm:h-14 sm:w-14 sm:text-3xl">
                   {cat.emoji}
                 </div>
-                <p className="text-sm font-semibold text-gray-800">{cat.label}</p>
-                <p className="text-[11px] leading-tight text-gray-400">{cat.sub}</p>
+                <p className="text-xs font-semibold text-gray-800 sm:text-sm">{cat.label}</p>
+                <p className="hidden text-[11px] leading-tight text-gray-400 sm:block">{cat.sub}</p>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── EXPLORE ZIYARATS ─── */}
+      {/* ══════════════════════════════════════════
+          EXPLORE ZIYARATS
+      ══════════════════════════════════════════ */}
       <section className="bg-white py-12">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-6 flex items-center justify-between">
@@ -369,28 +400,26 @@ export default function HomePage() {
               View All <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
             {ZIYARATS.map((z) => (
               <Link
                 key={z.title}
                 href="/ziyarat"
                 className="group relative overflow-hidden rounded-xl"
               >
-                {/* Image placeholder */}
-                <div className={`h-40 w-full flex items-center justify-center text-4xl`}>
-                  {
-                    z.image &&
-                    <Image src={z.image} alt="" width={200} height={200} className="w-full h-full object-cover" />
-                  }
+                <div className="relative h-40 w-full">
+                  <Image
+                    src={z.image}
+                    alt={z.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                  />
                 </div>
-                {/* Overlay */}
-                <div
-                  className={`absolute inset-0 bg-linear-to-t transition-all ${z.bg} flex flex-col justify-end p-3`}
-                >
-                  <p className="text-xs group-hover:-translate-y-1 transition-all font-bold leading-tight text-white">{z.title}</p>
-                  <p className="text-[10px] text-gray-300 group-hover:-translate-y-1 transition-all">{z.sub}</p>
+                <div className={`absolute inset-0 bg-gradient-to-t ${z.bg} flex flex-col justify-end p-3`}>
+                  <p className="text-xs font-bold leading-tight text-white transition-all group-hover:-translate-y-1">{z.title}</p>
+                  <p className="text-[10px] text-gray-300 transition-all group-hover:-translate-y-1">{z.sub}</p>
                 </div>
-                {/* Arrow */}
                 <div className="absolute bottom-3 right-3 flex h-6 w-6 items-center justify-center rounded-full bg-white/20 opacity-0 backdrop-blur-sm transition group-hover:opacity-100">
                   <ChevronRight className="h-3 w-3 text-white" />
                 </div>
@@ -400,7 +429,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── POPULAR COURSES ─── */}
+      {/* ══════════════════════════════════════════
+          POPULAR COURSES
+      ══════════════════════════════════════════ */}
       <section className="bg-gray-50 py-12">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-6 flex items-center justify-between">
@@ -409,27 +440,25 @@ export default function HomePage() {
               View All <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
-          <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
             {COURSES.map((c) => (
               <Link
                 key={c.title}
                 href="/courses"
                 className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
               >
-                {/* Thumb */}
-                <div className={`relative h-36 w-full ${c.imgBg} flex items-center justify-center text-5xl`}>
+                <div className={`relative h-32 w-full ${c.imgBg} flex items-center justify-center text-4xl sm:h-36 sm:text-5xl`}>
                   {c.emoji}
                   {c.badge && (
-                    <span
-                      className={`absolute left-2 top-2 rounded-md px-2 py-0.5 text-[10px] font-bold text-white ${c.badgeColor}`}
-                    >
+                    <span className={`absolute left-2 top-2 rounded-md px-2 py-0.5 text-[10px] font-bold text-white ${c.badgeColor}`}>
                       {c.badge}
                     </span>
                   )}
                 </div>
                 <div className="p-3">
-                  <p className="text-sm font-semibold text-gray-900 leading-tight">{c.title}</p>
-                  <p className="mt-0.5 text-[11px] text-gray-500">{c.sub}</p>
+                  <p className="text-xs font-semibold leading-tight text-gray-900 sm:text-sm">{c.title}</p>
+                  <p className="mt-0.5 text-[10px] text-gray-500 sm:text-[11px]">{c.sub}</p>
+                  <ProgressBar value={c.progress} />
                 </div>
               </Link>
             ))}
@@ -437,23 +466,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── STRUCTURED LEARNING PATHS ─── */}
+      {/* ══════════════════════════════════════════
+          STRUCTURED LEARNING PATHS
+      ══════════════════════════════════════════ */}
       <section className="border-y border-gray-100 bg-white py-12">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-2">
-            <h2 className="text-xl font-bold text-gray-900">Structured Learning Paths</h2>
-            <p className="mt-1 text-sm text-gray-500">
-              Follow step-by-step paths to build strong knowledge from basics to advanced levels.
-            </p>
-          </div>
-          <div className="mt-8 grid grid-cols-1 gap-0 divide-y divide-gray-100 rounded-2xl border border-gray-200 bg-gray-50 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-            {LEARNING_PATHS.map((p, i) => (
-              <div key={p.title} className="flex flex-col items-start gap-3 p-6">
-                {/* icon */}
+          <h2 className="text-xl font-bold text-gray-900">Structured Learning Paths</h2>
+          <p className="mt-1 text-sm text-gray-500">
+            Follow step-by-step paths to build strong knowledge from basics to advanced levels.
+          </p>
+          <div className="mt-8 grid grid-cols-1 divide-y divide-gray-100 rounded-2xl border border-gray-200 bg-gray-50 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+            {LEARNING_PATHS.map((p) => (
+              <div key={p.title} className="flex flex-col items-start gap-3 p-5 sm:p-6">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-200 bg-white text-2xl shadow-sm">
                   {p.icon}
                 </div>
-                {/* arrow between */}
                 <div>
                   <p className="text-sm font-semibold text-gray-900">{p.title}</p>
                   <p className="mt-1 text-xs leading-relaxed text-gray-500">{p.desc}</p>
@@ -470,11 +497,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── WHY LEARN WITH US ─── */}
+      {/* ══════════════════════════════════════════
+          WHY LEARN WITH US
+      ══════════════════════════════════════════ */}
       <section className="bg-white py-12">
         <div className="mx-auto max-w-7xl px-4">
           <h2 className="mb-8 text-xl font-bold text-gray-900">Why Learn with Shia Dinyaat?</h2>
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
             {FEATURES.map((f) => (
               <div key={f.title} className="flex flex-col items-start gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
@@ -490,7 +519,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── LATEST ARTICLES ─── */}
+      {/* ══════════════════════════════════════════
+          LATEST ARTICLES
+      ══════════════════════════════════════════ */}
       <section className="bg-gray-50 py-12">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-6 flex items-center justify-between">
@@ -499,7 +530,7 @@ export default function HomePage() {
               View All <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
             {ARTICLES.map((a) => (
               <div
                 key={a.title}
@@ -509,7 +540,7 @@ export default function HomePage() {
                   {a.emoji}
                 </div>
                 <div className="p-4">
-                  <p className="text-sm font-semibold text-gray-900 leading-tight">{a.title}</p>
+                  <p className="text-sm font-semibold leading-tight text-gray-900">{a.title}</p>
                   <p className="mt-1 text-xs leading-relaxed text-gray-500">{a.desc}</p>
                   <button className="mt-3 rounded-md border border-gray-200 px-3 py-1 text-xs font-medium text-gray-600 transition hover:border-emerald-400 hover:text-emerald-600">
                     Read More
@@ -521,14 +552,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── FOOTER ─── */}
+      {/* ══════════════════════════════════════════
+          FOOTER
+      ══════════════════════════════════════════ */}
       <footer className="bg-gray-950 text-gray-400">
         <div className="mx-auto max-w-7xl px-4 py-12">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+
             {/* Brand */}
-            <div className="lg:col-span-1">
+            <div>
               <div className="mb-3 flex items-center gap-2">
-                <div className="flex h-9 w-9 items-center justify-center">
+                <div className="flex h-9 w-9 items-center">
                   <Image src={logo} alt="Logo" width={100} height={100} />
                 </div>
                 <div>
@@ -543,32 +577,26 @@ export default function HomePage() {
 
             {/* Quick Links */}
             <div>
-              <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">
-                Quick Links
-              </h3>
+              <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">Quick Links</h3>
               <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-                {["Quran", "Dinyaat", "Ziyarat", "Courses", "Library", "Kids", "Resources", "About Us", "Contact Us"].map(
-                  (l) => (
-                    <Link
-                      key={l}
-                      href={`/${l.toLowerCase().replace(" ", "-")}`}
-                      className="text-xs text-gray-600 transition hover:text-emerald-400"
-                    >
-                      {l}
-                    </Link>
-                  )
-                )}
+                {["Quran", "Dinyaat", "Ziyarat", "Courses", "Library", "Kids", "Resources", "About Us", "Contact Us"].map((l) => (
+                  <Link
+                    key={l}
+                    href={`/${l.toLowerCase().replace(" ", "-")}`}
+                    className="text-xs text-gray-600 transition hover:text-emerald-400"
+                  >
+                    {l}
+                  </Link>
+                ))}
               </div>
             </div>
 
-            {/* Spacer col */}
+            {/* Spacer — desktop only */}
             <div className="hidden lg:block" />
 
             {/* Need Help */}
             <div>
-              <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">
-                Need Help?
-              </h3>
+              <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">Need Help?</h3>
               <div className="rounded-xl border border-gray-800 bg-gray-900 p-4">
                 <div className="mb-3 flex items-center gap-2">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-white">
@@ -593,12 +621,11 @@ export default function HomePage() {
         {/* Bottom bar */}
         <div className="border-t border-gray-800">
           <div className="mx-auto max-w-7xl px-4 py-4 text-center">
-            <p className="text-xs text-gray-700">
-              © 2024 Agha Naveed. All Rights Reserved.
-            </p>
+            <p className="text-xs text-gray-700">© 2024 Agha Naveed. All Rights Reserved.</p>
           </div>
         </div>
       </footer>
+
     </div>
   );
 }
