@@ -1,17 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
 import {
   BookOpen,
   MapPin,
-  ChevronDown,
   ChevronRight,
-  Menu,
-  X,
-  Moon,
-  Sun,
-  Search,
   Users,
   BookMarked,
   Landmark,
@@ -19,24 +12,10 @@ import {
   Volume2,
   Smartphone,
   ShieldCheck,
-  MessageCircle,
-  Phone,
 } from "lucide-react";
 import Image from "next/image";
-import logo from "@/public/logo.png";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
-
-const NAV_ITEMS = [
-  { label: "Home", href: "/" },
-  { label: "Courses", href: "/courses" },
-  { label: "Ziyarat", href: "/ziyarat" },
-  { label: "Dinyaat", href: "/dinyaat", dropdown: true },
-  { label: "Teachers", href: "/about" },
-  { label: "Blogs", href: "/resources", dropdown: true },
-  { label: "About", href: "/about" },
-];
-
 const CATEGORIES = [
   { emoji: "📖", label: "Quran", sub: "Read, Learn & Reflect", href: "/quran" },
   { emoji: "🕌", label: "Dinyaat", sub: "Beliefs, Laws & Teachings", href: "/dinyaat" },
@@ -85,181 +64,25 @@ const ARTICLES = [
 ];
 
 // ─── SUB-COMPONENTS ───────────────────────────────────────────────────────────
-
-function ProgressBar({ value, dark }: { value: number; dark: boolean }) {
+function ProgressBar({ value }: { value: number }) {
   return (
     <div className="mt-2">
-      <div className={`h-1 w-full rounded-full ${dark ? "bg-gray-700" : "bg-gray-200"}`}>
-        <div
-          className="h-1 rounded-full bg-emerald-600 transition-all"
-          style={{ width: `${value}%` }}
-        />
+      <div className="h-1 w-full rounded-full bg-gray-200 dark:bg-gray-700">
+        <div className="h-1 rounded-full bg-emerald-600 transition-all" style={{ width: `${value}%` }} />
       </div>
-      <p className={`mt-1 text-xs ${dark ? "text-gray-500" : "text-gray-500"}`}>{value}% Complete</p>
+      <p className="mt-1 text-xs text-gray-500">{value}% Complete</p>
     </div>
   );
 }
 
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
-
 export default function HomePage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [dark, setDark] = useState(false);
-
-  // ── helpers so class strings stay readable ──
-  const bg    = dark ? "bg-gray-950" : "bg-white";
-  const bgAlt = dark ? "bg-gray-900" : "bg-gray-50";
-  const border = dark ? "border-gray-800" : "border-gray-100";
-  const border2 = dark ? "border-gray-700" : "border-gray-200";
-  const text  = dark ? "text-gray-100" : "text-gray-900";
-  const textMd = dark ? "text-gray-300" : "text-gray-600";
-  const textSm = dark ? "text-gray-400" : "text-gray-500";
-  const card  = dark ? "bg-gray-900 border-gray-700" : "bg-white border-gray-200";
-  const cardHover = dark ? "hover:bg-gray-800" : "hover:bg-emerald-50";
-  const inputBg = dark ? "bg-gray-800 border-gray-700 text-gray-200 placeholder-gray-500" : "bg-gray-50 border-gray-200 text-gray-700 placeholder-gray-400";
-  const divider = dark ? "divide-gray-800" : "divide-gray-50";
-  const pathCard = dark ? "bg-gray-900 border-gray-700 divide-gray-800" : "bg-gray-50 border-gray-200 divide-gray-100";
-  const iconBg = dark ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200";
-
   return (
-    // Root: we drive dark mode purely by toggling classes on this wrapper
-    <div className={`min-h-screen font-sans antialiased transition-colors duration-300 ${bg} ${text}`}>
-
+    <div className="w-full">
       {/* ══════════════════════════════════════════
-          NAVBAR
-      ══════════════════════════════════════════ */}
-      <header className={`sticky top-0 z-50 border-b ${border} ${dark ? "bg-gray-950" : "bg-white"} shadow-sm transition-colors duration-300`}>
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
-
-          {/* Logo */}
-          <Link href="/" className="flex flex-shrink-0 items-center gap-2">
-            <div className="flex h-10 w-10 items-center">
-              <Image src={logo} alt="Logo" width={200} height={200} />
-            </div>
-            <div className="leading-tight">
-              <p className={`text-sm font-bold ${text}`}>Shia Dinyaat</p>
-              <p className={`text-[10px] ${textSm}`}>Learn. Believe. Practice.</p>
-            </div>
-          </Link>
-
-          {/* Desktop nav */}
-          <ul className="hidden items-center gap-1 lg:flex">
-            {NAV_ITEMS.map((item) => (
-              <li key={item.label}>
-                <Link
-                  href={item.href}
-                  className={`flex items-center gap-0.5 rounded-md px-3 py-1.5 text-sm ${textMd} transition ${dark ? "hover:bg-gray-800 hover:text-gray-100" : "hover:bg-gray-50 hover:text-gray-900"}`}
-                >
-                  {item.label}
-                  {item.dropdown && <ChevronDown className="h-3 w-3 opacity-50" />}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          {/* Right controls */}
-          <div className="flex items-center gap-2">
-            {/* 🌙 / ☀️ Theme toggle — always visible */}
-            <button
-              onClick={() => setDark((d) => !d)}
-              aria-label="Toggle theme"
-              className={`flex items-center justify-center rounded-md p-2 transition ${dark ? "bg-gray-800 text-amber-400 hover:bg-gray-700" : "text-gray-500 hover:bg-gray-100"}`}
-            >
-              {dark
-                ? <Sun className="h-4 w-4" />
-                : <Moon className="h-4 w-4" />
-              }
-            </button>
-
-            {/* Login — desktop only */}
-            <Link
-              href="/login"
-              className={`hidden rounded-md border ${border2} px-4 py-1.5 text-sm font-medium ${textMd} transition ${dark ? "hover:bg-gray-800" : "hover:bg-gray-50"} lg:inline-flex`}
-            >
-              Login
-            </Link>
-
-            {/* Sign Up */}
-            <Link
-              href="/signup"
-              className="rounded-md bg-emerald-600 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-emerald-700 sm:px-4"
-            >
-              Sign Up
-            </Link>
-
-            {/* Hamburger */}
-            <button
-              onClick={() => setMobileMenuOpen((o) => !o)}
-              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-              className={`flex items-center justify-center rounded-md p-2 ${textMd} transition ${dark ? "hover:bg-gray-800" : "hover:bg-gray-100"} lg:hidden`}
-            >
-              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
-          </div>
-        </nav>
-
-        {/* ── Mobile drawer ── */}
-        <div
-          className={`overflow-hidden transition-all duration-300 ease-in-out lg:hidden ${
-            mobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-          }`}
-        >
-          <div className={`border-t ${border} px-4 pb-5 pt-3 ${dark ? "bg-gray-950" : "bg-white"}`}>
-            {/* Search */}
-            <div className={`mb-4 flex items-center gap-2 rounded-xl border ${inputBg} px-3 py-2.5`}>
-              <Search className="h-4 w-4 flex-shrink-0 opacity-50" />
-              <input
-                type="text"
-                placeholder="Search courses, ziyarat…"
-                className="flex-1 bg-transparent text-sm outline-none"
-              />
-            </div>
-
-            {/* Links */}
-            <ul className={`mb-4 divide-y ${divider}`}>
-              {NAV_ITEMS.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`flex items-center justify-between py-3 text-sm font-medium ${text} hover:text-emerald-500`}
-                  >
-                    {item.label}
-                    {item.dropdown
-                      ? <ChevronDown className="h-4 w-4 opacity-40" />
-                      : <ChevronRight className="h-4 w-4 opacity-20" />
-                    }
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            {/* CTA buttons */}
-            <div className="flex gap-3">
-              <Link
-                href="/login"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`flex-1 rounded-xl border ${border2} py-2.5 text-center text-sm font-semibold ${text} ${dark ? "hover:bg-gray-800" : "hover:bg-gray-50"}`}
-              >
-                Login
-              </Link>
-              <Link
-                href="/signup"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex-1 rounded-xl bg-emerald-600 py-2.5 text-center text-sm font-semibold text-white hover:bg-emerald-700"
-              >
-                Sign Up Free
-              </Link>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* ══════════════════════════════════════════
-          HERO — always dark bg (shrine night photo)
+          HERO
       ══════════════════════════════════════════ */}
       <section className="relative overflow-hidden bg-[#030102]">
-        {/* Mobile background image */}
         <div className="absolute inset-0 lg:hidden">
           <Image
             src="/karbala-bg.jpg"
@@ -272,13 +95,10 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/80" />
         </div>
 
-        {/* Amber glow */}
         <div className="pointer-events-none absolute right-0 top-0 z-10 hidden h-full w-1/2 bg-gradient-to-l from-amber-900/20 via-transparent to-transparent lg:block" />
 
         <div className="relative mx-auto max-w-7xl px-4 py-16 lg:py-24">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
-
-            {/* Left */}
             <div className="relative z-10">
               <h1 className="mb-3 text-4xl font-extrabold leading-tight text-white sm:text-5xl">
                 Learn. Understand.
@@ -315,7 +135,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right — Desktop image + ayah */}
             <div className="relative hidden lg:block">
               <div
                 aria-hidden
@@ -333,7 +152,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Ayah — Mobile */}
             <div className="relative z-10 text-center lg:hidden">
               <p className="mb-2 text-3xl leading-loose text-amber-300" dir="rtl" style={{ fontFamily: "'Scheherazade New', 'Amiri', serif" }}>
                 وَقُل رَّبِّ زِدۡنِي عِلۡمًا
@@ -347,20 +165,20 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════
           CATEGORIES
       ══════════════════════════════════════════ */}
-      <section className={`border-b ${border} ${bg} py-10 transition-colors duration-300`}>
+      <section className="border-b bg-white border-gray-100 py-10 transition-colors duration-300 dark:bg-gray-950 dark:border-gray-800">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-3 gap-3 sm:grid-cols-6 sm:gap-4">
             {CATEGORIES.map((cat) => (
               <Link
                 key={cat.label}
                 href={cat.href}
-                className={`group flex flex-col items-center gap-2 rounded-xl border ${border} p-3 text-center transition hover:border-emerald-500 ${cardHover} sm:p-4`}
+                className="group flex flex-col items-center gap-2 rounded-xl border border-gray-100 p-3 text-center transition hover:border-emerald-500 hover:bg-emerald-50 dark:border-gray-800 dark:hover:bg-gray-800 sm:p-4"
               >
-                <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${dark ? "bg-gray-800" : "bg-gray-50"} text-2xl shadow-sm transition group-hover:scale-105 sm:h-14 sm:w-14 sm:text-3xl`}>
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-50 text-2xl shadow-sm transition group-hover:scale-105 dark:bg-gray-800 sm:h-14 sm:w-14 sm:text-3xl">
                   {cat.emoji}
                 </div>
-                <p className={`text-xs font-semibold sm:text-sm ${text}`}>{cat.label}</p>
-                <p className={`hidden text-[11px] leading-tight sm:block ${textSm}`}>{cat.sub}</p>
+                <p className="text-xs font-semibold sm:text-sm">{cat.label}</p>
+                <p className="hidden text-[11px] leading-tight text-gray-500 dark:text-gray-400 sm:block">{cat.sub}</p>
               </Link>
             ))}
           </div>
@@ -370,10 +188,10 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════
           EXPLORE ZIYARATS
       ══════════════════════════════════════════ */}
-      <section className={`${bg} py-12 transition-colors duration-300`}>
+      <section className="bg-white py-12 transition-colors duration-300 dark:bg-gray-950">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-6 flex items-center justify-between">
-            <h2 className={`text-xl font-bold ${text}`}>Explore Ziyarats</h2>
+            <h2 className="text-xl font-bold">Explore Ziyarats</h2>
             <Link href="/ziyarat" className="flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-500">
               View All <ChevronRight className="h-4 w-4" />
             </Link>
@@ -406,10 +224,10 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════
           POPULAR COURSES
       ══════════════════════════════════════════ */}
-      <section className={`${bgAlt} py-12 transition-colors duration-300`}>
+      <section className="bg-gray-50 py-12 transition-colors duration-300 dark:bg-gray-900">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-6 flex items-center justify-between">
-            <h2 className={`text-xl font-bold ${text}`}>Popular Courses</h2>
+            <h2 className="text-xl font-bold">Popular Courses</h2>
             <Link href="/courses" className="flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-500">
               View All <ChevronRight className="h-4 w-4" />
             </Link>
@@ -419,7 +237,7 @@ export default function HomePage() {
               <Link
                 key={c.title}
                 href="/courses"
-                className={`group overflow-hidden rounded-xl border ${dark ? "border-gray-700 bg-gray-900" : "border-gray-200 bg-white"} shadow-sm transition hover:shadow-md`}
+                className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-gray-900"
               >
                 <div className={`relative h-32 w-full ${c.imgBg} flex items-center justify-center text-4xl sm:h-36 sm:text-5xl`}>
                   {c.emoji}
@@ -430,9 +248,9 @@ export default function HomePage() {
                   )}
                 </div>
                 <div className="p-3">
-                  <p className={`text-xs font-semibold leading-tight sm:text-sm ${text}`}>{c.title}</p>
-                  <p className={`mt-0.5 text-[10px] sm:text-[11px] ${textSm}`}>{c.sub}</p>
-                  <ProgressBar value={c.progress} dark={dark} />
+                  <p className="text-xs font-semibold leading-tight sm:text-sm">{c.title}</p>
+                  <p className="mt-0.5 text-[10px] text-gray-500 dark:text-gray-400 sm:text-[11px]">{c.sub}</p>
+                  <ProgressBar value={c.progress} />
                 </div>
               </Link>
             ))}
@@ -443,25 +261,25 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════
           STRUCTURED LEARNING PATHS
       ══════════════════════════════════════════ */}
-      <section className={`border-y ${border} ${bg} py-12 transition-colors duration-300`}>
+      <section className="border-y border-gray-100 bg-white py-12 transition-colors duration-300 dark:border-gray-800 dark:bg-gray-950">
         <div className="mx-auto max-w-7xl px-4">
-          <h2 className={`text-xl font-bold ${text}`}>Structured Learning Paths</h2>
-          <p className={`mt-1 text-sm ${textSm}`}>
+          <h2 className="text-xl font-bold">Structured Learning Paths</h2>
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
             Follow step-by-step paths to build strong knowledge from basics to advanced levels.
           </p>
-          <div className={`mt-8 grid grid-cols-1 divide-y rounded-2xl border ${pathCard} sm:grid-cols-3 sm:divide-x sm:divide-y-0`}>
+          <div className="mt-8 grid grid-cols-1 divide-y divide-gray-100 rounded-2xl border border-gray-200 bg-gray-50 dark:divide-gray-800 dark:border-gray-700 dark:bg-gray-900 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             {LEARNING_PATHS.map((p) => (
               <div key={p.title} className="flex flex-col items-start gap-3 p-5 sm:p-6">
-                <div className={`flex h-12 w-12 items-center justify-center rounded-xl border text-2xl shadow-sm ${iconBg}`}>
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-200 bg-white text-2xl shadow-sm dark:border-gray-700 dark:bg-gray-800">
                   {p.icon}
                 </div>
                 <div>
-                  <p className={`text-sm font-semibold ${text}`}>{p.title}</p>
-                  <p className={`mt-1 text-xs leading-relaxed ${textSm}`}>{p.desc}</p>
+                  <p className="text-sm font-semibold">{p.title}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-gray-500 dark:text-gray-400">{p.desc}</p>
                 </div>
                 <Link
                   href={p.href}
-                  className={`mt-auto rounded-lg border px-4 py-1.5 text-xs font-semibold transition hover:border-emerald-500 hover:text-emerald-500 ${border2} ${textMd}`}
+                  className="mt-auto rounded-lg border border-gray-200 px-4 py-1.5 text-xs font-semibold text-gray-600 transition hover:border-emerald-500 hover:text-emerald-500 dark:border-gray-700 dark:text-gray-300"
                 >
                   Start Now
                 </Link>
@@ -474,18 +292,18 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════
           WHY LEARN WITH US
       ══════════════════════════════════════════ */}
-      <section className={`${bg} py-12 transition-colors duration-300`}>
+      <section className="bg-white py-12 transition-colors duration-300 dark:bg-gray-950">
         <div className="mx-auto max-w-7xl px-4">
-          <h2 className={`mb-8 text-xl font-bold ${text}`}>Why Learn with Shia Dinyaat?</h2>
+          <h2 className="mb-8 text-xl font-bold">Why Learn with Shia Dinyaat?</h2>
           <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
             {FEATURES.map((f) => (
               <div key={f.title} className="flex flex-col items-start gap-3">
-                <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${dark ? "bg-emerald-900/40 text-emerald-400" : "bg-emerald-50 text-emerald-600"}`}>
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400">
                   <f.icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className={`text-sm font-semibold ${text}`}>{f.title}</p>
-                  <p className={`mt-0.5 text-xs leading-relaxed ${textSm}`}>{f.desc}</p>
+                  <p className="text-sm font-semibold">{f.title}</p>
+                  <p className="mt-0.5 text-xs leading-relaxed text-gray-500 dark:text-gray-400">{f.desc}</p>
                 </div>
               </div>
             ))}
@@ -496,10 +314,10 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════
           LATEST ARTICLES
       ══════════════════════════════════════════ */}
-      <section className={`${bgAlt} py-12 transition-colors duration-300`}>
+      <section className="bg-gray-50 py-12 transition-colors duration-300 dark:bg-gray-900">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-6 flex items-center justify-between">
-            <h2 className={`text-xl font-bold ${text}`}>Latest Articles & Resources</h2>
+            <h2 className="text-xl font-bold">Latest Articles & Resources</h2>
             <Link href="/library" className="flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-500">
               View All <ChevronRight className="h-4 w-4" />
             </Link>
@@ -508,15 +326,15 @@ export default function HomePage() {
             {ARTICLES.map((a) => (
               <div
                 key={a.title}
-                className={`overflow-hidden rounded-xl border ${dark ? "border-gray-700 bg-gray-900" : "border-gray-200 bg-white"} shadow-sm transition hover:shadow-md`}
+                className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-gray-900"
               >
                 <div className={`h-36 w-full ${a.imgBg} flex items-center justify-center text-5xl`}>
                   {a.emoji}
                 </div>
                 <div className="p-4">
-                  <p className={`text-sm font-semibold leading-tight ${text}`}>{a.title}</p>
-                  <p className={`mt-1 text-xs leading-relaxed ${textSm}`}>{a.desc}</p>
-                  <button className={`mt-3 rounded-md border px-3 py-1 text-xs font-medium transition hover:border-emerald-500 hover:text-emerald-500 ${border2} ${textMd}`}>
+                  <p className="text-sm font-semibold leading-tight">{a.title}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-gray-500 dark:text-gray-400">{a.desc}</p>
+                  <button className="mt-3 rounded-md border border-gray-200 px-3 py-1 text-xs font-medium text-gray-600 transition hover:border-emerald-500 hover:text-emerald-500 dark:border-gray-700 dark:text-gray-300">
                     Read More
                   </button>
                 </div>
@@ -525,69 +343,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════
-          FOOTER — always dark
-      ══════════════════════════════════════════ */}
-      <footer className="bg-gray-950 text-gray-400">
-        <div className="mx-auto max-w-7xl px-4 py-12">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-
-            {/* Brand */}
-            <div>
-              <div className="mb-3 flex items-center gap-2">
-                <div className="flex h-9 w-9 items-center">
-                  <Image src={logo} alt="Logo" width={100} height={100} />
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-white">Shia Dinyaat</p>
-                  <p className="text-[10px] text-gray-600">Learn. Believe. Practice.</p>
-                </div>
-              </div>
-              <p className="text-xs leading-relaxed text-gray-600">
-                A platform dedicated to spreading the teachings of Quran and Ahlulbayt (ع) for a better tomorrow.
-              </p>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">Quick Links</h3>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-                {["Quran", "Dinyaat", "Ziyarat", "Courses", "Library", "Kids", "Resources", "About Us", "Contact Us"].map((l) => (
-                  <Link key={l} href={`/${l.toLowerCase().replace(" ", "-")}`} className="text-xs text-gray-600 transition hover:text-emerald-400">
-                    {l}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div className="hidden lg:block" />
-
-            {/* Need Help */}
-            <div>
-              <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">Need Help?</h3>
-              <div className="rounded-xl border border-gray-800 bg-gray-900 p-4">
-                <div className="mb-3 flex items-center gap-2">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-white">
-                    <MessageCircle className="h-4 w-4" />
-                  </div>
-                  <span className="text-xs font-medium text-white">Chat with us on WhatsApp</span>
-                </div>
-                <a href="https://wa.me/15551234567" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300">
-                  <Phone className="h-4 w-4" />
-                  +1 (555) 123-4567
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="border-t border-gray-800">
-          <div className="mx-auto max-w-7xl px-4 py-4 text-center">
-            <p className="text-xs text-gray-700">© 2024 Agha Naveed. All Rights Reserved.</p>
-          </div>
-        </div>
-      </footer>
 
     </div>
   );
