@@ -22,6 +22,7 @@ import {
     Languages,
 } from "lucide-react";
 import quran from "@/public/quran.png"
+
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 
 const CATEGORIES = [
@@ -40,12 +41,10 @@ type Course = {
     id: number;
     title: string;
     desc: string;
-    lessons: number;
     level: "Beginner Level" | "Intermediate" | "Advanced" | "All Levels";
-    progress: number;
     badge?: "Bestseller" | "New";
     imgBg: string;
-    imgEmoji: string;
+    image: string;
     category: string;
     href: string;
 };
@@ -55,24 +54,20 @@ const COURSES: Course[] = [
         id: 1,
         title: "Tafseer of Quran",
         desc: "Learn Quran with Authentic Tafseer from Ahlulbayt (عليهم السلام).",
-        lessons: 15,
         level: "Beginner Level",
-        progress: 45,
         badge: "Bestseller",
         imgBg: "from-amber-950 via-stone-900 to-amber-900",
-        imgEmoji: "📖",
+        image: "/images/courses/tafseer.webp",
         category: "Quran Studies",
-        href: "/courses/tafseer-of-quran",
+        href: "/courses/tafseer-e-quran",
     },
     {
         id: 2,
         title: "Aqaid (معنذات)",
         desc: "Understand the beliefs of Shia Islam with authentic references.",
-        lessons: 12,
         level: "Beginner Level",
-        progress: 60,
         imgBg: "from-teal-950 via-stone-900 to-teal-900",
-        imgEmoji: "🌙",
+        image: "/images/tafseer-course.jpg",
         category: "Aqeedah",
         href: "/courses/aqaid",
     },
@@ -80,11 +75,9 @@ const COURSES: Course[] = [
         id: 3,
         title: "Fiqh for Beginners",
         desc: "Learn practical Islamic laws for daily life with easy examples.",
-        lessons: 18,
         level: "Beginner Level",
-        progress: 35,
         imgBg: "from-yellow-950 via-stone-900 to-amber-800",
-        imgEmoji: "⚖️",
+        image: "/images/tafseer-course.jpg",
         category: "Fiqh",
         href: "/courses/fiqh-for-beginners",
     },
@@ -92,12 +85,11 @@ const COURSES: Course[] = [
         id: 4,
         title: "Life of Imam Ali (ع)",
         desc: "From birth to martyrdom – the complete story of Imam Ali (ع).",
-        lessons: 20,
+
         level: "All Levels",
-        progress: 70,
         badge: "New",
         imgBg: "from-stone-900 via-slate-900 to-stone-800",
-        imgEmoji: "✨",
+        image: "/images/tafseer-course.jpg",
         category: "Islamic History",
         href: "/courses/life-of-imam-ali",
     },
@@ -105,62 +97,13 @@ const COURSES: Course[] = [
         id: 5,
         title: "Ziyarat e Imam Hussain (ع)",
         desc: "Learn the meanings and benefits of Ziyarat e Imam Hussain (ع).",
-        lessons: 10,
+
         level: "All Levels",
-        progress: 50,
         imgBg: "from-red-950 via-stone-900 to-red-900",
-        imgEmoji: "🏴",
+        image: "/images/tafseer-course.jpg",
         category: "Ziyarat",
         href: "/courses/ziyarat-imam-hussain",
-    },
-    {
-        id: 6,
-        title: "Ziyarat Studies",
-        desc: "Explore authentic Ziyarat with meanings and historical background.",
-        lessons: 14,
-        level: "Intermediate",
-        progress: 40,
-        imgBg: "from-amber-950 via-stone-800 to-yellow-900",
-        imgEmoji: "🕌",
-        category: "Ziyarat",
-        href: "/courses/ziyarat-studies",
-    },
-    {
-        id: 7,
-        title: "Quranic Arabic Basics",
-        desc: "Learn Arabic for understanding Quran with grammar and vocabulary.",
-        lessons: 16,
-        level: "Beginner Level",
-        progress: 30,
-        imgBg: "from-stone-800 via-stone-700 to-stone-900",
-        imgEmoji: "📜",
-        category: "Arabic Language",
-        href: "/courses/quranic-arabic",
-    },
-    {
-        id: 8,
-        title: "Seerah of Prophet (ص)",
-        desc: "Complete life and teachings of Prophet Muhammad (ص).",
-        lessons: 25,
-        level: "All Levels",
-        progress: 65,
-        imgBg: "from-emerald-950 via-stone-900 to-emerald-800",
-        imgEmoji: "🌿",
-        category: "Islamic History",
-        href: "/courses/seerah-of-prophet",
-    },
-    {
-        id: 9,
-        title: "Dua in Daily Life",
-        desc: "Connect with Allah through authentic Duas for every moment.",
-        lessons: 10,
-        level: "All Levels",
-        progress: 80,
-        imgBg: "from-slate-900 via-stone-900 to-slate-800",
-        imgEmoji: "🤲",
-        category: "Dua & Supplication",
-        href: "/courses/dua-daily-life",
-    },
+    }
 ];
 
 const LEVEL_COLORS: Record<string, string> = {
@@ -191,8 +134,9 @@ function CourseCard({ course, view }: { course: Course; view: "grid" | "list" })
                 className="group flex gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-gray-900 dark:hover:border-gray-600"
             >
                 {/* Thumb */}
-                <div className={`relative h-24 w-36 flex-shrink-0 overflow-hidden rounded-lg bg-gradient-to-br ${course.imgBg} flex items-center justify-center text-4xl`}>
-                    {course.imgEmoji}
+                <div className={`relative h-24 w-36 shrink-0 overflow-hidden rounded-lg bg-linear-to-br ${course.imgBg} flex items-center justify-center text-4xl`}>
+
+                    <Image src={course.image} alt="" fill className="h-full w-full object-cover" />
                     {course.badge && (
                         <span className={`absolute left-2 top-2 rounded-md px-2 py-0.5 text-[10px] font-bold text-white ${course.badge === "Bestseller" ? "bg-emerald-600" : "bg-emerald-500"}`}>
                             {course.badge}
@@ -204,14 +148,6 @@ function CourseCard({ course, view }: { course: Course; view: "grid" | "list" })
                     <div>
                         <h3 className="mb-1 text-sm font-bold text-gray-900 dark:text-gray-100">{course.title}</h3>
                         <p className="text-xs leading-relaxed text-gray-500 dark:text-gray-400">{course.desc}</p>
-                    </div>
-                    <div className="mt-2 flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
-                        <span className="flex items-center gap-1"><BookOpen className="h-3 w-3" />{course.lessons}+ Lessons</span>
-                        <span className={`flex items-center gap-1 font-medium ${LEVEL_COLORS[course.level]}`}><BarChart2 className="h-3 w-3" />{course.level}</span>
-                    </div>
-                    <div className="mt-2">
-                        <ProgressBar value={course.progress} />
-                        <p className="mt-1 text-[10px] text-gray-400 dark:text-gray-500">{course.progress}% Complete</p>
                     </div>
                 </div>
                 <button
@@ -230,14 +166,14 @@ function CourseCard({ course, view }: { course: Course; view: "grid" | "list" })
             className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-gray-900 dark:hover:border-gray-600"
         >
             {/* Thumbnail */}
-            <div className={`relative h-44 w-full bg-gradient-to-br ${course.imgBg} flex items-center justify-center text-6xl`}>
+            <div className={`relative h-60 w-full bg-gradient-to-br ${course.imgBg} flex items-center justify-center text-6xl overflow-hidden`}>
                 {course.badge && (
                     <span className={`absolute left-3 top-3 z-10 rounded-md px-2.5 py-1 text-[11px] font-bold text-white shadow ${course.badge === "Bestseller" ? "bg-emerald-600" : "bg-emerald-500"}`}>
                         {course.badge}
                     </span>
                 )}
-                <span className="opacity-60 transition-transform duration-300 group-hover:scale-110">
-                    {course.imgEmoji}
+                <span className="opacity-80 transition-all group-hover:scale-110 w-full">
+                    <Image src={course.image} alt="" width={700} height={700} className="h-full w-full object-cover" />
                 </span>
             </div>
 
@@ -250,31 +186,6 @@ function CourseCard({ course, view }: { course: Course; view: "grid" | "list" })
                     {course.desc}
                 </p>
 
-                {/* Meta */}
-                <div className="mb-3 flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
-                    <span className="flex items-center gap-1">
-                        <BookOpen className="h-3.5 w-3.5" />
-                        {course.lessons}+ Lessons
-                    </span>
-                    <span className={`flex items-center gap-1 font-medium ${LEVEL_COLORS[course.level]}`}>
-                        <BarChart2 className="h-3.5 w-3.5" />
-                        {course.level}
-                    </span>
-                </div>
-
-                {/* Progress */}
-                <div>
-                    <ProgressBar value={course.progress} />
-                    <div className="mt-1.5 flex items-center justify-between">
-                        <p className="text-[11px] text-gray-400 dark:text-gray-500">{course.progress}% Complete</p>
-                        <button
-                            onClick={(e) => e.preventDefault()}
-                            className="rounded-md p-1 text-gray-300 transition hover:text-gray-500 dark:text-gray-600 dark:hover:text-gray-300"
-                        >
-                            <Bookmark className="h-4 w-4" />
-                        </button>
-                    </div>
-                </div>
             </div>
         </Link>
     );
@@ -342,7 +253,7 @@ export default function CoursesPage() {
                     <div className="flex flex-wrap items-center gap-3">
                         {/* Search */}
                         <div className="flex flex-1 items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 dark:border-gray-700 dark:bg-gray-900 min-w-[160px]">
-                            <Search className="h-4 w-4 flex-shrink-0 text-gray-400" />
+                            <Search className="h-4 w-4 shrink-0 text-gray-400" />
                             <input
                                 value={search}
                                 onChange={(e) => setSearch(e.target.value)}

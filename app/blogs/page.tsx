@@ -48,7 +48,7 @@ const ARTICLES = [
     category: "Quran",
     date: "May 12, 2024",
     readTime: "5 min read",
-    image: "/images/blog-quran.jpg",
+    image: "/images/blogs/quran.jpg",
   },
   {
     title: "Life Lessons from the Sayings of Ahlulbayt (عليهم السلام)",
@@ -56,7 +56,7 @@ const ARTICLES = [
     category: "Ahlulbayt (عليهم السلام)",
     date: "May 5, 2024",
     readTime: "6 min read",
-    image: "/images/blog-shrine.jpg",
+    image: "/images/blogs/rasool.webp",
   },
   {
     title: "The Importance of Taqwa in Today's World",
@@ -64,7 +64,7 @@ const ARTICLES = [
     category: "Dinyaat",
     date: "Apr 28, 2024",
     readTime: "4 min read",
-    image: "/images/blog-lantern.jpg",
+    image: "/images/blogs/taqwa.jpg",
   },
 ];
 
