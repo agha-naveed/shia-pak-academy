@@ -13,7 +13,7 @@ const NAV_ITEMS = [
   { label: "Ziyarat", href: "/ziyarat" },
   { label: "Dinyaat", href: "/dinyaat", dropdown: true },
   { label: "Teachers", href: "/about" },
-  { label: "Blogs", href: "/resources", dropdown: true },
+  { label: "Blogs", href: "/blogs", dropdown: true },
   { label: "About", href: "/about" },
 ];
 

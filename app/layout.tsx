@@ -50,7 +50,7 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col bg-white text-gray-900 font-sans antialiased transition-colors duration-300 dark:bg-gray-950 dark:text-gray-100">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          <main className="flex-grow">
+          <main className="grow">
             {children}
           </main>
           <Footer />
