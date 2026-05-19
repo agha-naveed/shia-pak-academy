@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import blogBg from "@/public/images/blog.png"
 import {
   Search,
   BookOpen,
@@ -65,54 +66,6 @@ const ARTICLES = [
     readTime: "4 min read",
     image: "/images/blog-lantern.jpg",
   },
-  {
-    title: "Virtues and Benefits of Ziyarat Ahlulbayt (عليهم السلام)",
-    desc: "How visiting the Imams (عليهم السلام) brings spiritual peace and closeness to Allah.",
-    category: "Ziyarat",
-    date: "May 12, 2024",
-    readTime: "5 min read",
-    image: "/images/blog-ziyarat.jpg",
-  },
-  {
-    title: "Good Character in Islam (Part 1)",
-    desc: "Islamic teachings on kindness, patience and treating others with respect.",
-    category: "Akhlaq (Ethics)",
-    date: "Apr 15, 2024",
-    readTime: "4 min read",
-    image: "/images/blog-plant.jpg",
-  },
-  {
-    title: "Can I Ask Questions During the Course?",
-    desc: "Yes! Interaction is encouraged. Clear your doubts and grow with confidence.",
-    category: "Q&A",
-    date: "Apr 10, 2024",
-    readTime: "3 min read",
-    image: "/images/blog-qna.jpg",
-  },
-  {
-    title: "Daily Habits that Bring you Closer to Allah",
-    desc: "Small consistent actions that strengthen your Imaan every day.",
-    category: "Dinyaat",
-    date: "Apr 7, 2024",
-    readTime: "4 min read",
-    image: "/images/blog-dua.jpg",
-  },
-  {
-    title: "Patience and Gratitude: A Path to Inner Peace",
-    desc: "How Sabr and Shukr can transform our lives and hearts.",
-    category: "Akhlaq (Ethics)",
-    date: "Apr 2, 2024",
-    readTime: "5 min read",
-    image: "/images/blog-nature.jpg",
-  },
-  {
-    title: "A Beginner's Guide to Ziyarat",
-    desc: "Everything you need to know to start your journey of Ziyarat.",
-    category: "Ziyarat",
-    date: "Mar 28, 2024",
-    readTime: "6 min read",
-    image: "/images/blog-arch.jpg",
-  },
 ];
 
 const POPULAR_ARTICLES = [
@@ -161,35 +114,36 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 transition-colors duration-300 dark:bg-[#030102]">
-      
+
       {/* ══════════════════════════════════════════
           HERO SECTION
       ══════════════════════════════════════════ */}
       <section className="relative h-[300px] w-full overflow-hidden sm:h-[350px] lg:h-[400px]">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <Image
-            src="/images/blog-hero-bg.jpg" // Add a suitable hero image
-            alt="Articles and Insights Background"
-            fill
-            priority
-            className="object-cover object-center"
-          />
           {/* Gradient Overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-transparent dark:from-black/90 dark:via-black/70" />
+          {/* <Image src={blogBg} alt="" fill priority className="" /> */}
+          <div className="absolute inset-0 bg-[#DABB99]" />
         </div>
 
         {/* Hero Content */}
-        <div className="relative mx-auto flex h-full max-w-[1400px] flex-col justify-center px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <span className="mb-3 inline-block rounded-full bg-emerald-900/50 px-3 py-1 text-xs font-semibold text-emerald-400 backdrop-blur-sm">
+        <div className="relative mx-auto flex z-10 h-full max-w-[1400px] flex-col justify-center px-4 sm:px-6 lg:px-8">
+          <Image
+            src={blogBg}
+            alt="Articles and Insights Background"
+            width={900}
+            height={900}
+            className="z-10 h-full w-fit absolute right-0"
+          />
+          <div className="max-w-2xl z-20">
+            <span className="mb-3 inline-block rounded-full bg-emerald-900/80 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
               Blog
             </span>
-            <h1 className="mb-4 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+            <h1 className="mb-4 text-3xl font-bold text-gray-800 sm:text-4xl lg:text-5xl">
               Articles & Insights
             </h1>
-            <p className="text-sm leading-relaxed text-gray-300 sm:text-base">
-              Explore authentic articles on Quran, Dinyaat, Ahlulbayt (عليهم السلام), 
+            <p className="text-sm leading-relaxed text-gray-600 sm:text-base">
+              Explore authentic articles on Quran, Dinyaat, Ahlulbayt (عليهم السلام),
               Ziyarat and more to strengthen your knowledge and faith.
             </p>
           </div>
@@ -201,21 +155,20 @@ export default function BlogPage() {
       ══════════════════════════════════════════ */}
       <section className="mx-auto max-w-[1400px] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
         <div className="flex flex-col gap-8 xl:flex-row xl:gap-12">
-          
+
           {/* ─── LEFT COLUMN (Articles Grid) ─── */}
           <div className="flex-1">
-            
+
             {/* Filter Pills */}
             <div className="mb-8 flex flex-wrap gap-2 sm:gap-3">
               {FILTER_CATEGORIES.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
-                    activeCategory === cat
-                      ? "bg-emerald-900 text-white shadow-sm dark:bg-emerald-600"
-                      : "bg-white text-gray-600 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800"
-                  } border border-transparent dark:border-gray-800`}
+                  className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${activeCategory === cat
+                    ? "bg-emerald-900 text-white shadow-sm dark:bg-emerald-600"
+                    : "bg-white text-gray-600 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800"
+                    } border border-transparent dark:border-gray-800`}
                 >
                   {cat}
                 </button>
@@ -251,7 +204,7 @@ export default function BlogPage() {
                     <p className="mb-5 line-clamp-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
                       {article.desc}
                     </p>
-                    
+
                     {/* Footer Meta */}
                     <div className="mt-auto flex items-center gap-2 text-xs font-medium text-gray-500 dark:text-gray-500">
                       <span>{article.date}</span>
@@ -275,7 +228,7 @@ export default function BlogPage() {
           {/* ─── RIGHT COLUMN (Sidebar) ─── */}
           <aside className="w-full xl:w-[320px] 2xl:w-[360px]">
             <div className="sticky top-24 space-y-8">
-              
+
               {/* Search Box */}
               <div className="relative">
                 <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
@@ -297,11 +250,10 @@ export default function BlogPage() {
                     <li key={cat.label}>
                       <button
                         onClick={() => setActiveCategory(cat.label)}
-                        className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm transition ${
-                          activeCategory === cat.label
-                            ? "bg-emerald-50 text-emerald-700 font-semibold dark:bg-emerald-900/30 dark:text-emerald-400"
-                            : "text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800"
-                        }`}
+                        className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm transition ${activeCategory === cat.label
+                          ? "bg-emerald-50 text-emerald-700 font-semibold dark:bg-emerald-900/30 dark:text-emerald-400"
+                          : "text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800"
+                          }`}
                       >
                         <div className="flex items-center gap-3">
                           <cat.icon className="h-4 w-4 opacity-70" />
@@ -341,7 +293,7 @@ export default function BlogPage() {
                           {article.id}
                         </div>
                       </div>
-                      
+
                       {/* Title & Date */}
                       <div className="flex flex-col justify-center">
                         <p className="line-clamp-2 text-sm font-semibold leading-snug text-gray-800 transition group-hover:text-emerald-600 dark:text-gray-200 dark:group-hover:text-emerald-400">
@@ -383,7 +335,7 @@ export default function BlogPage() {
 
             </div>
           </aside>
-          
+
         </div>
       </section>
 
