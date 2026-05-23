@@ -165,15 +165,15 @@ export default function ImamAliSermonBlogPage() {
           HERO
       ══════════════════════════════════════════ */}
       <section className="relative min-h-[340px] overflow-hidden bg-[#EDEAE3] dark:bg-[#0A0805] sm:min-h-[380px]">
-        <div className="relative z-10 flex flex-row-reverse justify-between mx-auto max-w-[1400px] px-4 py-14 sm:px-6 lg:px-8 lg:py-18">
+        <div className="relative z-10 flex md:flex-row-reverse justify-between mx-auto max-w-[1400px] px-4 py-14 sm:px-6 lg:px-8 lg:py-18">
           {/* Breadcrumb */}
-          <div className="w-80 h-80 overflow-hidden rounded-xl mr-10">
+          <div className="w-80 h-80 overflow-hidden rounded-xl mr-10 md:block hidden">
             <Image src={dp} alt="" className="w-full h-full" />
           </div>
 
           <div>
             <nav className="mb-5 flex flex-wrap items-center gap-1 text-xs text-gray-500 dark:text-gray-500">
-              <Link href="/"       className="transition hover:text-gray-700 dark:hover:text-gray-300">Home</Link>
+              <Link href="/" className="transition hover:text-gray-700 dark:hover:text-gray-300">Home</Link>
               <ChevronRight className="h-3 w-3 opacity-40" />
               <Link href="/blogs"  className="transition hover:text-gray-700 dark:hover:text-gray-300">Blog</Link>
               <ChevronRight className="h-3 w-3 opacity-40" />

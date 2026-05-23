@@ -13,6 +13,13 @@ import {
   BookOpen,
 } from "lucide-react";
 import BlogHero from "@/app/components/BlogHero";
+import banner from "@/public/images/blogs/taqwa-banner.jpg"
+import readingQuran from "@/public/images/blogs/reading-quran.webp"
+import manPraying from "@/public/images/blogs/man-praying.jpg"
+import goodCompany from "@/public/images/blogs/good-company.jpg"
+import helpOther from "@/public/images/blogs/help-other.jpg"
+import aerialView from "@/public/images/blogs/quran-aerial-view.jpg"
+
 
 // ─── WHATSAPP / FACEBOOK / X SVG ICONS ───────────────────────────────────────
 
@@ -58,10 +65,10 @@ const TAQWA_BENEFITS = [
 ];
 
 const DAILY_LIFE_ITEMS = [
-  { emoji: "📖", label: "Remember Allah\nregularly",           imgBg: "from-amber-950 via-stone-900 to-amber-800" },
-  { emoji: "🤲", label: "Read and reflect on\nthe Quran",     imgBg: "from-teal-950 via-stone-900 to-teal-800" },
-  { emoji: "👥", label: "Keep good\ncompany",                 imgBg: "from-stone-800 via-stone-700 to-stone-900" },
-  { emoji: "🙏", label: "Repent and seek\nforgiveness",       imgBg: "from-emerald-950 via-stone-900 to-emerald-800" },
+  { emoji: manPraying, label: "Remember Allah\nregularly",           imgBg: "from-amber-950 via-stone-900 to-amber-800" },
+  { emoji: readingQuran, label: "Read and reflect on\nthe Quran",     imgBg: "from-teal-950 via-stone-900 to-teal-800" },
+  { emoji: goodCompany, label: "Keep good\ncompany",                 imgBg: "from-stone-800 via-stone-700 to-stone-900" },
+  { emoji: helpOther, label: "Ready for\nhelp other",       imgBg: "from-emerald-950 via-stone-900 to-emerald-800" },
 ];
 
 const SIGNS_OF_TAQWA = [
@@ -159,12 +166,9 @@ description = {`Understanding Taqwa and how it guides us through modern-day chal
           <div ref={contentRef} className="min-w-0 flex-1">
 
             {/* Featured image */}
-            <div className="mb-8 overflow-hidden rounded-2xl">
-              <div className="relative h-64 w-full bg-gradient-to-br from-amber-950 via-stone-900 to-amber-800 sm:h-80 lg:h-96 flex items-center justify-center text-8xl">
-                🕌
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+            <div className="mb-8 relative rounded-xl overflow-hidden h-64 w-full sm:h-80 lg:h-96 flex items-center justify-center">
+                <Image src={banner} alt="Imam Ali as" className="w-full h-full object-cover" width={800} height={800} placeholder="blur" />
               </div>
-            </div>
 
             {/* Intro paragraph */}
             <p className="mb-6 text-sm leading-[1.85] text-gray-700 dark:text-gray-300 sm:text-base">
@@ -241,8 +245,8 @@ description = {`Understanding Taqwa and how it guides us through modern-day chal
             <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {DAILY_LIFE_ITEMS.map((item) => (
                 <div key={item.label} className="group overflow-hidden rounded-xl">
-                  <div className={`h-28 w-full bg-gradient-to-br ${item.imgBg} flex items-center justify-center text-4xl transition-transform duration-300 group-hover:scale-105`}>
-                    {item.emoji}
+                  <div className={`h-28 w-full bg-gradient-to-br ${item.imgBg} flex items-center justify-center text-4xl transition-transform duration-300 group-hover:scale-105 overflow-hidden`}>
+                    <Image src={item.emoji} alt="" width={200} height={200} className="w-full" />
                   </div>
                   <p className="mt-2 whitespace-pre-line text-center text-xs font-medium text-gray-600 dark:text-gray-400 leading-snug">
                     {item.label}
@@ -293,12 +297,11 @@ description = {`Understanding Taqwa and how it guides us through modern-day chal
 
             {/* Closing Quran quote with image */}
             <div className="mb-10 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800">
-              <div className="relative h-44 w-full bg-gradient-to-br from-amber-950 via-stone-900 to-stone-800 flex items-center justify-center text-7xl sm:h-52">
-                🤲
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="relative h-44 w-full bg-linear-to-br from-amber-950 via-stone-900 to-stone-800 flex items-center justify-center text-7xl sm:h-65 overflow-hidden">
+                <Image src={aerialView} width={1000} height={1000} className="w-full" alt="" />
               </div>
               <div className="flex items-start gap-4 bg-gray-50 p-5 dark:bg-gray-900/60">
-                <span className="flex-shrink-0 text-3xl font-bold leading-none text-gray-300 dark:text-gray-700">&ldquo;</span>
+                <span className="shrink-0 text-3xl font-bold leading-none text-gray-300 dark:text-gray-700">&ldquo;</span>
                 <div>
                   <p className="mb-2 text-sm italic leading-relaxed text-gray-700 dark:text-gray-300">
                     And whoever fears Allah — He will make for him a way out and provide for him
