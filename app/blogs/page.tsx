@@ -29,7 +29,16 @@ const ARTICLES = [
     date: "May 12, 2024",
     readTime: "5 min read",
     image: "/images/blogs/quran.jpg",
-    slug: "how-to-connect-with-quran", // Added slug for routing
+    slug: "how-to-connect-with-quran",
+  },
+  {
+    title: "What Imam Ali’s Sermons Teach Modern Society",
+    desc: "Timeless lessons from the sermons of Imam Ali for today’s world.",
+    category: "Ahlulbayt (عليه السلام)",
+    date: "May 5, 2024",
+    readTime: "6 min read",
+    image: "/images/blogs/imam-ali-roza.webp",
+    slug: "what-imam-ali-sermons-teach-modern-society",
   },
   {
     title: "Life Lessons from the Sayings of Ahlulbayt (عليهم السلام)",

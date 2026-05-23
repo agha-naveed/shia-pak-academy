@@ -15,6 +15,7 @@ import Image from "next/image";
 import banner from "@/public/images/blogs/imam-ali-sermon-banner.jpg"
 import lastImg from "@/public/images/blogs/imam-ali-roza.webp"
 import dp from "@/public/images/blogs/dp.jpg"
+import logo from "@/public/logo.png"
 
 // ─── SHARE ICONS ──────────────────────────────────────────────────────────────
 
@@ -179,7 +180,7 @@ export default function ImamAliSermonBlogPage() {
               <ChevronRight className="h-3 w-3 opacity-40" />
               <Link href="/blogs"  className="transition hover:text-gray-700 dark:hover:text-gray-300">Articles &amp; Insights</Link>
               <ChevronRight className="h-3 w-3 opacity-40" />
-              <span className="max-w-[200px] truncate text-gray-700 dark:text-gray-400">Sermons of Imam Ali (ع) for Today's World</span>
+              <span className="max-w-[200px] truncate text-gray-700 dark:text-gray-400">What Imam Ali (ع) Sermons Teach for Modern Society</span>
             </nav>
 
             <span className="mb-4 inline-block rounded-full bg-emerald-800 px-3 py-1 text-xs font-semibold text-white dark:bg-emerald-700">
@@ -187,8 +188,8 @@ export default function ImamAliSermonBlogPage() {
             </span>
 
             <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-tight text-gray-900 dark:text-gray-50 sm:text-4xl lg:text-5xl">
-              Sermons of Imam Ali (ع)<br />
-              <span className="text-emerald-800 dark:text-emerald-500">for Today&apos;s World</span>
+              Imam Ali's (ع) Sermons<br />
+              <span className="text-emerald-800 dark:text-emerald-500">Teach Modern Society</span>
             </h1>
 
             <p className="mb-6 max-w-lg text-sm leading-relaxed text-gray-600 dark:text-gray-400 sm:text-base">
@@ -197,13 +198,13 @@ export default function ImamAliSermonBlogPage() {
             </p>
 
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-800 text-sm font-bold text-white dark:bg-emerald-700">
-                SD
+              <div className="flex h-9 w-9 items-center justify-center">
+                <Image src={logo} width={200} height={200} alt="" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">Shia Dinyaat Team</p>
+                <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">Shia Quran Pak Academy</p>
                 <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-500">
-                  <span>May 20, 2024</span>
+                  <span>May 20, 2026</span>
                   <span className="h-1 w-1 rounded-full bg-gray-400" />
                   <span>8 min read</span>
                 </div>

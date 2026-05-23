@@ -12,14 +12,14 @@ import {
   Flame,
   BookOpen,
 } from "lucide-react";
-import BlogHero from "@/app/components/BlogHero";
 import banner from "@/public/images/blogs/taqwa-banner.jpg"
 import readingQuran from "@/public/images/blogs/reading-quran.webp"
 import manPraying from "@/public/images/blogs/man-praying.jpg"
 import goodCompany from "@/public/images/blogs/good-company.jpg"
 import helpOther from "@/public/images/blogs/help-other.jpg"
 import aerialView from "@/public/images/blogs/quran-aerial-view.jpg"
-
+import dp from "@/public/images/blogs/taqwa.jpg"
+import logo from "@/public/logo.png"
 
 // ─── WHATSAPP / FACEBOOK / X SVG ICONS ───────────────────────────────────────
 
@@ -147,15 +147,63 @@ export default function BlogArticlePage() {
   return (
     <div className="bg-white dark:bg-[#030102] transition-colors duration-300">
 
+<section className="relative min-h-[340px] overflow-hidden bg-[#EDEAE3] dark:bg-[#0A0805] sm:min-h-[380px]">
+        <div className="relative z-10 flex md:flex-row-reverse justify-between mx-auto max-w-[1400px] px-4 py-14 sm:px-6 lg:px-8 lg:py-18">
+          {/* Breadcrumb */}
+          <div className="w-80 h-80 overflow-hidden rounded-xl mr-10 md:block hidden">
+            <Image src={dp} alt="" className="w-full object-cover object-center h-full" />
+          </div>
+
+          <div>
+            <nav className="mb-5 flex flex-wrap items-center gap-1 text-xs text-gray-500 dark:text-gray-500">
+              <Link href="/" className="transition hover:text-gray-700 dark:hover:text-gray-300">Home</Link>
+              <ChevronRight className="h-3 w-3 opacity-40" />
+              <Link href="/blogs"  className="transition hover:text-gray-700 dark:hover:text-gray-300">Blog</Link>
+              <ChevronRight className="h-3 w-3 opacity-40" />
+              <Link href="/blogs"  className="transition hover:text-gray-700 dark:hover:text-gray-300">Articles &amp; Insights</Link>
+              <ChevronRight className="h-3 w-3 opacity-40" />
+              <span className="max-w-[200px] truncate text-gray-700 dark:text-gray-400">The Importance of Taqwa in Today's World</span>
+            </nav>
+
+            <span className="mb-4 inline-block rounded-full bg-emerald-800 px-3 py-1 text-xs font-semibold text-white dark:bg-emerald-700">
+              Dinyaat
+            </span>
+
+            <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-tight text-gray-900 dark:text-gray-50 sm:text-4xl lg:text-5xl">
+              The Importance of Taqwa<br />
+              <span className="text-emerald-800 dark:text-emerald-500">in Today&apos;s World</span>
+            </h1>
+
+            <p className="mb-6 max-w-lg text-sm leading-relaxed text-gray-600 dark:text-gray-400 sm:text-base">
+              Taqwa teaches Muslims to live with honesty, patience, and fear of Allah. In today’s world, it helps people avoid wrong actions, make good decisions, and live peaceful and meaningful lives.
+
+            </p>
+
+            <div className="flex items-center gap-3">
+              <div className="flex h-9 w-9 items-center justify-center">
+                <Image src={logo} width={200} height={200} alt="" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">Shia Quran Pak Academy</p>
+                <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-500">
+                  <span>May 20, 2026</span>
+                  <span className="h-1 w-1 rounded-full bg-gray-400" />
+                  <span>5 min read</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* ══════════════════════════════════════════
           HERO — article header with background image
       ══════════════════════════════════════════ */}
-      <BlogHero 
+      {/* <BlogHero 
         badge={"Dinyaat"}
         title={`The Importance of Taqwa
 in Today's World`} 
 description = {`Understanding Taqwa and how it guides us through modern-day challenges.`}
-      />
+      /> */}
       {/* ══════════════════════════════════════════
           MAIN CONTENT + RIGHT SIDEBAR
       ══════════════════════════════════════════ */}
