@@ -11,6 +11,10 @@ import {
   Flame,
   BookOpen,
 } from "lucide-react";
+import Image from "next/image";
+import banner from "@/public/images/blogs/imam-ali-sermon-banner.jpg"
+import lastImg from "@/public/images/blogs/imam-ali-roza.webp"
+import dp from "@/public/images/blogs/dp.jpg"
 
 // ─── SHARE ICONS ──────────────────────────────────────────────────────────────
 
@@ -161,57 +165,48 @@ export default function ImamAliSermonBlogPage() {
           HERO
       ══════════════════════════════════════════ */}
       <section className="relative min-h-[340px] overflow-hidden bg-[#EDEAE3] dark:bg-[#0A0805] sm:min-h-[380px]">
-        {/* Warm gradient bg */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#EDEAE3]/95 via-[#EDEAE3]/85 to-transparent dark:from-[#0A0805]/95 dark:via-[#0A0805]/85 dark:to-transparent" />
-
-        {/* Right decorative element */}
-        <div className="absolute right-0 top-0 h-full w-1/2 flex items-center justify-end pr-8 lg:pr-16">
-          <div className="relative h-60 w-72 sm:h-72 sm:w-80">
-            {/* calligraphy / mosque illustration */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-stone-200 via-amber-50 to-stone-100 dark:from-stone-900 dark:via-amber-950/40 dark:to-stone-950 flex items-center justify-center opacity-80 shadow-inner">
-              <span className="text-9xl">🏛️</span>
-            </div>
-            {/* glow ring */}
-            <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-amber-300/40 dark:ring-amber-700/30" />
-          </div>
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-[1400px] px-4 py-14 sm:px-6 lg:px-8 lg:py-18">
+        <div className="relative z-10 flex flex-row-reverse justify-between mx-auto max-w-[1400px] px-4 py-14 sm:px-6 lg:px-8 lg:py-18">
           {/* Breadcrumb */}
-          <nav className="mb-5 flex flex-wrap items-center gap-1 text-xs text-gray-500 dark:text-gray-500">
-            <Link href="/"       className="transition hover:text-gray-700 dark:hover:text-gray-300">Home</Link>
-            <ChevronRight className="h-3 w-3 opacity-40" />
-            <Link href="/blogs"  className="transition hover:text-gray-700 dark:hover:text-gray-300">Blog</Link>
-            <ChevronRight className="h-3 w-3 opacity-40" />
-            <Link href="/blogs"  className="transition hover:text-gray-700 dark:hover:text-gray-300">Articles &amp; Insights</Link>
-            <ChevronRight className="h-3 w-3 opacity-40" />
-            <span className="max-w-[200px] truncate text-gray-700 dark:text-gray-400">Sermons of Imam Ali (ع) for Today's World</span>
-          </nav>
+          <div className="w-80 h-80 overflow-hidden rounded-xl mr-10">
+            <Image src={dp} alt="" className="w-full h-full" />
+          </div>
 
-          <span className="mb-4 inline-block rounded-full bg-emerald-800 px-3 py-1 text-xs font-semibold text-white dark:bg-emerald-700">
-            Ahlulbayt (عليهم السلام)
-          </span>
+          <div>
+            <nav className="mb-5 flex flex-wrap items-center gap-1 text-xs text-gray-500 dark:text-gray-500">
+              <Link href="/"       className="transition hover:text-gray-700 dark:hover:text-gray-300">Home</Link>
+              <ChevronRight className="h-3 w-3 opacity-40" />
+              <Link href="/blogs"  className="transition hover:text-gray-700 dark:hover:text-gray-300">Blog</Link>
+              <ChevronRight className="h-3 w-3 opacity-40" />
+              <Link href="/blogs"  className="transition hover:text-gray-700 dark:hover:text-gray-300">Articles &amp; Insights</Link>
+              <ChevronRight className="h-3 w-3 opacity-40" />
+              <span className="max-w-[200px] truncate text-gray-700 dark:text-gray-400">Sermons of Imam Ali (ع) for Today's World</span>
+            </nav>
 
-          <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-tight text-gray-900 dark:text-gray-50 sm:text-4xl lg:text-5xl">
-            Sermons of Imam Ali (ع)<br />
-            <span className="text-emerald-800 dark:text-emerald-500">for Today&apos;s World</span>
-          </h1>
+            <span className="mb-4 inline-block rounded-full bg-emerald-800 px-3 py-1 text-xs font-semibold text-white dark:bg-emerald-700">
+              Ahlulbayt (عليهم السلام)
+            </span>
 
-          <p className="mb-6 max-w-lg text-sm leading-relaxed text-gray-600 dark:text-gray-400 sm:text-base">
-            The timeless words of Nahjul Balagha speak directly to the crises, struggles,
-            and questions of our modern age — if only we would listen.
-          </p>
+            <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-tight text-gray-900 dark:text-gray-50 sm:text-4xl lg:text-5xl">
+              Sermons of Imam Ali (ع)<br />
+              <span className="text-emerald-800 dark:text-emerald-500">for Today&apos;s World</span>
+            </h1>
 
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-800 text-sm font-bold text-white dark:bg-emerald-700">
-              SD
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">Shia Dinyaat Team</p>
-              <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-500">
-                <span>May 20, 2024</span>
-                <span className="h-1 w-1 rounded-full bg-gray-400" />
-                <span>8 min read</span>
+            <p className="mb-6 max-w-lg text-sm leading-relaxed text-gray-600 dark:text-gray-400 sm:text-base">
+              The timeless words of Nahjul Balagha speak directly to the crises, struggles,
+              and questions of our modern age — if only we would listen.
+            </p>
+
+            <div className="flex items-center gap-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-800 text-sm font-bold text-white dark:bg-emerald-700">
+                SD
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">Shia Dinyaat Team</p>
+                <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-500">
+                  <span>May 20, 2024</span>
+                  <span className="h-1 w-1 rounded-full bg-gray-400" />
+                  <span>8 min read</span>
+                </div>
               </div>
             </div>
           </div>
@@ -228,23 +223,9 @@ export default function ImamAliSermonBlogPage() {
           <div ref={contentRef} className="min-w-0 flex-1">
 
             {/* Featured banner image */}
-            <div className="mb-8 overflow-hidden rounded-2xl">
-              <div className="relative h-64 w-full sm:h-80 lg:h-96 bg-gradient-to-br from-stone-900 via-amber-950 to-stone-800 flex items-center justify-center">
-                {/* Calligraphy-style decoration */}
-                <div className="flex flex-col items-center gap-4">
-                  <span className="text-8xl opacity-60">🏛️</span>
-                  <p
-                    className="text-2xl text-amber-300 sm:text-4xl"
-                    dir="rtl"
-                    style={{ fontFamily: "'Scheherazade New','Amiri',serif" }}
-                  >
-                    نَهْجُ الْبَلَاغَة
-                  </p>
-                  <p className="text-xs tracking-widest text-amber-600 uppercase">Nahjul Balagha</p>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              <div className="mb-8 relative rounded-xl overflow-hidden h-64 w-full sm:h-80 lg:h-96 flex items-center justify-center">
+                <Image src={banner} alt="Imam Ali as" className="w-full h-full object-cover" width={800} height={800} placeholder="blur" />
               </div>
-            </div>
 
             {/* Intro */}
             <p className="mb-6 text-sm leading-[1.9] text-gray-700 dark:text-gray-300 sm:text-base">
@@ -499,19 +480,11 @@ export default function ImamAliSermonBlogPage() {
 
             {/* Closing quote */}
             <div className="mb-10 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800">
-              <div className="relative h-48 w-full bg-gradient-to-br from-emerald-950 via-stone-900 to-amber-950 flex flex-col items-center justify-center gap-3 sm:h-52">
-                <span className="text-7xl opacity-50">🕌</span>
-                <p
-                  className="text-xl text-amber-300 sm:text-2xl"
-                  dir="rtl"
-                  style={{ fontFamily: "'Scheherazade New','Amiri',serif" }}
-                >
-                  وَصَلُّوا عَلَى النَّبِيِّ وَآلِهِ
-                </p>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              <div className="relative h-48 w-full bg-linear-to-br from-emerald-950 via-stone-900 to-amber-950 flex flex-col items-center justify-center gap-3 sm:h-62">
+                <Image src={lastImg} alt="" width={800} height={600} className="w-full object-cover h-full" />
               </div>
               <div className="flex items-start gap-4 bg-gray-50 p-5 dark:bg-gray-900/60">
-                <span className="flex-shrink-0 text-3xl font-bold leading-none text-gray-300 dark:text-gray-700">&ldquo;</span>
+                <span className="shrink-0 text-3xl font-bold leading-none text-gray-300 dark:text-gray-700">&ldquo;</span>
                 <div>
                   <p className="mb-2 text-sm italic leading-relaxed text-gray-700 dark:text-gray-300">
                     Do not let the world deceive you, for it deceives and cheats and entices and
