@@ -47,7 +47,7 @@ const ARTICLES = [
     date: "Apr 28, 2024",
     readTime: "4 min read",
     image: "/images/blogs/taqwa.jpg",
-    slug: "importance-of-taqwa",
+    slug: "the-importance-of-taqwa-in-todays-world",
   },
 ];
 
