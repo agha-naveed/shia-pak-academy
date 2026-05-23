@@ -35,11 +35,11 @@ const ZIYARATS = [
 ];
 
 const COURSES = [
-  { title: "Tafseer of Quran", sub: "Learn Quran with Authentic Tafseer", progress: 45, badge: "Bestseller", badgeColor: "bg-emerald-600", imgBg: "bg-gradient-to-br from-emerald-950 via-stone-900 to-amber-900", emoji: "📖" },
-  { title: "Aqaid (عقائد)", sub: "Shia Beliefs Made Easy", progress: 60, badge: null, imgBg: "bg-gradient-to-br from-stone-900 via-amber-950 to-stone-800", emoji: "🌙" },
-  { title: "Fiqh for Beginners", sub: "Practical Islamic Laws", progress: 35, badge: null, imgBg: "bg-gradient-to-br from-amber-950 via-stone-900 to-yellow-950", emoji: "⚖️" },
-  { title: "Yassarnal Quran", sub: "Qaida for Beginners", progress: 70, badge: "New", badgeColor: "bg-emerald-500", imgBg: "bg-gradient-to-br from-stone-900 via-emerald-950 to-stone-800", emoji: "✨" },
-  { title: "Ziyarat Studies", sub: "Meaning & Benefits", progress: 50, badge: null, imgBg: "bg-gradient-to-br from-yellow-950 via-stone-900 to-amber-950", emoji: "🏛️" },
+  { title: "Yassarnal Quran", sub: "Qaida for Beginners", badge: null, badgeColor: "bg-emerald-500", imgBg: "bg-gradient-to-br from-stone-900 via-emerald-950 to-stone-800", emoji: "✨" },
+  { title: "Tajweed Quran", sub: "Perfect Your Recitation", badge: "Popular", badgeColor: "bg-emerald-500", imgBg: "bg-gradient-to-br from-emerald-950 via-stone-900 to-amber-900", emoji: "🎙️" },
+  { title: "Tafseer Course", sub: "Understand the Divine Words", badge: null, badgeColor: "bg-emerald-600", imgBg: "bg-gradient-to-br from-stone-900 via-amber-950 to-stone-800", emoji: "📖" },
+  { title: "Nehjul Balagh", sub: "Sermons of Imam Ali (ع)", badge: "New", badgeColor: "bg-emerald-500", imgBg: "bg-gradient-to-br from-stone-800 via-stone-700 to-stone-900", emoji: "📜" },
+  { title: "Shia Islamic Study", sub: "Comprehensive Dinyaat", badge: null, badgeColor: "", imgBg: "bg-gradient-to-br from-emerald-900 via-stone-800 to-amber-950", emoji: "📚" },
 ];
 
 const LEARNING_PATHS = [
@@ -57,23 +57,11 @@ const FEATURES = [
 ];
 
 const ARTICLES = [
-  { title: "The Importance of Ziyarat", desc: "Understand the spiritual benefits of visiting the Ahlulbayt (ع).", imgBg: "bg-gradient-to-br from-stone-800 via-stone-700 to-stone-900", emoji: "📿" },
-  { title: "Who are Ahlulbayt (ع)?", desc: "A brief introduction to the blessed household of Prophet (ص).", imgBg: "bg-gradient-to-br from-emerald-900 via-stone-800 to-amber-950", emoji: "🕌" },
-  { title: "Dua in Daily Life", desc: "How Dua connects us with Allah in every moment.", imgBg: "bg-gradient-to-br from-amber-950 via-stone-800 to-stone-900", emoji: "🤲" },
-  { title: "How to Understand Quran?", desc: "Simple steps to build a strong connection with Quran.", imgBg: "bg-gradient-to-br from-stone-900 via-amber-900 to-stone-800", emoji: "📖" },
+  { title: "What Imam Ali’s Sermons Teach Modern Society", desc: "Timeless lessons from the sermons of Imam Ali for today’s world.", image: "/images/blogs/imam-ali-roza.webp" , url: "/blogs/what-imam-ali-sermons-teach-modern-society" },
+  { title: "Life Lessons from the Sayings of Ahlulbayt (عليهم السلام)", desc: "Timeless wisdom from our Imams (عليهم السلام) for a better life.", image: "/images/blogs/rasool.webp", url: "/blogs/life-lessons-from-ahlulbayt" },
+  { title: "How to Connect with the Quran in Daily Life", desc: "Practical ways to build a strong and lasting connection with the words of Allah.", image: "/images/blogs/quran.jpg", url: "/blogs/how-to-connect-with-quran" },
+  { title: "The Importance of Taqwa in Today's World", desc: "Understanding Taqwa and how it guides us through modern-day challenges.", image: "/images/blogs/taqwa.jpg", url: "/blogs/the-importance-of-taqwa-in-todays-world" },
 ];
-
-// ─── SUB-COMPONENTS ───────────────────────────────────────────────────────────
-function ProgressBar({ value }: { value: number }) {
-  return (
-    <div className="mt-2">
-      <div className="h-1 w-full rounded-full bg-gray-200 dark:bg-gray-700">
-        <div className="h-1 rounded-full bg-emerald-600 transition-all" style={{ width: `${value}%` }} />
-      </div>
-      <p className="mt-1 text-xs text-gray-500">{value}% Complete</p>
-    </div>
-  );
-}
 
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
 export default function HomePage() {
@@ -106,7 +94,7 @@ export default function HomePage() {
                 <span className="text-emerald-400">Live the Truth.</span>
               </h1>
               <p className="mb-8 max-w-md text-sm leading-relaxed text-gray-300">
-                A complete platform to learn Quran, Shia Dinyaat, Ziyarat and
+                A complete platform to learn Quran, Shia Islamic Study, Ziyarat and
                 the teachings of Ahlulbayt&nbsp;(عليهم السلام).
               </p>
               <div className="flex flex-wrap gap-3">
@@ -247,10 +235,9 @@ export default function HomePage() {
                     </span>
                   )}
                 </div>
-                <div className="p-3">
-                  <p className="text-xs font-semibold leading-tight sm:text-sm">{c.title}</p>
-                  <p className="mt-0.5 text-[10px] text-gray-500 dark:text-gray-400 sm:text-[11px]">{c.sub}</p>
-                  <ProgressBar value={c.progress} />
+                <div className="p-4">
+                  <p className="text-xs font-bold leading-tight sm:text-sm">{c.title}</p>
+                  <p className="mt-1 text-[10px] leading-relaxed text-gray-500 dark:text-gray-400 sm:text-[11px]">{c.sub}</p>
                 </div>
               </Link>
             ))}
@@ -277,12 +264,6 @@ export default function HomePage() {
                   <p className="text-sm font-semibold">{p.title}</p>
                   <p className="mt-1 text-xs leading-relaxed text-gray-500 dark:text-gray-400">{p.desc}</p>
                 </div>
-                <Link
-                  href={p.href}
-                  className="mt-auto rounded-lg border border-gray-200 px-4 py-1.5 text-xs font-semibold text-gray-600 transition hover:border-emerald-500 hover:text-emerald-500 dark:border-gray-700 dark:text-gray-300"
-                >
-                  Start Now
-                </Link>
               </div>
             ))}
           </div>
@@ -294,7 +275,7 @@ export default function HomePage() {
       ══════════════════════════════════════════ */}
       <section className="bg-white py-12 transition-colors duration-300 dark:bg-gray-950">
         <div className="mx-auto max-w-7xl px-4">
-          <h2 className="mb-8 text-xl font-bold">Why Learn with Shia Dinyaat?</h2>
+          <h2 className="mb-8 text-xl font-bold">Why Learn with Shia Quran Pak Academy?</h2>
           <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
             {FEATURES.map((f) => (
               <div key={f.title} className="flex flex-col items-start gap-3">
@@ -317,8 +298,8 @@ export default function HomePage() {
       <section className="bg-gray-50 py-12 transition-colors duration-300 dark:bg-gray-900">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-6 flex items-center justify-between">
-            <h2 className="text-xl font-bold">Latest Articles & Resources</h2>
-            <Link href="/library" className="flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-500">
+            <h2 className="text-xl font-bold">Latest Articles & Blogs</h2>
+            <Link href="/blogs" className="flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-500">
               View All <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
@@ -328,15 +309,15 @@ export default function HomePage() {
                 key={a.title}
                 className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-gray-900"
               >
-                <div className={`h-36 w-full ${a.imgBg} flex items-center justify-center text-5xl`}>
-                  {a.emoji}
+                <div className={`h-36 w-full flex items-center justify-center text-5xl`}>
+                  <Image src={a.image} width={200} height={200} className="w-full object-cover h-full" alt="" />
                 </div>
                 <div className="p-4">
                   <p className="text-sm font-semibold leading-tight">{a.title}</p>
                   <p className="mt-1 text-xs leading-relaxed text-gray-500 dark:text-gray-400">{a.desc}</p>
-                  <button className="mt-3 rounded-md border border-gray-200 px-3 py-1 text-xs font-medium text-gray-600 transition hover:border-emerald-500 hover:text-emerald-500 dark:border-gray-700 dark:text-gray-300">
+                  <Link href={a.url} className="mt-3 block w-fit rounded-md border border-gray-200 px-3 py-1 text-xs font-medium text-gray-600 transition hover:border-emerald-500 hover:text-emerald-500 dark:border-gray-700 dark:text-gray-300">
                     Read More
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}
