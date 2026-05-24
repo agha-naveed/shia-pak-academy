@@ -150,11 +150,11 @@ export default function MaleTeachersPage() {
             <div className="hidden lg:block">
               <div className="relative ml-auto h-[400px] w-[90%] overflow-hidden rounded-2xl shadow-2xl ring-1 ring-emerald-800/30">
                 <Image
-                  src="/images/teachers/male-teacher.png" // Make sure to add a relevant image to your public folder!
+                  src="/images/teachers/male-teacher.webp" // Make sure to add a relevant image to your public folder!
                   alt="Online Shia Male Quran Teacher"
                   fill
                   placeholder="blur"
-                  blurDataURL="/images/teachers/male-teacher.png"
+                  blurDataURL="/images/teachers/male-teacher.webp"
                   className="object-cover"
                 />
                 {/* Gradient overlay for text readability */}
@@ -163,8 +163,8 @@ export default function MaleTeachersPage() {
                 {/* Floating Glassmorphism Badge */}
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/10 p-4 backdrop-blur-md">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-600 text-white">
-                      👨‍🏫
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full text-white">
+                      <Image src={logo} alt="Shia Quran Pak Academy Logo" width={100} height={100} />
                     </div>
                     <div>
                       <p className="text-sm font-bold text-white">Expert Faculty</p>

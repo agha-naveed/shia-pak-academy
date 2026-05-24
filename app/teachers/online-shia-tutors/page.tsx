@@ -152,21 +152,21 @@ export default function TutorsPage() {
             <div className="hidden lg:block">
               <div className="relative ml-auto h-[400px] w-[90%] overflow-hidden rounded-2xl shadow-2xl ring-1 ring-amber-800/30">
                 <Image
-                  src="/images/teachers/tutor.png" // Ensure this placeholder is in your public folder!
+                  src="/images/teachers/tutor.webp" // Ensure this placeholder is in your public folder!
                   alt="Online Shia Private Quran Tutors"
                   fill
                   className="object-cover"
                   placeholder="blur"
-                  blurDataURL="/images/teachers/tutor.png"
+                  blurDataURL="/images/teachers/tutor.webp"
                 />
                 {/* Gradient overlay for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1A130A] via-transparent to-transparent opacity-90" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#1A130A] via-transparent to-transparent opacity-90" />
                 
                 {/* Floating Glassmorphism Badge */}
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/10 p-4 backdrop-blur-md">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-600 text-white text-xl">
-                      🎓
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full text-white text-xl">
+                      <Image src={logo} alt="Shia Quran Pak Academy Logo" width={100} height={100} />
                     </div>
                     <div>
                       <p className="text-sm font-bold text-white">Customized Learning</p>

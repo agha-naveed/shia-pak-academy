@@ -29,12 +29,7 @@ const CATEGORIES = [
     { icon: LayoutGrid, label: "All Courses" },
     { icon: BookOpen, label: "Quran Studies" },
     { icon: BookMarked, label: "Aqeedah" },
-    { icon: Scale, label: "Fiqh" },
-    { icon: MapPin, label: "Ziyarat" },
-    { icon: HandMetal, label: "Dua & Supplication" },
     { icon: Clock3, label: "Islamic History" },
-    { icon: GraduationCap, label: "Personal Development" },
-    { icon: Languages, label: "Arabic Language" },
 ];
 
 const LEVELS = ["All Levels", "Beginner Level", "Intermediate", "Advanced"];

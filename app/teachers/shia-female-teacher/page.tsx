@@ -151,9 +151,11 @@ export default function FemaleTeachersPage() {
             <div className="hidden lg:block">
               <div className="relative ml-auto h-[400px] w-[90%] overflow-hidden rounded-2xl shadow-2xl ring-1 ring-rose-800/30">
                 <Image
-                  src="/images/teachers/female-teacher.png" // Ensure this image is added to your public folder!
+                  src="/images/teachers/female-teacher.webp" // Ensure this image is added to your public folder!
                   alt="Online Shia Female Quran Teacher"
                   fill
+                  placeholder="blur"
+                  blurDataURL="/images/teachers/female-teacher.webp"
                   className="object-cover"
                 />
                 {/* Gradient overlay for text readability */}
@@ -162,8 +164,8 @@ export default function FemaleTeachersPage() {
                 {/* Floating Glassmorphism Badge */}
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/10 p-4 backdrop-blur-md">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-rose-600 text-white text-xl">
-                      👩‍🏫
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full text-white text-xl">
+                      <Image src={logo} alt="Shia Quran Pak Academy Logo" width={100} height={100} />
                     </div>
                     <div>
                       <p className="text-sm font-bold text-white">Dedicated Aalimat</p>
