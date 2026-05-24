@@ -163,7 +163,7 @@ export default function BlogSidebar() {
             Chat on WhatsApp
           </a>
           <p className="text-sm font-bold text-emerald-900 dark:text-emerald-500">
-            +1 (555) 123-4567
+            +92 339 4022926
           </p>
         </div>
       </div>

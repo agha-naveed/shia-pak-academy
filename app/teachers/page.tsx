@@ -308,7 +308,7 @@ export default function TeachersPage() {
                 <MessageCircle className="h-4 w-4" />
                 Chat on WhatsApp
               </a>
-              <p className="text-xs font-semibold text-emerald-400">+1 (555) 123-4567</p>
+              <p className="text-xs font-semibold text-emerald-400">+92 339 4022926</p>
             </div>
           </div>
         </div>

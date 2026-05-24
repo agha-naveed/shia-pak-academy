@@ -324,7 +324,7 @@ export default function FemaleTeachersPage() {
                 className="flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-emerald-900 shadow-lg transition hover:bg-emerald-50">
                 <MessageCircle className="h-4 w-4" /> Chat on WhatsApp
               </a>
-              <p className="text-xs font-semibold text-emerald-400">+1 (555) 123-4567</p>
+              <p className="text-xs font-semibold text-emerald-400">+92 339 4022926</p>
             </div>
           </div>
         </div>
