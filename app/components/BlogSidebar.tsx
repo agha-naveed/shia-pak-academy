@@ -31,33 +31,38 @@ const SIDEBAR_CATEGORIES = [
 const POPULAR_ARTICLES = [
   {
     id: 1,
-    title: "The Power of Istighfar in Our Lives",
-    date: "May 1, 2024",
-    image: "/images/pop-1.jpg",
+    title: "How to Connect with the Quran in Daily Life",
+    date: "May 12, 2026",
+    image: "/images/blogs/quran.jpg",
+    navig: "how-to-connect-with-quran"
   },
   {
     id: 2,
-    title: "Dua: The Weapon of a Believer",
-    date: "Apr 24, 2024",
-    image: "/images/pop-2.jpg",
+    title: "What Imam Ali's Sermons Teach Modern Society",
+    date: "May 5, 2026",
+    image: "/images/blogs/imam-ali-roza.webp",
+    navig: "what-imam-ali-sermons-teach-modern-society"
   },
   {
     id: 3,
-    title: "Who are the Ahlulbayt (عليهم السلام)?",
-    date: "Apr 18, 2024",
-    image: "/images/pop-3.jpg",
+    title: "Life Lessons from the Sayings of Ahlulbayt (عليهم السلام)?",
+    date: "Apr 5, 2026",
+    image: "/images/blogs/rasool.webp",
+    navig: "life-lessons-from-ahlulbayt"
   },
   {
     id: 4,
-    title: "Dealing with Anxiety from an Islamic Perspective",
-    date: "Apr 11, 2024",
-    image: "/images/pop-4.jpg",
+    title: "The Importance of Taqwa in Today's World",
+    date: "Apr 28, 2026",
+    image: "/images/blogs/taqwa.jpg",
+    navig: "the-importance-of-taqwa-in-todays-world"
   },
   {
     id: 5,
     title: "Ramadan: A Month of Transformation",
     date: "Apr 3, 2024",
     image: "/images/pop-5.jpg",
+    navig: ""
   },
 ];
 
@@ -117,7 +122,7 @@ export default function BlogSidebar() {
           </h3>
           <div className="space-y-4">
             {POPULAR_ARTICLES.map((article) => (
-              <Link href="#" key={article.id} className="group flex items-center gap-4">
+              <Link href={"/blogs/"+article.navig} key={article.id} className="group flex items-center gap-4">
                 <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg">
                   <Image
                     src={article.image}

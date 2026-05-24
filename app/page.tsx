@@ -18,12 +18,12 @@ import Pricing from "./components/Pricing";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 const CATEGORIES = [
-  { emoji: "📖", label: "Quran", sub: "Read, Learn & Reflect", href: "/courses" },
-  { emoji: "🏛️", label: "Ziyarat", sub: "Authentic Ziyarats with Audio", href: "/ziyarat" },
+  { label: "Quran", sub: "Read, Learn & Reflect", href: "/courses" },
+  { label: "Ziyarat", sub: "Authentic Ziyarats with Audio", href: "/ziyarat" },
   { emoji: "🎓", label: "Courses", sub: "Structured Learning Paths", href: "/courses" },
-  { emoji: "👨‍🏫", label: "Teachers", sub: "Male & Female Tutors", href: "/teachers" },
-  { emoji: "📝", label: "Blogs", sub: "Articles & Insights", href: "/blogs" },
-  { emoji: "✚", label: "More", sub: "Supplications & Munajat", href: "/more" },
+  { label: "Teachers", sub: "Male & Female Tutors", href: "/teachers" },
+  { label: "Blogs", sub: "Articles & Insights", href: "/blogs" },
+  { label: "About", sub: "Know About Shia Quran Pak Academy", href: "/about-shia-quran-pak-academy" },
 ];
 
 const ZIYARATS = [
@@ -162,9 +162,6 @@ export default function HomePage() {
                 href={cat.href}
                 className="group flex flex-col items-center gap-2 rounded-xl border border-gray-100 p-3 text-center transition hover:border-emerald-500 hover:bg-emerald-50 dark:border-gray-800 dark:hover:bg-gray-800 sm:p-4"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-50 text-2xl shadow-sm transition group-hover:scale-105 dark:bg-gray-800 sm:h-14 sm:w-14 sm:text-3xl">
-                  {cat.emoji}
-                </div>
                 <p className="text-xs font-semibold sm:text-sm">{cat.label}</p>
                 <p className="hidden text-[11px] leading-tight text-gray-500 dark:text-gray-400 sm:block">{cat.sub}</p>
               </Link>
