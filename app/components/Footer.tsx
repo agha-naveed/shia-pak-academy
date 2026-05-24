@@ -33,7 +33,7 @@ export default function Footer() {
               {["Quran", "Courses", "Ziyarat", "Teachers", "Blogs", "About Us", "Contact Us"].map((l) => (
                 <Link
                   key={l}
-                  href={`/${l.toLowerCase().replace(" ", "-")}`}
+                  href={l == "About Us" ? "/about-shia-quran-pak-academy" : `/${l.toLowerCase().replace(" ", "-")}`}
                   className="text-xs text-gray-600 transition hover:text-emerald-400"
                 >
                   {l}

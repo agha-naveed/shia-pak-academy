@@ -33,7 +33,7 @@ const NAV_ITEMS = [
     ],
   },
   { label: "Blogs", href: "/blogs" },
-  { label: "About", href: "/about" },
+  { label: "About", href: "/about-shia-quran-pak-academy" },
   {
     label: "More",
     href: "#",

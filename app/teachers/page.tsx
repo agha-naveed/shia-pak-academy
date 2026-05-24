@@ -15,12 +15,13 @@ import {
   ChevronDown,
 } from "lucide-react";
 import TeacherHero from "../components/TeacherHero";
+import Image from "next/image";
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 
 const TEACHER_TYPES = [
   {
-    icon: "👨‍🏫",
+    image: "/images/teachers/male-teacher.png",
     title: "Online Shia Male Quran Teacher",
     desc: "Qualified male scholars and Quran teachers offering one-on-one and group sessions.",
     href: "/teachers/shia-male-teacher",
@@ -30,7 +31,7 @@ const TEACHER_TYPES = [
     features: ["Tajweed & Recitation", "Tafseer Classes", "Fiqh & Masail", "Flexible Timings"],
   },
   {
-    icon: "👩‍🏫",
+    image: "/images/teachers/female-teacher.png",
     title: "Online Shia Female Quran Teacher",
     desc: "Qualified female scholars offering comfortable, private learning sessions for sisters.",
     href: "/teachers/shia-female-teacher",
@@ -40,7 +41,7 @@ const TEACHER_TYPES = [
     features: ["Ladies-Only Classes", "Tajweed & Quran", "Islamic Studies", "Flexible Timings"],
   },
   {
-    icon: "🎓",
+    image: "/images/teachers/tutor.png",
     title: "Online Shia Quran Tutors",
     desc: "Private tutors for children and adults — beginner to advanced levels, all subjects.",
     href: "/teachers/online-shia-tutors",
@@ -144,8 +145,8 @@ export default function TeachersPage() {
             <Link key={type.href} href={type.href}
               className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
               {/* Top gradient banner */}
-              <div className={`h-36 w-full bg-gradient-to-br ${type.color} flex items-center justify-center text-7xl relative`}>
-                {type.icon}
+              <div className={`h-45 w-full bg-gradient-to-br ${type.color} flex items-center justify-center text-7xl relative`}>
+                <Image src={type.image} alt="" width={400} height={400} className="w-full h-full object-cover object-center" />
                 <span className={`absolute left-3 top-3 rounded-full px-2.5 py-1 text-[10px] font-bold text-white ${type.badgeColor}`}>
                   {type.badge}
                 </span>
