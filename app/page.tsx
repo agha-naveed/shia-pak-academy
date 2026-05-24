@@ -35,11 +35,11 @@ const ZIYARATS = [
 ];
 
 const COURSES = [
-  { title: "Yassarnal Quran", sub: "Qaida for Beginners", badge: null, badgeColor: "bg-emerald-500", imgBg: "bg-gradient-to-br from-stone-900 via-emerald-950 to-stone-800", emoji: "✨" },
-  { title: "Tajweed Quran", sub: "Perfect Your Recitation", badge: "Popular", badgeColor: "bg-emerald-500", imgBg: "bg-gradient-to-br from-emerald-950 via-stone-900 to-amber-900", emoji: "🎙️" },
-  { title: "Tafseer Course", sub: "Understand the Divine Words", badge: null, badgeColor: "bg-emerald-600", imgBg: "bg-gradient-to-br from-stone-900 via-amber-950 to-stone-800", emoji: "📖" },
-  { title: "Nehjul Balagh", sub: "Sermons of Imam Ali (ع)", badge: "New", badgeColor: "bg-emerald-500", imgBg: "bg-gradient-to-br from-stone-800 via-stone-700 to-stone-900", emoji: "📜" },
-  { title: "Shia Islamic Study", sub: "Comprehensive Islamic Studies", badge: null, badgeColor: "", imgBg: "bg-gradient-to-br from-emerald-900 via-stone-800 to-amber-950", emoji: "📚" },
+  { title: "Yassarnal Quran", sub: "Qaida for Beginners", badge: "New", badgeColor: "bg-emerald-500", imgBg: "bg-gradient-to-br from-stone-900 via-emerald-950 to-stone-800", image: "/images/courses/yassarnal-quran-qaida.webp", },
+  { title: "Tajweed Quran", sub: "Perfect Your Recitation", badge: "Popular", badgeColor: "bg-emerald-500", imgBg: "bg-gradient-to-br from-emerald-950 via-stone-900 to-amber-900", image: "/images/courses/tajweed-course.jpg", },
+  { title: "Tafseer Course", sub: "Understand the Divine Words", badge: null, badgeColor: "bg-emerald-600", imgBg: "bg-gradient-to-br from-stone-900 via-amber-950 to-stone-800", image: "/images/courses/tafseer-course.webp", },
+  { title: "Nahjul Balagha", sub: "Sermons of Imam Ali (ع)", badge: "New", badgeColor: "bg-emerald-500", imgBg: "bg-gradient-to-br from-stone-800 via-stone-700 to-stone-900", image: "/images/courses/nehjul-balagha.webp", },
+  { title: "Shia Islamic Study", sub: "Comprehensive Islamic Studies", badge: null, badgeColor: "", imgBg: "bg-gradient-to-br from-emerald-900 via-stone-800 to-amber-950", image: "/images/courses/shia-study.jpg" },
 ];
 
 const LEARNING_PATHS = [
@@ -228,7 +228,7 @@ export default function HomePage() {
                 className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-gray-900"
               >
                 <div className={`relative h-32 w-full ${c.imgBg} flex items-center justify-center text-4xl sm:h-36 sm:text-5xl`}>
-                  {c.emoji}
+                  <Image src={c.image} className={"w-full h-full object-cover"} width={200} height={200} alt="" />
                   {c.badge && (
                     <span className={`absolute left-2 top-2 rounded-md px-2 py-0.5 text-[10px] font-bold text-white ${c.badgeColor}`}>
                       {c.badge}

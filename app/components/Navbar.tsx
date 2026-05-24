@@ -27,9 +27,9 @@ const NAV_ITEMS = [
     label: "Teachers",
     href: "/teachers",
     dropdownItems: [
-      { label: "Online shia male Quran teacher", href: "/teachers/male" },
-      { label: "Online shia female Quran teacher", href: "/teachers/female" },
-      { label: "Online shia Quran Tutors", href: "/teachers/tutors" },
+      { label: "Online Shia Male Quran Teacher", href: "/teachers/shia-male-teacher" },
+      { label: "Online Shia Female Quran Teacher", href: "/teachers/shia-female-teacher" },
+      { label: "Online Shia Quran Tutors", href: "/teachers/online-shia-tutors" },
     ],
   },
   { label: "Blogs", href: "/blogs" },
@@ -74,41 +74,46 @@ export default function Navbar() {
                 <Image src={logo} alt="Shia Quran Pak Academy Logo" width={200} height={200} />
               </div>
               <span className="text-lg font-bold leading-4 text-gray-900 dark:text-gray-100">
-                Shia Quran <br /> <span className="text-[13px] tracking-[1.15px] dark:text-gray-400 text-black/70 font-medium">Pak Academy</span>
+                Shia Quran <br /> <span className="text-[13px] tracking-[1.10px] dark:text-gray-400 text-black/70 font-medium">Pak Academy</span>
               </span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:gap-5 lg:gap-8">
-            {NAV_ITEMS.map((item) => (
-              <div key={item.label} className="group relative py-4">
-                <Link
-                  href={item.href}
-                  className="flex items-center gap-1 text-sm font-medium text-gray-600 transition-colors hover:text-emerald-600 dark:text-gray-400 dark:hover:text-emerald-400"
-                >
-                  {item.label}
-                  {item.dropdownItems && (
-                    <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
-                  )}
-                </Link>
+            {NAV_ITEMS.map((item, index) => {
+              // Menus on the right half of the navbar open towards the left to prevent overflow
+              const dropdownAlignment = index > 2 ? "right-0" : "left-0";
 
-                {/* Desktop Dropdown Menu */}
-                {item.dropdownItems && (
-                  <div className="absolute left-0 top-full invisible flex w-64 translate-y-2 flex-col gap-1 rounded-xl border border-gray-100 bg-white p-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 dark:border-gray-800 dark:bg-gray-900">
-                    {item.dropdownItems.map((subItem) => (
-                      <Link
-                        key={subItem.label}
-                        href={subItem.href}
-                        className="block rounded-lg px-3 py-2 text-sm text-gray-600 transition-colors hover:bg-emerald-50 hover:text-emerald-700 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-emerald-400"
-                      >
-                        {subItem.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+              return (
+                <div key={item.label} className="group relative py-4">
+                  <Link
+                    href={item.href}
+                    className="flex items-center gap-1 text-sm font-medium text-gray-600 transition-colors hover:text-emerald-600 dark:text-gray-400 dark:hover:text-emerald-400"
+                  >
+                    {item.label}
+                    {item.dropdownItems && (
+                      <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
+                    )}
+                  </Link>
+
+                  {/* Desktop Dropdown Menu */}
+                  {item.dropdownItems && (
+                    <div className={`absolute top-full invisible flex w-64 translate-y-2 flex-col gap-1 rounded-xl border border-gray-100 bg-white p-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 dark:border-gray-800 dark:bg-gray-900 ${dropdownAlignment}`}>
+                      {item.dropdownItems.map((subItem) => (
+                        <Link
+                          key={subItem.label}
+                          href={subItem.href}
+                          className="block rounded-lg px-3 py-2 text-sm text-gray-600 transition-colors hover:bg-emerald-50 hover:text-emerald-700 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-emerald-400"
+                        >
+                          {subItem.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* Right Side Icons */}
