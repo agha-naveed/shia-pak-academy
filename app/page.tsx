@@ -26,12 +26,11 @@ const CATEGORIES = [
 ];
 
 const ZIYARATS = [
-  { title: "Ziyarat e Ashura", sub: "Imam Hussain (ع)", bg: "from-amber-900/80 via-black/20 to-transparent", image: "/images/zyarat-e-ashura.jpg" },
-  { title: "Ziyarat e Warith", sub: "Imam Hussain (ع)", bg: "from-emerald-900/80 via-black/20 to-transparent", image: "/images/warisa.jpg" },
-  { title: "Ziyarat e Nahiya", sub: "Ahlulbayt (ع)", bg: "from-sky-900/80 via-black/20 to-transparent", image: "/images/nahiya.jpg" },
-  { title: "Ziyarat e Ameenullah", sub: "Imam Ali (ع)", bg: "from-yellow-900/80 via-black/20 to-transparent", image: "/images/ameenullah.jpg" },
-  { title: "Ziyarat e Imam Hussain (ع)", sub: "Full Ziyarat", bg: "from-red-900/80 via-black/20 to-transparent", image: "/images/imamhussain.jpg" },
-  { title: "Ziyarat e Imam Ali Raza (ع)", sub: "Mashhad e Muqaddas", bg: "from-stone-900/80 via-black/20 to-transparent", image: "/images/mashhad.jpg" },
+  { title: "Ziyarat e Ashura", sub: "Imam Hussain (ع)", bg: "from-amber-900/80 via-black/20 to-transparent", image: "/images/zyarat-e-ashura.jpg", url: "ziyarat-e-ashura" },
+  { title: "Ziyarat e Warith", sub: "Imam Hussain (ع)", bg: "from-emerald-900/80 via-black/20 to-transparent", image: "/images/warisa.jpg", url: "ziyarat-e-warisa" },
+  { title: "Ziyarat e Nahiya", sub: "Ahlulbayt (ع)", bg: "from-sky-900/80 via-black/20 to-transparent", image: "/images/nahiya.jpg", url: "ziyarat-e-ashura" },
+  { title: "Ziyarat e Ameenullah", sub: "Imam Ali (ع)", bg: "from-yellow-900/80 via-black/20 to-transparent", image: "/images/ameenullah.jpg", url: "ziyarat-e-ameenullah" },
+  { title: "Ziyarat e Arbaeen", sub: "Chehlum e Imam Hussain (ع)", bg: "from-stone-900/80 via-black/20 to-transparent", image: "/images/arbaeen.jpg", url: "ziyarat-e-arbaeen" },
 ];
 
 const COURSES = [
@@ -184,9 +183,9 @@ export default function HomePage() {
               View All <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
             {ZIYARATS.map((z) => (
-              <Link key={z.title} href="/ziyarat" className="group relative overflow-hidden rounded-xl">
+              <Link key={z.title} href={`/ziyarat/${z.url}`} className="group relative overflow-hidden rounded-xl">
                 <div className="relative h-40 w-full">
                   <Image
                     src={z.image}

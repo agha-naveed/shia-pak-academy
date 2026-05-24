@@ -147,15 +147,92 @@ const ZIYARAT_E_ASHURA = [
   { type: "segment", arabic: "مَعَ ٱلْحُسَيْنِ وَأَصْحَابِ ٱلْحُسَيْنِ", transliteration: "ma`a alhusayni wa ashabi alhusayni", translation: "with al-Husayn and the companions of al-Husayn" },
   { type: "segment", arabic: "ٱلَّذينَ بَذَلُوٱ مُهَجَهُمْ دُونَ ٱلْحُسَيْنِ عَلَيْهِ ٱلسَّلاَمُ", transliteration: "alladhina badhalu muhajahum duna alhusayni", translation: "who sacrificed their souls in defense of al-Husayn, peace be upon him." },
 ];
-const ZIYARAT_E_AMEENULLAH = [
-  
-]
+const ZIYARAT_AMEENULLAH = [
+  // ── Main Ziyarat ──────────────────────────────────────────────────────────
+  { type: "segment", arabic: "اَلسَّلَامُ عَلَیْكَ یَا اَمِیْنَ اللّٰهِ فِیْ اَرْضِهٖ", transliteration: "alssalamu `alayka ya amina allahi fi ardihi", translation: "Peace be upon you, O trustee of Allah on His lands" },
+  { type: "segment", arabic: "وَ حُجَّتَهٗ عَلٰی عِبَادِهٖ", transliteration: "wa hujjatahu `ala `ibadihi", translation: "and argument of Allah against His servants." },
+  { type: "segment", arabic: "اَلسَّلَامُ عَلَیْكَ یَا اَمِیْرَ الْمُؤْمِنِیْنَ", transliteration: "alssalamu `alayka ya amira almu'minina", translation: "Peace be upon you, O Commander of the Faithful." },
+  { type: "segment", arabic: "اَشْهَدُ اَنَّكَ جَاهَدْتَ فِی اللّٰهِ حَقَّ جِهَادِهٖ", transliteration: "ashhadu annaka jahadta fi allahi haqqa jihadihi", translation: "I bear witness that you strove for the sake of Allah as it ought to be striven," },
+  { type: "segment", arabic: "وَ عَمِلْتَ بِكِتَابِهٖ", transliteration: "wa `amilta bikitabihi", translation: "acted upon His Book," },
+  { type: "segment", arabic: "وَ اتَّبَعْتَ سُنَنَ نَبِیِّهٖ", transliteration: "wattba`ta sunana nabiyyihi", translation: "and followed the instructions of His Prophet," },
+  { type: "segment", arabic: "صَلَّی اللّٰهُ عَلَیْهِ وَ اٰلِهٖ", transliteration: "salla allahu `alayhi wa alihi", translation: "peace of Allah be upon him and his Household," },
+  { type: "segment", arabic: "حَتّٰی دَعَاكَ اللّٰهُ اِلیٰ جِوَارِهٖ", transliteration: "hatta da`aka allahu ila jiwarihi", translation: "until Allah called you to be in His vicinity." },
+  { type: "segment", arabic: "فَقَبَضَكَ اِلَیْهِ بِاِخْتِیَارِهٖ", transliteration: "faqabadaka ilayhi bikhtiyarihi", translation: "So, He grasped you to Him by His will" },
+  { type: "segment", arabic: "وَ اَلْزَمَ اَعْدَاۤئَكَ الْحُجَّۃَ", transliteration: "wa alzama a`da'aka alhujjata", translation: "and put your enemies under the claim" },
+  { type: "segment", arabic: "مَعَ مَالَكَ مِنَ الْحُجَجِ الْبَالِغَۃِ عَلٰی جَمِیْعِ خَلْقِهٖ", transliteration: "ma`a ma laka min alhujaji albalighati `ala jami`i khalqihi", translation: "although you have inclusive claims against all of His creatures." },
+  { type: "segment", arabic: "اَللّٰهُمَّ فَاجْعَلْ نَفْسِیْ مُطْمَئِنَّۃً بِقَدَرِكَ", transliteration: "allahumma faj`al nafsi mutma'innatan biqadarika", translation: "O Allah, (please do) cause my soul to be fully tranquil with Your decrees," },
+  { type: "segment", arabic: "رَاضِیَۃً بِقَضَاۤئِكَ", transliteration: "radiyatan biqada'ika", translation: "satisfied with Your acts," },
+  { type: "segment", arabic: "مُوْلَعَۃً بِذِكْرِكَ وَ دُعَاۤئِكَ", transliteration: "mula`atan bidhikrika wa du`a'ika", translation: "fond of mentioning and praying to You," },
+  { type: "segment", arabic: "مُحِبَّۃً لِصَفْوَۃِ اَوْلِیَاۤئِكَ", transliteration: "muhibbatan lisafwati awliya'ika", translation: "bearing love for the choicest of Your intimate servants," },
+  { type: "segment", arabic: "مَحْبُوْبَۃً فِیْ اَرْضِكَ وَ سَمَاۤئِكَ", transliteration: "mahbubatan fi ardika wa sama'ika", translation: "beloved in Your lands and heavens," },
+  { type: "segment", arabic: "صَابِرَۃً عَلٰی نُزُوُلِ بَلَاۤئِكَ", transliteration: "sabiratan `ala nuzuli bala'ika", translation: "steadfast against the affliction of Your tribulations," },
+  { type: "segment", arabic: "شَاكِرَۃً لِفَوَاضِلِ نَعْمَاۤئِكَ", transliteration: "shakiratan lifawadili na`ma'ika", translation: "thankful for Your graceful bounties," },
+  { type: "segment", arabic: "ذَاكِرَۃً لِسَوَابِغِ اٰلَاۤئِكَ", transliteration: "dhakiratan lisawabighi ala'ika", translation: "always bearing in mind Your incessant gifts," },
+  { type: "segment", arabic: "مُشْتَاقَۃً اِلیٰ فَرْحَتِ لِقَاۤئِكَ", transliteration: "mushtaqatan ila farhati liqa'ika", translation: "longing for the gladness of meeting You," },
+  { type: "segment", arabic: "مُتَزَوِّدَۃً التَّقْوٰی لِیَوْمِ جَزَاۤئِكَ", transliteration: "mutazawwidatan alttaqwa liyawmi jaza'ika", translation: "supplied with piety for the day of Your rewarding," },
+  { type: "segment", arabic: "مُسْتَنَّۃً بِسُنَنِ اَوْلِیَاۤئِكَ", transliteration: "mustannatan bisunani awliya'ika", translation: "pursuing the morals of Your intimate servants," },
+  { type: "segment", arabic: "مُفَارِقَۃً لِاَخْلَاقِ اَعْدَاۤئِكَ", transliteration: "mufariqatan li'akhlaqi a`da'ika", translation: "quitting the conducts of Your enemies," },
+  { type: "segment", arabic: "مَشْغُوْلَۃً عَنِ الدُّنْیَا بِحَمْدِكَ وَ ثَنَاۤئِكَ", transliteration: "mashghulatan `an alddunya bihamdika wa thana'ika", translation: "and distracted from this world by praising and thanking You." },
+  { type: "segment", arabic: "اَللّٰهُمَّ اِنَّ قُلُوْبَ الْمُخْبِتِیْنَ اِلَیْكَ وَالِهَۃٌ", transliteration: "allahumma inna quluba almukhbitina ilayka walihatun", translation: "O Allah, the hearts of those humbling themselves to You are fascinated," },
+  { type: "segment", arabic: "وَ سُبُلَ الرَّاغِبِیْنَ اِلَیْكَ شَارِعَۃٌ", transliteration: "wa subula alrraghibina ilayka shari`atun", translation: "the paths of those desiring for You are open," },
+  { type: "segment", arabic: "وَ اَعْلَامَ الْقَاصِدِیْنَ اِلَیْكَ وَاضِحَۃٌ", transliteration: "wa a`lama alqasidina ilayka wadihatun", translation: "the signs of those directing to You are evident," },
+  { type: "segment", arabic: "وَ اَفْئِدَۃَ الْعَارِفِیْنَ مِنْكَ فَازِعَۃٌ", transliteration: "wa af'idata al`arifina minka fazi`atun", translation: "the hearts of those having recognition of You are resorting to You," },
+  { type: "segment", arabic: "وَ اَصْوَاتَ الدَّاعِیْنَ اِلَیْكَ صَاعِدَۃٌ", transliteration: "wa aswata aldda`ina ilayka sa`idatun", translation: "the voices of those beseeching You are mounting up to You," },
+  { type: "segment", arabic: "وَ اَبْوَابَ الْاِجَابَۃِ لَهُمْ مُفَتَّحَۃٌ", transliteration: "wa abwaba al-ijabati lahum mufattahatun", translation: "the doors of responding to them are wide open," },
+  { type: "segment", arabic: "وَ دَعْوَۃَ مَنْ نَاجَاكَ مُسْتَجَابَۃٌ", transliteration: "wa da`wata man najaka mustajabatun", translation: "the prayer of him who speaks to You confidentially is responded," },
+  { type: "segment", arabic: "وَ تَوْبَۃَ مَنْ اَنَابَ اِلَیْكَ مَقْبُوْلَۃٌ", transliteration: "wa tawbata man anaba ilayka maqbulatun", translation: "the repentance of him who turns to You modestly is admitted," },
+  { type: "segment", arabic: "وَ عَبْرَۃَ مَنْ بَكٰی مِنْ خَوْفِكَ مَرْحُوْمَۃٌ", transliteration: "wa `abrata man baka min khawfika marhumatun", translation: "the tear of him who weeps on account of fear from You is compassionated," },
+  { type: "segment", arabic: "وَ الْاِغَاثَۃَ لِمَنِ اسْتَغَاثَ بِكَ مَوْجُوْدَۃٌ", transliteration: "wal-ighathata liman istaghatha bika mawjudatun", translation: "the aid of him who seeks Your aid is available," },
+  { type: "segment", arabic: "وَ الْاِعَانَۃَ لِمَنِ اسْتَعَانَ بِكَ مَبْذُوْلَۃٌ", transliteration: "wal-i`anata liman ista`ana bika mabdhulatun", translation: "the help of him who seeks Your help is obtainable," },
+  { type: "segment", arabic: "وَ عِدَاتِكَ لِعِبَادِكَ مُنْجَزَۃٌ", transliteration: "wa `idatika li`ibadika munjazatun", translation: "Your promises to Your servants are fulfilled," },
+  { type: "segment", arabic: "وَ زَلَلَ مَنِ اسْتَقَالَكَ مُقَالَۃٌ", transliteration: "wa zalala man istaqalaka muqalatun", translation: "the slips of him who implore You to excuse him are forgivable," },
+  { type: "segment", arabic: "وَ اَعْمَالَ الْعَامِلِیْنَ لَدَیْكَ مَحْفُوْظَۃٌ", transliteration: "wa a`mala al`amilina ladayka mahfuzatun", translation: "the deeds of those who act for You are preserved," },
+  { type: "segment", arabic: "وَ اَرْزَاقَكَ اِلَی الْخَلَاۤئِقِ مِنْ لَّدُنْكَ نَازِلَۃٌ", transliteration: "wa arzaqaka ila alkhala'iqi min ladunka nazilatun", translation: "Your sustenance to the creatures are descending from You," },
+  { type: "segment", arabic: "وَ عَوَاۤئِدَ الْمَزِیْدِ اِلَیْھِمْ وَاصِلَۃٌ", transliteration: "wa `awa'ida almazidi ilayhim wasilatun", translation: "Your gifts for further conferrals are reaching them," },
+  { type: "segment", arabic: "وَ ذُنُوْبَ الْمُسْتَغْفِرِیْنَ مَغْفُوْرَۃٌ", transliteration: "wa dhunuba almustaghfirina maghfuratun", translation: "the sins of those imploring Your forgiveness are forgiven," },
+  { type: "segment", arabic: "وَ حَوَاۤئِجِ خَلْقِكَ عِنْدَكَ مَقْضِیَّۃٌ", transliteration: "wa hawa'ija khalqika `indaka maqdiyyatun", translation: "the requests of Your creatures are granted by You," },
+  { type: "segment", arabic: "وَ جَوَاۤئِزَ السَّاۤئِلِیْنَ عِنْدَكَ مُوَفَّرَۃٌ", transliteration: "wa jawa'iza alssa'ilina `indaka muwaffaratun", translation: "the prizes of those begging You are offered," },
+  { type: "segment", arabic: "وَ عَوَاۤئِدَ الْمَزِیْدِ مُتَوَاْتِرَۃٌ", transliteration: "wa `awa'ida almazidi mutawatiratun", translation: "Your gifts for further conferrals are uninterrupted," },
+  { type: "segment", arabic: "وَ مَوَاۤئِدَ الْمُسْتَطْعِمِیْنَ مُعَدَّۃٌ", transliteration: "wa mawa'ida almustat`imina mu`addatun", translation: "the dining tables for those seeking Your feeding are prepared," },
+  { type: "segment", arabic: "وَ مَنَاهِلَ الظِّمَاۤئِ مُتْرَعَۃٌ", transliteration: "wa manahila alzzama'i mutra`atun", translation: "and the springs of quenching their thirst are brimful." },
+  { type: "segment", arabic: "اَللّٰهُمَّ فَاسْتَجِبْ دُعَاۤئِیْ", transliteration: "allahumma fastajib du`a'i", translation: "O Allah, (so) respond to my prayer," },
+  { type: "segment", arabic: "وَ اقْبَلْ ثَنَاۤئِیْ", transliteration: "waqbal thana'i", translation: "accept my thanksgiving for You," },
+  { type: "segment", arabic: "وَ اجْمَعْ بَیْنِیْ وَ بَیْنَ اَوْلِیَاۤئِیْ", transliteration: "wajma` bayni wa bayna awliya'i", translation: "and join me to my masters," },
+  { type: "segment", arabic: "بِحَقِّ مُحَمَّدٍ وَّ عَلِیٍّ", transliteration: "bihaqqi muhammadin wa `aliyyin", translation: "[I beseech You] in the name of Muhammad, `Ali," },
+  { type: "segment", arabic: "وَ فَاطِمَۃَ وَٱلْحَسَنِ وَٱلْحُسَيْنِ", transliteration: "wa fatimata walhasani walhusayni", translation: "Fatimah, al-Hasan, and al-Husayn." },
+  { type: "segment", arabic: "اِنَّكَ وَلِیُّ نَعْمَاۤئِیْ", transliteration: "innaka waliyyu na`ma'i", translation: "You are verily the only source of my boons," },
+  { type: "segment", arabic: "وَ مُنْتَهٰی مُنَایَ", transliteration: "wa muntaha munaya", translation: "the ultimate goal of my wishes," },
+  { type: "segment", arabic: "وَ غَایَۃُ رَجَاۤئِیْ فِیْ مُنْقَلَبِیْ وَ مَثْوَایَ", transliteration: "wa ghayatu raja'i fi munqalabi wa mathwaya", translation: "and the target of my hope in my recourses and settlement." },
+
+  // ── Addition from Kamil al-Ziyarat ───────────────────────────────────────
+  { type: "note", text: "In the book of Kamil al-Ziyarat, the following statements are added:" },
+  { type: "segment", arabic: "اَنْتَ اِلٰهِیْ وَ سَیَّدِیْ وَ مَوْلَایَ", transliteration: "anta ilahi wa sayyidi wa mawlaya", translation: "You are verily my God, Master, and Lord." },
+  { type: "segment", arabic: "اغْفِرْ لِاَوْلِیَاۤئِنَا", transliteration: "ighfir li-awliya'ina", translation: "(Please) forgive our friend," },
+  { type: "segment", arabic: "وَ كُفَّ عَنَّا اَعْدَاۤئَنَا", transliteration: "wa kuffa `anna a`da'ana", translation: "prevent our enemies against us," },
+  { type: "segment", arabic: "وَ اشْغَلْهُمْ عَنْ اَذَانَا", transliteration: "wa ashghilhum `an adhana", translation: "distract them from harming us," },
+  { type: "segment", arabic: "وَ اَظْهِرْ كَلِمَۃَ الْحَقِّ", transliteration: "wa azhir kalimata alhaqqi", translation: "give prevalence to the Word of Truth" },
+  { type: "segment", arabic: "وَ اجْعَلْهَا الْعُلْیَا", transliteration: "waj`alha al`ulya", translation: "and make it the supreme," },
+  { type: "segment", arabic: "وَ اَدْحِضْ كَلِمَۃَ الْبَاطِلِ", transliteration: "wa adhid kalimata albatili", translation: "and frustrate the word of falsehood" },
+  { type: "segment", arabic: "وَ اجْعَلْهَا السُّفْلیٰ", transliteration: "waj`alha alssufla", translation: "and make it the lowliest." },
+  { type: "segment", arabic: "اِنَّكَ عَلٰی كُلِّ شَیْئٍ قَدِیْرٌ", transliteration: "innaka `ala kulli shay'in qadirun", translation: "Verily, You have power over all things." },
+
+  // ── Farewell Ziyarat ──────────────────────────────────────────────────────
+  { type: "note", text: "Farewell Ziyarat — to be recited when departing from the shrine of the Holy Imams (a.s.):" },
+  { type: "segment", arabic: "اَلسَّلَامُ عَلَيْكَ اَيُّهَا الْاِمَامُ وَ رَحْمَةُ اللهِ وَ بَرَكَاتُهٗ اَسْتَوْدِعُكَ اللهَ وَ عَلَيْكَ السَّلَامُ وَ رَحْمَةُ اللهِ وَ بَرَكَاتُهٗ", transliteration: "assalaamu `alayka ayyuhal imaamu wa rahmatullahi wa barakaatuh, astawdi`ukallaaha wa `alaykas salaamu wa rahmatullahi wa barakaatuh", translation: "Peace be on you, O the Imam and mercy of Allah and His blessings, I entrust you with Allah and upon you is peace and mercy of Allah and His blessings." },
+  { type: "segment", arabic: "اٰمَنَّا بِالرَّسُوْلِ وَ بِمَا جِئْتُمْ بِهٖ وَ دَعَوْتُمْ اِلَيْهِ", transliteration: "aamannaa bir-rasoole wa bemaa ji'tum bihi wa da`awtum ilayhi", translation: "We believe in the Messenger, and in whatever you have come with and called to." },
+  { type: "segment", arabic: "اَللّٰهُمَّ لَا تَجْعَلْهُ اٰخِرَ الْعَهْدِ مِنْ زِيَارَتِيْ وَلِيَّكَ", transliteration: "allahumma la taj`alhu akhiral `ahdi min ziyarati waliyyaka", translation: "O Allah! Do not make this my last visitation of Your master." },
+  { type: "segment", arabic: "اَللّٰهُمَّ لَا تَحْرِمْنِيْ ثَوَابَ مَزَارِهِ الَّذِيْ اَوْجَبْتَ لَهٗ وَ يَسِّرْ لَنَا الْعَوْدَ اِلَیْہِ اِنْ شَآءَ اللهُ تَعَالٰى", transliteration: "allahumma la tahrimni thawaaba mazaarihi alladhi awjabta lahu wa yassir lanal `awda ilayhi in sha'allahu ta`ala", translation: "O Allah! Do not deprive me of the reward of his shrine which You have decided for him and make our returning to visit it easy for us, if Allah – the High – wish." },
+];
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 const ZYARAT_DATABASE: Record<string, { title: string, data: any[] }> = {
     "ziyarat-e-ashura": {
-        title: "Zyarat e Ashura",
+        title: "Ziyarat e Ashura",
         data: ZIYARAT_E_ASHURA
+    },
+    "ziyarat-e-ameenullah": {
+      title: "Ziyarat e Ameenullah",
+      data: ZIYARAT_AMEENULLAH
     }
 }
 
@@ -227,7 +304,10 @@ export default function ZiyaratAshuraPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#030102] transition-colors duration-300">
-      <audio ref={audioRef} src="/audio/ashura.mp3" />
+      {/* <audio   /> */}
+      <audio ref={audioRef} controls preload="none">
+        <source src={`/audio/${slug}.mp3`} />
+      </audio>
 
       {/* ── HERO SECTION ── */}
       <section className="bg-emerald-950 py-12 text-white">
@@ -235,8 +315,7 @@ export default function ZiyaratAshuraPage() {
           <Link href="/ziyarat" className="mb-4 inline-flex items-center gap-1.5 text-sm text-emerald-200 hover:text-white transition">
             <ArrowLeft className="h-4 w-4" onClick={() => router.push("/ziyarat")} /> Back to Ziyarats
           </Link>
-          <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl">Ziyarat e Ashura</h1>
-          <p className="mt-2 text-emerald-100/80">Recitation & Salutation to Imam Hussain (ع)</p>
+          <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl">{ziyarat.title}</h1>
         </div>
       </section>
 

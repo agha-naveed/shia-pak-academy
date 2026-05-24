@@ -57,13 +57,13 @@ export default function Footer() {
                 <span className="text-xs font-medium text-white">Chat with us on WhatsApp</span>
               </div>
               <a
-                href="https://wa.me/15551234567"
+                href="https://wa.me/+923394022926"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300"
               >
                 <Phone className="h-4 w-4" />
-                +1 (555) 123-4567
+                +92 339 4022926
               </a>
             </div>
           </div>

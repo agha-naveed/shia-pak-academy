@@ -7,15 +7,14 @@ import { Search, Play, BookOpen, ChevronDown, MapPin, Heart } from "lucide-react
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 
-const CATEGORIES = ["All Ziyarats", "Aimma (ع)", "Anbiya (ع)", "Karbala", "Mashhad", "Other Sites"];
+const CATEGORIES = ["All Ziyarats", "Karbala", "Aimma (ع)", "Mashhad", "Other Sites"];
 
 const ZIYARATS = [
   { title: "Ziyarat e Ashura", sub: "Imam Hussain (ع)", category: "Karbala", image: "/images/zyarat-e-ashura.jpg", audioUrl: "/ziyarat/ziyarat-e-ashura" },
-  { title: "Ziyarat e Warith", sub: "Imam Hussain (ع)", category: "Karbala", image: "/images/warisa.jpg", audioUrl: "/ziyarat/ziyarat-e-ashura" },
-  { title: "Ziyarat e Nahiya", sub: "Ahlulbayt (ع)", category: "Karbala", image: "/images/nahiya.jpg", audioUrl: "/ziyarat/ziyarat-e-ashura" },
-  { title: "Ziyarat e Ameenullah", sub: "Imam Ali (ع)", category: "Aimma (ع)", image: "/images/ameenullah.jpg", audioUrl: "/ziyarat/ziyarat-e-ashura" },
-  { title: "Ziyarat e Imam Ali Raza (ع)", sub: "Mashhad e Muqaddas", category: "Mashhad", image: "/images/mashhad.jpg", audioUrl: "/ziyarat/ziyarat-e-ashura" },
-  { title: "Ziyarat e Jamea Kabira", sub: "All Aimma (ع)", category: "Aimma (ع)", image: "/images/jamea-kabira.jpg", audioUrl: "/ziyarat/ziyarat-e-ashura" },
+  { title: "Ziyarat e Warith", sub: "Imam Hussain (ع)", category: "Karbala", image: "/images/warisa.jpg", audioUrl: "/ziyarat/ziyarat-e-warisa" },
+  { title: "Ziyarat e Nahiya", sub: "Ahlulbayt (ع)", category: "Aimma (ع)", image: "/images/nahiya.jpg", audioUrl: "/ziyarat/ziyarat-e-nahiya" },
+  { title: "Ziyarat e Ameenullah", sub: "Imam Ali (ع)", category: "Aimma (ع)", image: "/images/ameenullah.jpg", audioUrl: "/ziyarat/ziyarat-e-ameenullah" },
+  { title: "Ziyarat e Arbaeen", sub: "Chehlum of Imam Hussain", category: "Karbala", image: "/images/arbaeen.jpg", audioUrl: "/ziyarat/ziyarat-e-arbaeen" },
 ];
 
 // ─── PAGE COMPONENT ───────────────────────────────────────────────────────────
