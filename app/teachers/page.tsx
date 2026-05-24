@@ -303,7 +303,7 @@ export default function TeachersPage() {
               </p>
             </div>
             <div className="flex flex-col items-center gap-2 sm:flex-shrink-0">
-              <a href="https://wa.me/15551234567" target="_blank" rel="noreferrer"
+              <a href="https://wa.me/+923394022926" target="_blank" rel="noreferrer"
                 className="flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-emerald-900 shadow transition hover:bg-emerald-50">
                 <MessageCircle className="h-4 w-4" />
                 Chat on WhatsApp

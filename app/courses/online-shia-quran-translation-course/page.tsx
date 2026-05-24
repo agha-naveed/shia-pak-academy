@@ -182,7 +182,7 @@ export default function CoursePage() {
               {/* CTA */}
               <div>
                 <a
-                  href="https://wa.me/15551234567"
+                  href="https://wa.me/+923394022926"
                   target="_blank"
                   rel="noreferrer"
                   className="flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-800 py-3.5 text-sm font-semibold text-white shadow transition hover:bg-emerald-900 dark:bg-emerald-600 dark:hover:bg-emerald-700 sm:w-auto sm:px-10"
@@ -430,7 +430,7 @@ export default function CoursePage() {
 
           <div className="flex flex-col items-center gap-2 sm:items-end w-full sm:w-auto">
             <a
-              href="https://wa.me/15551234567"
+              href="https://wa.me/+923394022926"
               target="_blank"
               rel="noreferrer"
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-white px-8 py-3.5 text-sm font-bold text-emerald-900 shadow transition hover:bg-gray-100 sm:w-auto"

@@ -154,7 +154,7 @@ export default function BlogSidebar() {
             We&apos;re here to help you on your learning journey.
           </p>
           <a
-            href="https://wa.me/15551234567"
+            href="https://wa.me/+923394022926"
             target="_blank"
             rel="noreferrer"
             className="mb-3 flex w-full items-center justify-center gap-2 rounded-xl border border-emerald-700 bg-transparent px-4 py-2.5 text-sm font-semibold text-emerald-800 transition hover:bg-emerald-700 hover:text-white dark:border-emerald-500 dark:text-emerald-400 dark:hover:bg-emerald-600 dark:hover:text-white"

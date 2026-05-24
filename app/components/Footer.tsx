@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MessageCircle, Phone } from "lucide-react";
+import { MessageCircle, Phone, Mail } from "lucide-react";
 import logo from "@/public/logo.png";
 
 export default function Footer() {
@@ -56,6 +56,8 @@ export default function Footer() {
                 </div>
                 <span className="text-xs font-medium text-white">Chat with us on WhatsApp</span>
               </div>
+              
+              {/* WhatsApp Link */}
               <a
                 href="https://wa.me/+923394022926"
                 target="_blank"
@@ -64,6 +66,15 @@ export default function Footer() {
               >
                 <Phone className="h-4 w-4" />
                 +92 339 4022926
+              </a>
+
+              {/* Email Link */}
+              <a
+                href="mailto:shiaquranpak@gmail.com"
+                className="mt-2 flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300"
+              >
+                <Mail className="h-4 w-4" />
+                shiaquranpak@gmail.com
               </a>
             </div>
           </div>
@@ -86,7 +97,6 @@ export default function Footer() {
             >
               Agha Naveed
             </Link>
-            
           </div>
         </div>
       </div>

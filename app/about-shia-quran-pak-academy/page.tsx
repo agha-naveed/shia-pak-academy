@@ -295,7 +295,7 @@ export default function AboutPage() {
                 Join our growing family of students. Whether you are seeking a foundation in Quran reading or advanced Fiqh studies, we are here to guide you.
               </p>
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <a href="https://wa.me/15551234567" target="_blank" rel="noreferrer"
+                <a href="https://wa.me/+923394022926" target="_blank" rel="noreferrer"
                   className="flex w-full items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 text-sm font-bold text-emerald-900 shadow-xl transition hover:bg-emerald-50 sm:w-auto">
                   <MessageCircle className="h-5 w-5" /> Chat on WhatsApp
                 </a>
