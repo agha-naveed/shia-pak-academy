@@ -15,7 +15,7 @@ export default function Footer() {
                 <Image src={logo} alt="Logo" width={100} height={100} />
               </div>
               <div>
-                <p className="text-sm font-bold text-white">Shia Dinyaat</p>
+                <p className="text-sm font-bold text-white">Shia Quran Pak Academy</p>
                 <p className="text-[10px] text-gray-600">Learn. Believe. Practice.</p>
               </div>
             </div>
@@ -30,7 +30,7 @@ export default function Footer() {
               Quick Links
             </h3>
             <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-              {["Quran", "Dinyaat", "Ziyarat", "Courses", "Library", "Kids", "Resources", "About Us", "Contact Us"].map((l) => (
+              {["Quran", "Courses", "Ziyarat", "Teachers", "Blogs", "About Us", "Contact Us"].map((l) => (
                 <Link
                   key={l}
                   href={`/${l.toLowerCase().replace(" ", "-")}`}
@@ -71,8 +71,38 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-gray-800">
-        <div className="mx-auto max-w-7xl px-4 py-4 text-center">
-          <p className="text-xs text-gray-700">© 2024 Agha Naveed. All Rights Reserved.</p>
+        <div className="mx-auto flex md:flex-row flex-col gap-2 max-w-7xl items-center justify-between px-4 py-5 text-center text-xs text-gray-700">
+          <div>
+            © 2026&nbsp;
+            Shia Quran Pak Academy
+            &nbsp;. All Rights Reserved.
+          </div>
+          <div className="group relative inline-flex justify-center">
+            Developer:&nbsp;
+            <Link 
+              href={"https://aghanaveed.vercel.app"} 
+              target="_blank"
+              className="font-medium text-gray-600 transition-colors hover:text-emerald-400"
+            >
+              Agha Naveed
+            </Link>
+
+            {/* Popup Card */}
+            <div className="pointer-events-none absolute bottom-full left-1/2 z-50 mb-3 w-48 -translate-x-1/2 opacity-0 transition-all duration-300 group-hover:translate-y-1 group-hover:opacity-100">
+              <div className="relative rounded-xl border border-gray-700 bg-gray-900 p-3 shadow-xl">
+                <p className="text-sm font-bold text-white">Syed Naveed Abbas</p>
+                <p className="mt-0.5 text-[10px] text-gray-400">Full-Stack Engineer & AI Architect</p>
+                
+                <div className="mt-2 flex flex-wrap justify-center gap-1.5">
+                  <span className="rounded bg-emerald-900/30 px-1.5 py-0.5 text-[9px] font-medium tracking-wide text-emerald-400 border border-emerald-800/50">Next.js</span>
+                  <span className="rounded bg-emerald-900/30 px-1.5 py-0.5 text-[9px] font-medium tracking-wide text-emerald-400 border border-emerald-800/50">MERN</span>
+                </div>
+                
+                {/* Tooltip Triangle Arrow */}
+                <div className="absolute -bottom-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rotate-45 border-b border-r border-gray-700 bg-gray-900" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

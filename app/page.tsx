@@ -17,12 +17,12 @@ import Image from "next/image";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 const CATEGORIES = [
-  { emoji: "📖", label: "Quran", sub: "Read, Learn & Reflect", href: "/quran" },
-  { emoji: "🕌", label: "Dinyaat", sub: "Beliefs, Laws & Teachings", href: "/dinyaat" },
+  { emoji: "📖", label: "Quran", sub: "Read, Learn & Reflect", href: "/courses" },
   { emoji: "🏛️", label: "Ziyarat", sub: "Authentic Ziyarats with Audio", href: "/ziyarat" },
   { emoji: "🎓", label: "Courses", sub: "Structured Learning Paths", href: "/courses" },
-  { emoji: "📚", label: "Library", sub: "Books, Articles & Resources", href: "/library" },
-  { emoji: "👦", label: "Kids", sub: "Interactive Islamic Learning", href: "/kids" },
+  { emoji: "👨‍🏫", label: "Teachers", sub: "Male & Female Tutors", href: "/teachers" },
+  { emoji: "📝", label: "Blogs", sub: "Articles & Insights", href: "/blogs" },
+  { emoji: "✚", label: "More", sub: "Supplications & Munajat", href: "/more" },
 ];
 
 const ZIYARATS = [
@@ -39,11 +39,11 @@ const COURSES = [
   { title: "Tajweed Quran", sub: "Perfect Your Recitation", badge: "Popular", badgeColor: "bg-emerald-500", imgBg: "bg-gradient-to-br from-emerald-950 via-stone-900 to-amber-900", emoji: "🎙️" },
   { title: "Tafseer Course", sub: "Understand the Divine Words", badge: null, badgeColor: "bg-emerald-600", imgBg: "bg-gradient-to-br from-stone-900 via-amber-950 to-stone-800", emoji: "📖" },
   { title: "Nehjul Balagh", sub: "Sermons of Imam Ali (ع)", badge: "New", badgeColor: "bg-emerald-500", imgBg: "bg-gradient-to-br from-stone-800 via-stone-700 to-stone-900", emoji: "📜" },
-  { title: "Shia Islamic Study", sub: "Comprehensive Dinyaat", badge: null, badgeColor: "", imgBg: "bg-gradient-to-br from-emerald-900 via-stone-800 to-amber-950", emoji: "📚" },
+  { title: "Shia Islamic Study", sub: "Comprehensive Islamic Studies", badge: null, badgeColor: "", imgBg: "bg-gradient-to-br from-emerald-900 via-stone-800 to-amber-950", emoji: "📚" },
 ];
 
 const LEARNING_PATHS = [
-  { icon: "🌱", title: "Beginner Path", desc: "Start your journey with the basics of Islam and Shia Dinyaat.", href: "/paths/beginner" },
+  { icon: "🌱", title: "Beginner Path", desc: "Start your journey with the basics of Islam and Shia Islamic Studies.", href: "/paths/beginner" },
   { icon: "📘", title: "Intermediate Path", desc: "Strengthen your understanding of beliefs, fiqh, and Ahlulbayt teachings.", href: "/paths/intermediate" },
   { icon: "🎓", title: "Advanced Path", desc: "Deepen your knowledge with advanced topics and scholarly resources.", href: "/paths/advanced" },
 ];
@@ -155,7 +155,7 @@ export default function HomePage() {
       ══════════════════════════════════════════ */}
       <section className="border-b bg-white border-gray-100 py-10 transition-colors duration-300 dark:bg-gray-950 dark:border-gray-800">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="grid grid-cols-3 gap-3 sm:grid-cols-6 sm:gap-4">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6 sm:gap-4">
             {CATEGORIES.map((cat) => (
               <Link
                 key={cat.label}

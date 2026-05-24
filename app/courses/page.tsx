@@ -112,7 +112,7 @@ const COURSES: Course[] = [
         level: "Intermediate",
         badge: "New",
         imgBg: "from-stone-800 via-stone-700 to-stone-900",
-        image: "/images/courses/nehjul-balagha.webp",
+        image: "/images/courses/nahjul-balagha.webp",
         category: "Islamic History", 
         href: "/courses/nahjul-balagha-course",
     },
