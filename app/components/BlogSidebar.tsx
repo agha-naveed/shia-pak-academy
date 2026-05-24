@@ -60,9 +60,9 @@ const POPULAR_ARTICLES = [
   {
     id: 5,
     title: "Ramadan: A Month of Transformation",
-    date: "Apr 3, 2024",
-    image: "/images/pop-5.jpg",
-    navig: ""
+    date: "Mar 10, 2026",
+    image: "/images/blogs/ramzan.jpg",
+    navig: "ramadan-a-month-of-transformation"
   },
 ];
 
@@ -73,46 +73,6 @@ export default function BlogSidebar() {
   return (
     <aside className="w-full xl:w-[320px] 2xl:w-[360px]">
       <div className="sticky top-24 space-y-8">
-        {/* Search Box */}
-        <div className="relative">
-          <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
-          <input
-            type="text"
-            placeholder="Search articles..."
-            className="w-full rounded-2xl border border-gray-200 bg-white py-3.5 pl-11 pr-4 text-sm text-gray-900 outline-none transition focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100 dark:focus:border-emerald-500"
-          />
-        </div>
-
-        {/* Categories Block */}
-        <div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900">
-          <h3 className="mb-4 flex items-center gap-2 text-base font-bold text-gray-900 dark:text-white">
-            <BookOpen className="h-5 w-5 text-emerald-600 dark:text-emerald-500" />
-            Categories
-          </h3>
-          <ul className="space-y-1">
-            {SIDEBAR_CATEGORIES.map((cat) => (
-              <li key={cat.label}>
-                <Link
-                  href={`?category=${encodeURIComponent(cat.label)}`}
-                  scroll={false}
-                  className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm transition ${
-                    activeCategory === cat.label
-                      ? "bg-emerald-50 text-emerald-700 font-semibold dark:bg-emerald-900/30 dark:text-emerald-400"
-                      : "text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800"
-                  }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <cat.icon className="h-4 w-4 opacity-70" />
-                    <span>{cat.label}</span>
-                  </div>
-                  <span className="rounded-full bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-400">
-                    {cat.count}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
 
         {/* Popular Articles Block */}
         <div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900">

@@ -581,30 +581,6 @@ export default function ImamAliSermonBlogPage() {
                 <ShareButtons />
               </div>
 
-              {/* Related Articles */}
-              <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900">
-                <h3 className="mb-4 flex items-center gap-2 text-sm font-bold text-gray-900 dark:text-gray-100">
-                  <Flame className="h-4 w-4 text-emerald-600 dark:text-emerald-500" />
-                  Related Articles
-                </h3>
-                <div className="space-y-4">
-                  {RELATED_ARTICLES.map((a) => (
-                    <Link key={a.slug} href={`/blogs/${a.slug}`} className="group flex items-center gap-3">
-                      <div className={`h-14 w-14 flex-shrink-0 overflow-hidden rounded-lg bg-gradient-to-br ${a.imgBg} flex items-center justify-center text-2xl`}>
-                        <span className="opacity-70">{a.emoji}</span>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="line-clamp-2 text-xs font-semibold leading-snug text-gray-800 transition group-hover:text-emerald-700 dark:text-gray-200 dark:group-hover:text-emerald-400">
-                          {a.title}
-                        </p>
-                        <p className="mt-1 text-[10px] text-gray-400 dark:text-gray-500">
-                          {a.date} · {a.readTime}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
 
               {/* Have Questions */}
               <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900">

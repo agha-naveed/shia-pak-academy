@@ -58,6 +58,16 @@ const ARTICLES = [
     image: "/images/blogs/taqwa.jpg",
     slug: "the-importance-of-taqwa-in-todays-world",
   },
+  {
+    title: "Ramadan: A Month of Transformation",
+    desc: "A Month of Allah, and Our Transformation.",
+    category: "Akhlaq (Ethics)",
+    date: "Mar 10, 2026",
+    readTime: "4 min read",
+    image: "/images/blogs/ramzan.jpg",
+    slug: "ramadan-a-month-of-transformation",
+  },
+  
 ];
 
 // ─── PAGE COMPONENT ───────────────────────────────────────────────────────────
