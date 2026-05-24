@@ -20,6 +20,7 @@ import {
   Scale,
   Globe
 } from "lucide-react";
+import Pricing from "@/app/components/Pricing";
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 
@@ -373,10 +374,12 @@ export default function CoursePage() {
         </div>
       </section>
 
+      <Pricing />
+      
       {/* ══════════════════════════════════════════
           FAQ & WHO IT'S FOR
       ══════════════════════════════════════════ */}
-      <section className="mx-auto max-w-7xl px-4 pb-14 grid grid-cols-1 gap-6 lg:grid-cols-[1fr_2fr]">
+      <section className="mx-auto mt-14 max-w-7xl px-4 pb-14 grid grid-cols-1 gap-6 lg:grid-cols-[1fr_2fr]">
         
         {/* Who it's for */}
         <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-colors dark:border-gray-800 dark:bg-gray-900">
