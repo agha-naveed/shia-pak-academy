@@ -1,5 +1,5 @@
 import Image from "next/image";
-import blogBg from "@/public/images/blog.png";
+import blogBg from "@/public/images/blog.webp";
 
 interface BlogHeroProps {
   title: string;

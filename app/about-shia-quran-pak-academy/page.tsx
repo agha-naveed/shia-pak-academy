@@ -131,7 +131,7 @@ export default function AboutPage() {
             <div className="relative overflow-hidden rounded-3xl border border-gray-100 bg-white p-2 shadow-xl dark:border-gray-800 dark:bg-gray-900">
               <div className="w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800">
                 <Image 
-                  src="/images/about-hero.png" // Place an appropriate image in your public/images folder
+                  src="/images/about-hero.webp" // Place an appropriate image in your public/images folder
                   alt="Islamic Studies at Shia Quran Pak Academy" 
                   width={800} 
                   height={600} 
@@ -139,7 +139,7 @@ export default function AboutPage() {
                   loading="lazy"
                   fetchPriority="low"
                   placeholder="blur"
-                  blurDataURL="/images/about-hero.png" // Place an appropriate image in your public/images folder
+                  blurDataURL="/images/about-hero.webp" // Place an appropriate image in your public/images folder
                 />
               </div>
             </div>
@@ -255,7 +255,7 @@ export default function AboutPage() {
                 {/* <div className="absolute inset-0 opacity-10 mix-blend-overlay" /> */}
                 
                 <Image 
-                  src="/images/with_whatsapp.png" // Place an appropriate image in your public/images folder
+                  src="/images/with_whatsapp.webp" // Place an appropriate image in your public/images folder
                   alt="Islamic Studies at Shia Quran Pak Academy" 
                   width={800} 
                   height={600} 
@@ -263,7 +263,7 @@ export default function AboutPage() {
                   loading="lazy"
                   fetchPriority="low"
                   placeholder="blur"
-                  blurDataURL="/images/with_whatsapp.png" // Place an appropriate image in your public/images folder
+                  blurDataURL="/images/with_whatsapp.webp" // Place an appropriate image in your public/images folder
                 />
                 {/* <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
                   <h4 className="mb-2 text-xl font-bold text-white">Learn via WhatsApp</h4>

@@ -102,6 +102,10 @@ function BlogContent() {
                   src={article.image}
                   alt={article.title}
                   fill
+                  fetchPriority="low"
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL={article.image}
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute bottom-3 left-3 rounded bg-emerald-900/90 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur-sm dark:bg-emerald-700/90">

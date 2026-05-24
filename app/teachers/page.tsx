@@ -21,7 +21,7 @@ import Image from "next/image";
 
 const TEACHER_TYPES = [
   {
-    image: "/images/teachers/male-teacher.png",
+    image: "/images/teachers/male-teacher.webp",
     title: "Online Shia Male Quran Teacher",
     desc: "Qualified male scholars and Quran teachers offering one-on-one and group sessions.",
     href: "/teachers/shia-male-teacher",
@@ -31,7 +31,7 @@ const TEACHER_TYPES = [
     features: ["Tajweed & Recitation", "Tafseer Classes", "Fiqh & Masail", "Flexible Timings"],
   },
   {
-    image: "/images/teachers/female-teacher.png",
+    image: "/images/teachers/female-teacher.webp",
     title: "Online Shia Female Quran Teacher",
     desc: "Qualified female scholars offering comfortable, private learning sessions for sisters.",
     href: "/teachers/shia-female-teacher",
@@ -41,7 +41,7 @@ const TEACHER_TYPES = [
     features: ["Ladies-Only Classes", "Tajweed & Quran", "Islamic Studies", "Flexible Timings"],
   },
   {
-    image: "/images/teachers/tutor.png",
+    image: "/images/teachers/tutor.webp",
     title: "Online Shia Quran Tutors",
     desc: "Private tutors for children and adults — beginner to advanced levels, all subjects.",
     href: "/teachers/online-shia-tutors",
@@ -146,7 +146,7 @@ export default function TeachersPage() {
               className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
               {/* Top gradient banner */}
               <div className={`h-45 w-full bg-gradient-to-br ${type.color} flex items-center justify-center text-7xl relative`}>
-                <Image src={type.image} alt="" width={400} height={400} className="w-full h-full object-cover object-center" />
+                <Image src={type.image} alt="" width={400} height={400} className="w-full h-full object-cover object-center" placeholder="blur" blurDataURL={type.image} />
                 <span className={`absolute left-3 top-3 rounded-full px-2.5 py-1 text-[10px] font-bold text-white ${type.badgeColor}`}>
                   {type.badge}
                 </span>
