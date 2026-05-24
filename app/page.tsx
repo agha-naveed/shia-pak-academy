@@ -12,6 +12,7 @@ import {
   Volume2,
   Smartphone,
   ShieldCheck,
+  BookOpenText,
 } from "lucide-react";
 import Image from "next/image";
 import Pricing from "./components/Pricing";
@@ -107,10 +108,10 @@ export default function HomePage() {
               </div>
               <div className="mt-10 flex flex-wrap gap-6 sm:gap-8">
                 {[
-                  { icon: Users, value: "10K+", label: "Students" },
-                  { icon: BookMarked, value: "500+", label: "Lessons" },
-                  { icon: Landmark, value: "100+", label: "Ziyarats" },
-                  { icon: GraduationCap, value: "50+", label: "Scholars" },
+                  { icon: Users, value: "1K+", label: "Students" },
+                  { icon: BookMarked, value: "100+", label: "Lessons" },
+                  { icon: BookOpenText, value: "10+", label: "Ziyarats" },
+                  { icon: GraduationCap, value: "10+", label: "Scholars" },
                 ].map((s) => (
                   <div key={s.label} className="flex items-center gap-2">
                     <s.icon className="h-5 w-5 text-emerald-500" />

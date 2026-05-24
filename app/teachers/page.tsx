@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import TeacherHero from "../components/TeacherHero";
 import Image from "next/image";
+import logo from "@/public/logo.png"
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 
@@ -291,8 +292,8 @@ export default function TeachersPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-900 to-emerald-950">
           <div className="flex flex-col items-center gap-6 px-8 py-10 text-center sm:flex-row sm:text-left">
-            <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-white/10 text-4xl">
-              🕌
+            <div className="h-16 w-16">
+              <Image src={logo} alt="" width={100} height={100} />
             </div>
             <div className="flex-1">
               <h3 className="mb-1 text-xl font-extrabold text-white sm:text-2xl">
