@@ -7,19 +7,12 @@ import {
     Search,
     ChevronDown,
     BookOpen,
-    BarChart2,
-    Bookmark,
     LayoutGrid,
     List,
     RefreshCw,
     ChevronRight,
     BookMarked,
-    Scale,
-    MapPin,
-    HandMetal,
     Clock3,
-    GraduationCap,
-    Languages,
 } from "lucide-react";
 import quran from "@/public/quran.png"
 

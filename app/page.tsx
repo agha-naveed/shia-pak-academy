@@ -14,6 +14,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import Image from "next/image";
+import Pricing from "./components/Pricing";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 const CATEGORIES = [
@@ -290,6 +291,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+        <Pricing />
 
       {/* ══════════════════════════════════════════
           LATEST ARTICLES
