@@ -84,20 +84,33 @@ export default function Footer() {
       <div className="border-t border-gray-800">
         <div className="mx-auto flex md:flex-row flex-col gap-2 max-w-7xl items-center justify-between px-4 py-5 text-center text-xs text-gray-700">
           <div>
-            © 2026&nbsp;
-            Shia Quran Pak Academy
+            © {new Date().getFullYear()}&nbsp;
+            <Link href={"/"} className="cursor-pointer font-semibold transition-all hover:text-emerald-400">Shia Quran Pak Academy</Link>
             &nbsp;. All Rights Reserved.
           </div>
-          <div className="group relative inline-flex justify-center">
-            Developer:&nbsp;
+          
+          <div className="flex flex-wrap items-center justify-center gap-1.5">
+            <span>Powered by</span>
             <Link 
-              href={"https://aghanaveed.vercel.app"} 
+              href="https://auraofficial.tech"
               target="_blank"
-              className="font-medium text-gray-600 transition-colors hover:text-emerald-400"
+              className="font-bold text-gray-700 transition-colors hover:text-emerald-400"
+            >
+              Aura Technologies
+            </Link>
+            <span className="hidden sm:inline mx-1 text-gray-800">|</span>
+            <span className="sm:hidden w-full h-0"></span>
+            <span>Dev:</span>
+            <Link 
+              href="https://aghanaveed.vercel.app" 
+              target="_blank"
+              className="font-medium text-gray-600 transition-colors hover:text-emerald-400 underline decoration-gray-800 underline-offset-4 hover:decoration-emerald-400"
             >
               Agha Naveed
             </Link>
           </div>
+
+
         </div>
       </div>
     </footer>
