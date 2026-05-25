@@ -1,21 +1,75 @@
 import type { Metadata, Viewport } from "next";
+import { Inter, Amiri, Scheherazade_New } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import { ThemeProvider } from "@/app/components/ThemeProvider";
 
+// ─── FONT OPTIMIZATION ────────────────────────────────────────────────────────
+const inter = Inter({ 
+  subsets: ["latin"], 
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const amiri = Amiri({ 
+  weight: ["400", "700"], 
+  subsets: ["arabic"],
+  variable: "--font-amiri",
+  display: "swap",
+});
+
+const scheherazade = Scheherazade_New({ 
+  weight: ["400", "700"], 
+  subsets: ["arabic"],
+  variable: "--font-scheherazade",
+  display: "swap",
+});
+
 // ─── SEO METADATA ─────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yourdomain.com"),
+  // IMPORTANT: Change this to your actual deployed domain
+  metadataBase: new URL("https://shiaquranpak.com"), 
   title: {
-    default: "Shia Dinyaat — Learn. Believe. Practice.",
-    template: "%s | Shia Dinyaat",
+    default: "Shia Quran Pak Academy | Learn. Believe. Practice.",
+    template: "%s | Shia Quran Pak Academy",
   },
   description:
-    "A complete platform to learn Quran, Shia Dinyaat, Ziyarat and the teachings of Ahlulbayt (عليهم السلام).",
-  keywords: ["Quran", "Shia", "Dinyaat", "Ziyarat", "Islamic Learning", "Ahlulbayt"],
-  authors: [{ name: "Agha Naveed" }],
-  creator: "Agha Naveed",
+    "A complete platform to learn Quran, Shia Dinyaat, Ziyarat and the teachings of Ahlulbayt (عليهم السلام) online with certified scholars.",
+  keywords: ["Shia Quran Classes", "Online Quran Academy", "Shia", "Dinyaat", "Ziyarat", "Ahlulbayt", "Online Tajweed"],
+  authors: [{ name: "Shia Quran Pak Academy" }],
+  creator: "Shia Quran Pak Academy",
+  
+  // Open Graph for WhatsApp, Facebook, LinkedIn
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    title: "Shia Quran Pak Academy | Online Classes",
+    description: "Master the recitation, understand the divine meanings, and build a strong Islamic foundation from anywhere in the world.",
+    siteName: "Shia Quran Pak Academy",
+    images: [
+      {
+        url: "/og-image.jpg", // Create a 1200x630 image and put it in your /public folder
+        width: 1200,
+        height: 630,
+        alt: "Shia Quran Pak Academy Preview",
+      },
+    ],
+  },
+  
+  // Twitter Card metadata
+  twitter: {
+    card: "summary_large_image",
+    title: "Shia Quran Pak Academy",
+    description: "Learn Quran, Shia Dinyaat, and Ziyarat online.",
+    images: ["/og-image.jpg"], // Uses the same image from the public folder
+  },
+  
+  // Canonical URL prevents duplicate content penalties
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export const viewport: Viewport = {
@@ -36,18 +90,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Scheherazade+New:wght@400;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      {/* Tailwind classes here handle the root background. 
-        next-themes will automatically add/remove the "dark" class to the HTML tag.
-      */}
-      <body className="flex min-h-screen flex-col bg-white text-gray-900 font-sans antialiased transition-colors duration-300 dark:bg-gray-950 dark:text-gray-100">
+      {/* We apply the font variables directly to the body tag */}
+      <body 
+        className={`${inter.variable} ${amiri.variable} ${scheherazade.variable} font-sans flex min-h-screen flex-col bg-white text-gray-900 antialiased transition-colors duration-300 dark:bg-gray-950 dark:text-gray-100`}
+      >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
           <main className="grow">

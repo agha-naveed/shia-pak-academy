@@ -5,8 +5,8 @@
 
 @theme {
   /* Fonts */
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-arabic: "Scheherazade New", "Amiri", serif;
+  --font-sans: "Inter";
+  --font-arabic: "Amiri";
 
   /* Emerald colors */
   --color-emerald-400: #34d399;
