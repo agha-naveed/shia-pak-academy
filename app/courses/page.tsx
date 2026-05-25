@@ -42,8 +42,8 @@ type Course = {
 const COURSES: Course[] = [
     {
         id: 1,
-        title: "Yassarnal Quran",
-        desc: "The foundational step to reading the Holy Quran with correct pronunciation (Makharij).",
+        title: "Shia Yassarnal Quran Course Online",
+        desc: "Start your journey of Quran learning with proper pronunciation and correct Makharij with Yassarnal Quran Course Online.",
         level: "Beginner Level",
         badge: "New",
         imgBg: "from-stone-900 via-emerald-950 to-stone-800",
@@ -53,8 +53,8 @@ const COURSES: Course[] = [
     },
     {
         id: 2,
-        title: "Tajweed Quran Course",
-        desc: "Perfect your recitation and master the intricate rules of Tajweed with a live teacher.",
+        title: "Shia Tajweed e Quran Course Online",
+        desc: "Improve your Quran recitation and learn the essential rules of Tajweed with guidance from a qualified live teacher.",
         level: "Intermediate",
         badge: "Bestseller",
         imgBg: "from-emerald-950 via-stone-900 to-amber-900",
@@ -64,7 +64,7 @@ const COURSES: Course[] = [
     },
     {
         id: 3,
-        title: "Shia Tafseer Course",
+        title: "Shia Tafseer e Quran Course Online",
         desc: "Unveil the depths of the Quran through authentic teachings of Ahlulbayt (عليهم السلام).",
         level: "All Levels",
         badge: "Bestseller",
@@ -75,7 +75,7 @@ const COURSES: Course[] = [
     },
     {
         id: 4,
-        title: "Quran Memorization (Hifz)",
+        title: "Shia Quran Memorization (Hifz) Course Online",
         desc: "Commit the words of Allah to your heart with proven retention and revision techniques.",
         level: "All Levels",
         imgBg: "from-amber-950 via-stone-900 to-yellow-950",
@@ -85,7 +85,7 @@ const COURSES: Course[] = [
     },
     {
         id: 5,
-        title: "Quran Translation (Tarjuma)",
+        title: "Shia Quran Translation (Tarjuma) Course Online",
         desc: "Understand the direct word-for-word meaning of the Holy Quran and your daily prayers.",
         level: "Beginner Level",
         imgBg: "from-yellow-950 via-stone-900 to-amber-950",
@@ -95,7 +95,7 @@ const COURSES: Course[] = [
     },
     {
         id: 6,
-        title: "Nahjul Balagha",
+        title: "Nahjul Balagha Course Online",
         desc: "Explore the peak of eloquence, justice, and wisdom of Imam Ali (عليه السلام).",
         level: "Intermediate",
         badge: "New",
@@ -106,7 +106,7 @@ const COURSES: Course[] = [
     },
     {
         id: 7,
-        title: "Shia Islamic Studies",
+        title: "Shia Islamic Studies Course Online",
         desc: "Comprehensive guide to Beliefs (Aqaid), Laws (Fiqh), History, and Ethics (Akhlaq).",
         level: "Beginner Level",
         badge: "Bestseller",
@@ -124,53 +124,109 @@ function CourseCard({ course, view }: { course: Course; view: "grid" | "list" })
         return (
             <Link
                 href={course.href}
-                className="group flex gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-gray-900 dark:hover:border-gray-600"
+                className="group flex flex-col sm:flex-row gap-5 rounded-2xl border border-gray-200 bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900"
             >
                 {/* Thumb */}
-                <div className={`relative h-24 w-36 shrink-0 overflow-hidden rounded-lg bg-gradient-to-br ${course.imgBg} flex items-center justify-center text-4xl`}>
-                    <Image src={course.image} alt={course.title} fill className="h-full w-full object-cover" />
+                <div className={`relative h-48 sm:h-auto sm:w-72 shrink-0 overflow-hidden rounded-xl bg-gradient-to-br ${course.imgBg}`}>
+                    <Image 
+                        src={course.image} 
+                        alt={course.title} 
+                        fill 
+                        className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                    />
                     {course.badge && (
-                        <span className={`absolute left-2 top-2 rounded-md px-2 py-0.5 text-[10px] font-bold text-white ${course.badge === "Bestseller" ? "bg-emerald-600" : "bg-emerald-500"}`}>
+                        <span className={`absolute left-3 top-3 z-10 rounded-md px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-md ${course.badge === "Bestseller" ? "bg-amber-500" : "bg-emerald-500"}`}>
                             {course.badge}
                         </span>
                     )}
                 </div>
+                
                 {/* Info */}
-                <div className="flex flex-1 flex-col justify-between">
-                    <div>
-                        <h3 className="mb-1 text-sm font-bold text-gray-900 dark:text-gray-100">{course.title}</h3>
-                        <p className="text-xs leading-relaxed text-gray-500 dark:text-gray-400">{course.desc}</p>
+                <div className="flex flex-1 flex-col justify-center py-2 pr-4">
+                    {/* Added Content: Category & Level Tags */}
+                    <div className="mb-3 flex flex-wrap items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                        <span className="rounded-full bg-gray-100 px-3 py-1 dark:bg-gray-800">
+                            {course.category}
+                        </span>
+                        <span className="flex items-center gap-1.5">
+                            <span className="h-1 w-1 rounded-full bg-gray-400 dark:bg-gray-500"></span>
+                            {course.level}
+                        </span>
+                    </div>
+
+                    <h3 className="mb-2 text-xl font-bold text-gray-900 transition-colors group-hover:text-emerald-600 dark:text-gray-100 dark:group-hover:text-emerald-400">
+                        {course.title}
+                    </h3>
+                    
+                    <p className="mb-6 text-sm leading-relaxed text-gray-600 dark:text-gray-400 max-w-2xl">
+                        {course.desc}
+                    </p>
+
+                    {/* Added Content: Call to Action */}
+                    <div className="mt-auto flex items-center gap-2">
+                        <span className="text-sm font-semibold text-emerald-600 dark:text-emerald-500">
+                            Explore Course Details
+                        </span>
+                        <ChevronRight className="h-4 w-4 text-emerald-600 transition-transform group-hover:translate-x-1 dark:text-emerald-500" />
                     </div>
                 </div>
             </Link>
         );
     }
 
+    // GRID VIEW
     return (
         <Link
             href={course.href}
-            className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-gray-900 dark:hover:border-gray-600"
+            className="group flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-800 dark:bg-gray-900"
         >
             {/* Thumbnail */}
-            <div className={`relative h-60 w-full bg-gradient-to-br ${course.imgBg} flex items-center justify-center text-6xl overflow-hidden`}>
+            <div className={`relative h-56 w-full bg-gradient-to-br ${course.imgBg} flex items-center justify-center overflow-hidden`}>
                 {course.badge && (
-                    <span className={`absolute left-3 top-3 z-10 rounded-md px-2.5 py-1 text-[11px] font-bold text-white shadow ${course.badge === "Bestseller" ? "bg-emerald-600" : "bg-emerald-500"}`}>
+                    <span className={`absolute left-4 top-4 z-10 rounded-md px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-md ${course.badge === "Bestseller" ? "bg-amber-500" : "bg-emerald-500"}`}>
                         {course.badge}
                     </span>
                 )}
-                <span className="opacity-80 transition-all group-hover:scale-110 w-full h-full relative">
-                    <Image src={course.image} alt={course.title} fill className="h-full w-full object-cover" />
-                </span>
+                <Image 
+                    src={course.image} 
+                    alt={course.title} 
+                    fill 
+                    className="object-cover opacity-90 transition-all duration-700 group-hover:scale-110 group-hover:opacity-100" 
+                />
+                {/* Subtle overlay on hover for a premium feel */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </div>
 
             {/* Body */}
-            <div className="flex flex-1 flex-col p-4">
-                <h3 className="mb-1 text-sm font-bold text-gray-900 dark:text-gray-100 leading-snug">
+            <div className="flex flex-1 flex-col p-5">
+                {/* Added Content: Category & Level Tags */}
+                <div className="mb-3 flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                    <span className="rounded-full bg-gray-100 px-2.5 py-1 dark:bg-gray-800">
+                        {course.category}
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                        <span className="h-1 w-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+                        {course.level}
+                    </span>
+                </div>
+
+                <h3 className="mb-2 text-lg font-bold leading-tight text-gray-900 transition-colors group-hover:text-emerald-600 dark:text-gray-100 dark:group-hover:text-emerald-400">
                     {course.title}
                 </h3>
-                <p className="mb-3 text-xs leading-relaxed text-gray-500 dark:text-gray-400 flex-1">
+                
+                <p className="mb-6 text-sm leading-relaxed text-gray-600 line-clamp-2 dark:text-gray-400 flex-1">
                     {course.desc}
                 </p>
+
+                {/* Added Content: Footer Action Bar */}
+                <div className="mt-auto flex items-center justify-between border-t border-gray-100 pt-4 dark:border-gray-800">
+                    <span className="text-sm font-semibold text-emerald-600 dark:text-emerald-500">
+                        View Course
+                    </span>
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 transition-colors group-hover:bg-emerald-600 group-hover:text-white dark:bg-emerald-900/30 dark:text-emerald-400 dark:group-hover:bg-emerald-600 dark:group-hover:text-white">
+                        <ChevronRight className="h-4 w-4" />
+                    </div>
+                </div>
             </div>
         </Link>
     );
@@ -224,7 +280,7 @@ export default function CoursesPage() {
                         </div>
                         <div className="relative hidden lg:block">
                             <div className="h-36 w-64 flex items-center justify-center text-7xl">
-                                <Image src={quran} alt="Quran" width={200} height={200} />
+                                <Image src={quran} alt="Quran e Kareem" width={200} height={200} />
                             </div>
                         </div>
                     </div>
@@ -251,7 +307,7 @@ export default function CoursesPage() {
 
                         {/* Category Dropdown */}
                         <div className="relative" onClick={(e) => e.stopPropagation()}>
-                            <button
+                            <button aria-label="Set Category"
                                 onClick={() => setOpenDropdown(openDropdown === "category" ? null : "category")}
                                 className="flex items-center gap-1.5 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-600 transition hover:border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-600"
                             >
@@ -263,6 +319,7 @@ export default function CoursesPage() {
                                 <div className="absolute left-0 mt-2 w-48 flex flex-col gap-1 rounded-xl border border-gray-200 bg-white p-2 shadow-lg dark:border-gray-700 dark:bg-gray-900">
                                     {CATEGORIES.map((cat) => (
                                         <button
+                                            aria-label={`choose ${cat.label} category`}
                                             key={cat.label}
                                             onClick={() => {
                                                 setActiveCategory(cat.label);
@@ -281,6 +338,7 @@ export default function CoursesPage() {
                         {/* Level Dropdown */}
                         <div className="relative" onClick={(e) => e.stopPropagation()}>
                             <button
+                                aria-label="choose level"
                                 onClick={() => setOpenDropdown(openDropdown === "level" ? null : "level")}
                                 className="flex items-center gap-1.5 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-600 transition hover:border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-600"
                             >
@@ -292,6 +350,7 @@ export default function CoursesPage() {
                                 <div className="absolute left-0 mt-2 w-40 flex flex-col gap-1 rounded-xl border border-gray-200 bg-white p-2 shadow-lg dark:border-gray-700 dark:bg-gray-900">
                                     {LEVELS.map((level) => (
                                         <button
+                                            aria-label={"set level "+level}
                                             key={level}
                                             onClick={() => {
                                                 setActiveLevel(level);
@@ -355,13 +414,13 @@ export default function CoursesPage() {
                     <div className="flex items-center gap-2">
                         <span className="text-sm text-gray-400 dark:text-gray-500">View as:</span>
                         <button
-                            onClick={() => setView("grid")}
+                            onClick={() => setView("grid")} aria-label="Set Grid View"
                             className={`rounded-md p-1.5 transition ${view === "grid" ? "bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900" : "text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"}`}
                         >
                             <LayoutGrid className="h-4 w-4" />
                         </button>
                         <button
-                            onClick={() => setView("list")}
+                            onClick={() => setView("list")} aria-label="Set List View"
                             className={`rounded-md p-1.5 transition ${view === "list" ? "bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900" : "text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"}`}
                         >
                             <List className="h-4 w-4" />
@@ -395,7 +454,7 @@ export default function CoursesPage() {
         ══════════════════════════════════════════ */}
                 {visibleCount < filtered.length && (
                     <div className="mt-10 flex justify-center">
-                        <button
+                        <button aria-label="Load More Courses"
                             onClick={() => setVisibleCount((n) => n + 6)}
                             className="flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-8 py-3 text-sm font-semibold text-gray-700 shadow-sm transition hover:border-gray-400 hover:shadow-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200 dark:hover:border-gray-500"
                         >

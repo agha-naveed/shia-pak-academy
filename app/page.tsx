@@ -16,6 +16,9 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Pricing from "./components/Pricing";
+import WhyChooseUs from "./components/WhyChooseUs";
+import CtaSection from "./components/CtaSection";
+import Testimonials from "./components/Testimonials";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 const CATEGORIES = [
@@ -75,7 +78,7 @@ export default function HomePage() {
         <div className="absolute inset-0 lg:hidden">
           <Image
             src="/karbala-bg.jpg"
-            alt="Karbala"
+            alt="Karbala Image"
             fill
             priority
             className="object-cover object-center opacity-50"
@@ -130,7 +133,7 @@ export default function HomePage() {
                 className="xl:w-[170%] w-[210%]"
                 style={{ position: "absolute", top: "-39%", right: "-18%", zIndex: 0, pointerEvents: "none", userSelect: "none" }}
               >
-                <Image src="/karbala-bg.jpg" alt="Karbala" width={900} height={600} priority className="w-full opacity-80" sizes="60vw" />
+                <Image src="/karbala-bg.jpg" alt="Karbala Image" width={900} height={600} priority className="w-full opacity-80" sizes="60vw" />
               </div>
               <div className="relative z-10 flex flex-col items-end py-16 text-right">
                 <p className="mb-3 text-4xl leading-loose text-amber-300 lg:text-5xl" dir="rtl" style={{ fontFamily: "'Scheherazade New', 'Amiri', serif" }}>
@@ -207,6 +210,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <WhyChooseUs />
+      
       {/* ══════════════════════════════════════════
           POPULAR COURSES
       ══════════════════════════════════════════ */}
@@ -226,7 +231,7 @@ export default function HomePage() {
                 className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-gray-900"
               >
                 <div className={`relative h-32 w-full ${c.imgBg} flex items-center justify-center text-4xl sm:h-36 sm:text-5xl`}>
-                  <Image src={c.image} className={"w-full h-full object-cover"} width={200} height={200} alt="" />
+                  <Image src={c.image} className={"w-full h-full object-cover"} width={200} height={200} alt={`${c.title} image`} />
                   {c.badge && (
                     <span className={`absolute left-2 top-2 rounded-md px-2 py-0.5 text-[10px] font-bold text-white ${c.badgeColor}`}>
                       {c.badge}
@@ -242,6 +247,10 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+
+
+      <Testimonials />
 
       {/* ══════════════════════════════════════════
           STRUCTURED LEARNING PATHS
@@ -310,7 +319,7 @@ export default function HomePage() {
                 className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-gray-900"
               >
                 <div className={`h-36 w-full flex items-center justify-center text-5xl`}>
-                  <Image src={a.image} width={200} height={200} className="w-full object-cover h-full" alt="" />
+                  <Image src={a.image} width={200} height={200} className="w-full object-cover h-full" alt={`${a.title} image`} />
                 </div>
                 <div className="p-4">
                   <p className="text-sm font-semibold leading-tight">{a.title}</p>
@@ -324,6 +333,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      
+      <CtaSection />
 
     </div>
   );

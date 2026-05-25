@@ -11,7 +11,7 @@ const PACKAGES = {
     { title: "Advanced", price: 50, weekly: "5 Days/Week", monthly: "20 Days/Month", trial: "1 Day Free Trial", currency: { aud: 70, eur: 43, gbp: 37 }, students: 1 },
   ],
   family: [
-    { title: "Family Basic", price: 55, weekly: "1 Day/Week", monthly: "4 Days/Month", trial: "2 Days Free Trial", currency: { aud: 0, eur: 0, gbp: 0 }, students: 2 },
+    { title: "Family Basic", price: 55, weekly: "1 Day/Week", monthly: "4 Days/Month", trial: "2 Days Free Trial", currency: { aud: 77, eur: 48, gbp: 41 }, students: 2 },
     { title: "Family Standard", price: 60, weekly: "2 Days/Week", monthly: "8 Days/Month", trial: "2 Days Free Trial", currency: { aud: 91, eur: 56, gbp: 48 }, students: 2, popular: true },
     { title: "Family Plus", price: 65, weekly: "3 Days/Week", monthly: "12 Days/Month", trial: "2 Days Free Trial", currency: { aud: 84, eur: 52, gbp: 44 }, students: 2 },
     { title: "Family Pro", price: 70, weekly: "5 Days/Week", monthly: "20 Days/Month", trial: "2 Days Free Trial", currency: { aud: 98, eur: 60, gbp: 52 }, students: 2 },
