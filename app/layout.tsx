@@ -4,6 +4,9 @@ import "./globals.css";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import { ThemeProvider } from "@/app/components/ThemeProvider";
+import whatsapp from "@/public/whatsappIcon.png"
+import Image from "next/image";
+import Link from "next/link";
 
 // ─── FONT OPTIMIZATION ────────────────────────────────────────────────────────
 const inter = Inter({ 
@@ -99,6 +102,9 @@ export default function RootLayout({
           <main className="grow">
             {children}
           </main>
+            <Link href={"https://wa.me/+923394022926"} target="_blank" className="fixed bottom-7 right-7">
+              <Image src={whatsapp} alt="Whatsapp Icon" width={40} height={40} />
+            </Link>
           <Footer />
         </ThemeProvider>
       </body>
