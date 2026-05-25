@@ -2923,3 +2923,595 @@ export const ZIYARAT_E_NAHIYA = [
   },
 
 ];
+
+export const ZIYARAT_E_WARISA = [
+
+  // ── Salutations as the Inheritor of the Prophets ──────────────────────────────
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ يَا وَارِثَ آدَمَ صَفْوَةِ ٱللَّهِ",
+    transliteration: "alssalamu `alayka ya waritha adama safwati allahi",
+    translation: "Peace be upon you, O inheritor of Adam the choice of Allah.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ يَا وَارِثَ نُوحٍ نَبِيِّ ٱللَّهِ",
+    transliteration: "alssalamu `alayka ya waritha nuhin nabiyyi allahi",
+    translation: "Peace be upon you, O inheritor of Noah the prophet of Allah.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ يَا وَارِثَ إِبْرَاهِيمَ خَلِيلِ ٱللَّهِ",
+    transliteration: "alssalamu `alayka ya waritha ibrahima khalili allahi",
+    translation: "Peace be upon you, O inheritor of Abraham the intimate friend of Allah.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ يَا وَارِثَ مُوسَىٰ كَلِيمِ ٱللَّهِ",
+    transliteration: "alssalamu `alayka ya waritha musa kalimi allahi",
+    translation: "Peace be upon you, O inheritor of Moses the spoken by Allah.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ يَا وَارِثَ عِيسَىٰ رُوحِ ٱللَّهِ",
+    transliteration: "alssalamu `alayka ya waritha `isa ruhi allahi",
+    translation: "Peace be upon you, O inheritor of Jesus the spirit of Allah.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ يَا وَارِثَ مُحَمَّدٍ حَبِيبِ ٱللَّهِ",
+    transliteration: "alssalamu `alayka ya waritha muhammadin habibi allahi",
+    translation: "Peace be upon you, O inheritor of Muhammad the most beloved by Allah.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ يَا وَارِثَ أَمِيرِ ٱلْمُؤْمِنِينَ عَلَيْهِ ٱلسَّلاَمُ",
+    transliteration: "alssalamu `alayka ya waritha amiri almu'minina",
+    translation: "Peace be upon you, O inheritor of the Commander of the Faithful, peace be upon him.",
+  },
+
+  // ── Salutations by Lineage ────────────────────────────────────────────────────
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ يَا بْنَ مُحَمَّدٍ ٱلْمُصْطَفَىٰ",
+    transliteration: "alssalamu `alayka yabna muhammadin almustafa",
+    translation: "Peace be upon you, O son of Muhammad the well-chosen Prophet.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ يَا بْنَ عَلِيٍّ ٱلْمُرْتَضَىٰ",
+    transliteration: "alssalamu `alayka yabna `aliyyin almurtada",
+    translation: "Peace be upon you, O son of `Ali the well-pleased.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ يَا بْنَ فَاطِمَةَ ٱلزَّهْرَاءِ",
+    transliteration: "alssalamu `alayka yabna fatimata alzzahra'i",
+    translation: "Peace be upon you, O son of Fatimah the luminous lady.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ يَا بْنَ خَدِيـجَةَ ٱلْكُبْرَىٰ",
+    transliteration: "alssalamu `alayka yabna khadijata alkubra",
+    translation: "Peace be upon you, O son of Khadijah the grand lady.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ يَا ثَارَ ٱللَّهِ وَٱبْنَ ثَارِهِ",
+    transliteration: "alssalamu `alayka ya thara allahi wabna tharihi",
+    translation: "Peace be upon you, O vengeance of Allah, son of His vengeance,",
+  },
+  {
+    type: "segment",
+    arabic: "وَٱلْوِتْرَ ٱلْمَوْتُورَ",
+    transliteration: "walwitra almawtura",
+    translation: "and the unavenged so far.",
+  },
+
+  // ── First Testimony ───────────────────────────────────────────────────────────
+  {
+    type: "segment",
+    arabic: "أَشْهَدُ أَنَّكَ قَدْ أَقَمْتَ ٱلصَّلاَةَ",
+    transliteration: "ashhadu annaka qad aqamta alssalata",
+    translation: "I bear witness that you performed the prayers,",
+  },
+  {
+    type: "segment",
+    arabic: "وَآتَيْتَ ٱلزَّكَاةَ",
+    transliteration: "wa atayta alzzakata",
+    translation: "defrayed the poor-rate,",
+  },
+  {
+    type: "segment",
+    arabic: "وَأَمَرْتَ بِٱلْمَعْرُوفِ",
+    transliteration: "wa amarta bilma`rufi",
+    translation: "enjoined the right,",
+  },
+  {
+    type: "segment",
+    arabic: "وَنَهَيْتَ عَنِ ٱلْمُنْكَرِ",
+    transliteration: "wa nahayta `an almunkari",
+    translation: "forbade the wrong,",
+  },
+  {
+    type: "segment",
+    arabic: "وَأَطَعْتَ ٱللَّهَ وَرَسُولَهُ حَتَّىٰ أَتَاكَ ٱلْيَقِينُ",
+    transliteration: "wa ata`ta allaha wa rasulahu hatta ataka alyaqinu",
+    translation: "and obeyed Allah and His Messenger until death came upon you.",
+  },
+
+  // ── Curses upon the Oppressors ────────────────────────────────────────────────
+  {
+    type: "segment",
+    arabic: "فَلَعَنَ ٱللَّهُ أُمَّةً قَتَلَتْكَ",
+    transliteration: "fala`ana allahu ummatan qatalatka",
+    translation: "So, may Allah curse the people who slew you.",
+  },
+  {
+    type: "segment",
+    arabic: "وَلَعَنَ ٱللَّهُ أُمَّةً ظَلَمَتْكَ",
+    transliteration: "wa la`ana allahu ummatan zalamatka",
+    translation: "May Allah curse the people who persecuted you.",
+  },
+  {
+    type: "segment",
+    arabic: "وَلَعَنَ ٱللَّهُ أُمَّةً سَمِعَتْ بِذٰلِكَ فَرَضِيَتْ بِهِ",
+    transliteration: "wa la`ana allahu ummatan sami`at bidhalika faradiyat bihi",
+    translation: "May Allah curse the people who were pleased when they had heard of that.",
+  },
+
+  // ── Second Witness of Virtue ──────────────────────────────────────────────────
+  {
+    type: "segment",
+    arabic: "يَا مَوْلاَيَ يَا أَبَا عَبْدِ ٱللَّهِ",
+    transliteration: "ya mawlaya ya aba `abdillahi",
+    translation: "O my Master, O Abu-`Abdullah!",
+  },
+  {
+    type: "segment",
+    arabic: "أَشْهَدُ أَنَّكَ كُنْتَ نُوراً فِي ٱلأَصْلاَبِ ٱلشَّامِخَةِ",
+    transliteration: "ashhadu annaka kunta nuran fi al-aslabi alshshamikhati",
+    translation: "I bear witness that you were light in the sublime loins",
+  },
+  {
+    type: "segment",
+    arabic: "وَٱلأَرْحَامِ ٱلْمُطَهَّرَةِ",
+    transliteration: "wal-arhami almutahharati",
+    translation: "and purified wombs;",
+  },
+  {
+    type: "segment",
+    arabic: "لَمْ تُنَجِّسْكَ ٱلْجَاهِلِيَّةُ بِأَنْجَاسِهَا",
+    transliteration: "lam tunajjiska aljahiliyyatu bi'anjasiha",
+    translation: "the impurities of the Ignorance Era could not object you to filth",
+  },
+  {
+    type: "segment",
+    arabic: "وَلَمْ تُلْبِسْكَ مِنْ مُدْلَهِمَّاتِ ثِيَابِهَا",
+    transliteration: "wa lam tulbiska min mudlahimmati thiyabiha",
+    translation: "nor could it dress you its murky clothes.",
+  },
+  {
+    type: "segment",
+    arabic: "وَأَشْهَدُ أَنَّكَ مِنْ دَعَائِمِ ٱلدِّينِ",
+    transliteration: "wa ashhadu annaka min da`a'imi alddini",
+    translation: "I also bear witness that you are one of the mainstays of the religion",
+  },
+  {
+    type: "segment",
+    arabic: "وَأَرْكَانِ ٱلْمُؤْمِنِينَ",
+    transliteration: "wa arkani almu'minina",
+    translation: "and the supports of the faithful believers.",
+  },
+  {
+    type: "segment",
+    arabic: "وَأَشْهَدُ أَنَّكَ ٱلإِمَامُ ٱلْبَرُّ ٱلتَّقِيُّ",
+    transliteration: "wa ashhadu annaka al-imamu albarru alttaqiyyu",
+    translation: "I also bear witness that you are the God-fearing, pious,",
+  },
+  {
+    type: "segment",
+    arabic: "ٱلرَّضِيُّ ٱلزَّكِيُّ",
+    transliteration: "alrradiyyu alzzakiyyu",
+    translation: "pleased, immaculate,",
+  },
+  {
+    type: "segment",
+    arabic: "ٱلْهَادِي ٱلْمَهْدِيُّ",
+    transliteration: "alhadi almahdiyyu",
+    translation: "guide, and well-guided Imam.",
+  },
+  {
+    type: "segment",
+    arabic: "وَأَشْهَدُ أَنَّ ٱلأَئِمَّةَ مِنْ وُلْدِكَ كَلِمَةُ ٱلتَّقْوَىٰ",
+    transliteration: "wa ashhadu anna al-a'immata min wuldika kalimatu alttaqwa",
+    translation: "And (I bear witness) that the Imams from your progeny are the spokesmen of piety,",
+  },
+  {
+    type: "segment",
+    arabic: "وَأَعْلاَمُ ٱلْهُدَىٰ",
+    transliteration: "wa a`lamu alhuda",
+    translation: "the signs of guidance,",
+  },
+  {
+    type: "segment",
+    arabic: "وَٱلْعُروَةُ ٱلْوُثْقَىٰ",
+    transliteration: "wal`urwatu alwuthqa",
+    translation: "the firmest handle (of Islam),",
+  },
+  {
+    type: "segment",
+    arabic: "وَٱلْحُجَّةُ عَلَىٰ أَهْلِ ٱلدُّنْيَا",
+    transliteration: "walhujjatu `ala ahli alddunya",
+    translation: "and the decisive Argument against the inhabitants of the world.",
+  },
+
+  // ── Declaration of Faith & Loyalty ───────────────────────────────────────────
+  {
+    type: "segment",
+    arabic: "وَأُشْهِدُ ٱللَّهَ وَمَلاَئِكَتَهُ",
+    transliteration: "wa ushhidu allaha wa mala'ikatahu",
+    translation: "And I call Allah, His angels,",
+  },
+  {
+    type: "segment",
+    arabic: "وَأَنْبِيَاءَهُ وَرُسُلَهُ",
+    transliteration: "wa anbiya'ahu wa rusulahu",
+    translation: "His Prophets, and His Messenger",
+  },
+  {
+    type: "segment",
+    arabic: "أَنِّي بِكُمْ مُؤْمِنٌ وَبِإِيَابِكُمْ",
+    transliteration: "anni bikum mu'minun wa bi'yabikum",
+    translation: "to witness for me that I believe in you all and in your Return,",
+  },
+  {
+    type: "segment",
+    arabic: "مُوقِنٌ بِشَرَائِعِ دِينِي وَخَوَاتِيمِ عَمَلي",
+    transliteration: "muqinun bishara'i`i dini wa khawatimi `amali",
+    translation: "I have full confidence in the laws of my religion and in the seals of my deeds,",
+  },
+  {
+    type: "segment",
+    arabic: "وَقَلْبِي لِقَلْبِكُمْ سِلْمٌ",
+    transliteration: "wa qalbi liqalbikum silmun",
+    translation: "my heart is at peace with you all,",
+  },
+  {
+    type: "segment",
+    arabic: "وَأَمْرِي لأَمْرِكُمْ مُتَّبِعٌ",
+    transliteration: "wa amri li'amrikum muttbi`un",
+    translation: "and all my affairs are based on your commands.",
+  },
+
+  // ── Closing Blessings ─────────────────────────────────────────────────────────
+  {
+    type: "segment",
+    arabic: "صَلَوَاتُ اللَّهِ عَلَيْكُمْ وَعَلَىٰ أَرْوَاحِكُمْ",
+    transliteration: "salawatu allahi `alaykum wa `ala arwahikum",
+    translation: "May Allah's benedictions be on your souls,",
+  },
+  {
+    type: "segment",
+    arabic: "وَعَلَىٰ أَجْسَادِكُمْ وَعَلَىٰ أَجْسَامِكُمْ",
+    transliteration: "wa `ala ajsadikum wa `ala ajsamikum",
+    translation: "your bodies, your forms,",
+  },
+  {
+    type: "segment",
+    arabic: "وَعَلَىٰ شَاهِدِكُمْ وَعَلَىٰ غَائِبِكُمْ",
+    transliteration: "wa `ala shahidikum wa `ala gha'ibkum",
+    translation: "the present and the absent from you,",
+  },
+  {
+    type: "segment",
+    arabic: "وَعَلَىٰ ظَاهِرِكُمْ وَعَلَىٰ بَاطِنِكُمْ",
+    transliteration: "wa `ala zahirikum wa `ala batinikum",
+    translation: "and the apparent and the invisible from you.",
+  },
+
+  // ── At the Tomb ───────────────────────────────────────────────────────────────
+  {
+    type: "segment",
+    arabic: "بِأَبِي أَنْتَ وَأُمِّي يَا بْنَ رَسُولِ ٱللَّهِ",
+    transliteration: "bi'abi anta wa ummi yabna rasuli allahi",
+    translation: "My father and mother be sacrificed for you, O son of the Messenger of Allah!",
+  },
+  {
+    type: "segment",
+    arabic: "بِأَبِي أَنْتَ وَأُمِّي يَا أَبَا عَبْدِ ٱللَّهِ",
+    transliteration: "bi'abi anta wa ummi ya aba `abdillahi",
+    translation: "My father and mother be sacrificed for you, O Abu `Abdullah!",
+  },
+  {
+    type: "segment",
+    arabic: "لَقَدْ عَظُمَتِ ٱلرَّزِيَّةُ",
+    transliteration: "laqad `azumat alrraziyyatu",
+    translation: "Extremely terrible was the calamity",
+  },
+  {
+    type: "segment",
+    arabic: "وَجَلَّتِ ٱلْمُصيبَةُ بِكَ عَلَيْنَا",
+    transliteration: "wa jallat almusibatu bika `alayna",
+    translation: "and astounding is the misfortune that you suffered upon us",
+  },
+  {
+    type: "segment",
+    arabic: "وَعَلَىٰ جَمِيعِ أَهْلِ ٱلسَّمَاوَاتِ وَٱلأَرْضِ",
+    transliteration: "wa `ala jami`i ahli alssamawati wal-ardi",
+    translation: "and upon all the inhabitants of the heavens and the earth.",
+  },
+  {
+    type: "segment",
+    arabic: "فَلَعَنَ ٱللَّهُ أُمَّةً أَسْرَجَتْ وَأَلْجَمَتْ",
+    transliteration: "fala`ana allahu ummatan asrajat wa aljamat",
+    translation: "Therefore, Allah may curse the people who saddled up, gave rein to their horses,",
+  },
+  {
+    type: "segment",
+    arabic: "وَتَهَيَّأَتْ لِقِتَالِكَ",
+    transliteration: "wa tahayya'at liqitalika",
+    translation: "and prepared themselves to kill you.",
+  },
+
+  // ── Supplication at the Shrine ────────────────────────────────────────────────
+  {
+    type: "segment",
+    arabic: "يَا مَوْلاَيَ يَا أَبَا عَبْدِ ٱللَّهِ",
+    transliteration: "ya mawlaya ya aba `abdillahi",
+    translation: "O my Master, O Abu `Abdullah!",
+  },
+  {
+    type: "segment",
+    arabic: "قَصَدْتُ حَرَمَكَ",
+    transliteration: "qasadtu haramaka",
+    translation: "I moved towards your sanctuary",
+  },
+  {
+    type: "segment",
+    arabic: "وَأَتَيْتُ إِلَىٰ مَشْهَدِكَ",
+    transliteration: "wa ataytu ila mashhadika",
+    translation: "and came to your shrine",
+  },
+  {
+    type: "segment",
+    arabic: "أَسْأَلُ ٱللَّهَ بِٱلشَّأْنِ ٱلَّذِي لَكَ عِنْدَهُ",
+    transliteration: "as'alu allaha bilshsha'ni alladhi laka `indahu",
+    translation: "beseeching Allah in the name of the standing that you enjoy with Him",
+  },
+  {
+    type: "segment",
+    arabic: "وَبِٱلْمَحَلِّ ٱلَّذِي لَكَ لَدَيْهِ",
+    transliteration: "wa bilmahalli alladhi laka ladayhi",
+    translation: "and the position that you occupy with Him",
+  },
+  {
+    type: "segment",
+    arabic: "أَنْ يُصَلِّيَ عَلَىٰ مُحَمَّدٍ وَآلِ مُحَمَّدٍ",
+    transliteration: "an yusalliya `ala muhammadin wa ali muhammadin",
+    translation: "to send blessings on Muhammad and on the Household of Muhammad",
+  },
+  {
+    type: "segment",
+    arabic: "وَأَنْ يَجْعَلَنِي مَعَكُمْ فِي ٱلدُّنْيَا وَٱلآخِرَةِ",
+    transliteration: "wa an yaj`alani ma`akum fi alddunya wal-akhirati",
+    translation: "and to keep me with you in this world and in the Hereafter.",
+  },
+
+  // ── Ziyarah of Ali ibn al-Husayn (ع) ─────────────────────────────────────────
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ يَا بْنَ رَسُولِ ٱللَّهِ",
+    transliteration: "alssalamu `alayka yabna rasuli allahi",
+    translation: "Peace be upon you, O son of the Messenger of Allah.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ يَا بْنَ نَبِيِّ ٱللَّهِ",
+    transliteration: "alssalamu `alayka yabna nabiyyi allahi",
+    translation: "Peace be upon you, O son of the Prophet of Allah.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ يَا بْنَ أَمِيرِ ٱلْمُؤْمِنِينَ",
+    transliteration: "alssalamu `alayka yabna amiri almu'minina",
+    translation: "Peace be upon you, O son of the commander of the faithful.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ يَا بْنَ ٱلْحُسَيْنِ ٱلشَّهِيدِ",
+    transliteration: "alssalamu `alayka yabna alhusayni alshshahidi",
+    translation: "Peace be upon you, O son of al-Husayn the martyr.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ أَيُّهَا ٱلشَّهِيدُ",
+    transliteration: "alssalamu `alayka ayyuha alshshahidu",
+    translation: "Peace be upon you, O martyr.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ أَيُّهَا ٱلْمَظْلُومُ وَٱبْنُ ٱلْمَظْلُومِ",
+    transliteration: "alssalamu `alayka ayyuha almazlumu wabnu almazlumi",
+    translation: "Peace be upon you, O wronged and harassed and the son of the wrong and harassed.",
+  },
+  {
+    type: "segment",
+    arabic: "لَعَنَ ٱللَّهُ أُمَّةً قَتَلَتْكَ",
+    transliteration: "la`ana allahu ummatan qatalatka",
+    translation: "Curse of Allah be on those who killed you.",
+  },
+  {
+    type: "segment",
+    arabic: "وَلَعَنَ ٱللَّهُ أُمَّةً ظَلَمَتْكَ",
+    transliteration: "wa la`ana allahu ummatan zalamatka",
+    translation: "Curse of Allah be on those who persecuted you.",
+  },
+  {
+    type: "segment",
+    arabic: "وَلَعَنَ ٱللَّهُ أُمَّةً سَمِعَتْ بِذٰلِكَ فَرَضَيِتْ بِهِ",
+    transliteration: "wa la`ana allahu ummatan sami`at bidhalika faradiyat bihi",
+    translation: "Curse of Allah be on those who heard this even but rested satisfied.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ يَا وَلِيَّ ٱللَّهِ وَٱبْنَ وَلِيِّهِ",
+    transliteration: "alssalamu `alayka ya waliyya allahi wabna waliyyihi",
+    translation: "Peace be upon you, O intimate servant of Allah and the son of His intimate servant.",
+  },
+  {
+    type: "segment",
+    arabic: "لَقَدْ عَظُمَتِ ٱلْمُصيبَةُ",
+    transliteration: "laqad `azumat almusibatu",
+    translation: "Extremely terrible was the calamity",
+  },
+  {
+    type: "segment",
+    arabic: "وَجَلَّتِ ٱلرَّزِيَّةُ بِكَ عَلَيْنَا",
+    transliteration: "wa jallat alrraziyyatu bika `alayna",
+    translation: "and astounding is the misfortune that you suffered, upon us",
+  },
+  {
+    type: "segment",
+    arabic: "وَعَلَىٰ جَمِيعِ ٱلْمُسْلِمينَ",
+    transliteration: "wa `ala jami`i almuslimina",
+    translation: "and upon all Muslims.",
+  },
+  {
+    type: "segment",
+    arabic: "فَلَعَنَ ٱللَّهُ أُمَّةً قَتَلَتْكَ",
+    transliteration: "fala`ana allahu ummatan qatalatka",
+    translation: "So, curse of Allah be on those who killed you",
+  },
+  {
+    type: "segment",
+    arabic: "وَأَبْرَأُ إِلَىٰ ٱللَّهِ وَإِلَيْكَ مِنْهُمْ",
+    transliteration: "wa abra'u ila allahi wa ilayka minhum",
+    translation: "and I disavow them in the presence of Allah and You.",
+  },
+
+  // ── Ziyarah of All Martyrs (Shuhada') ────────────────────────────────────────
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكُمْ يَا أَوْلِيَاءَ ٱللَّهِ وَأَحِبَّائَهُ",
+    transliteration: "alssalamu `alaykum ya awliya'a allahi wa ahibba'ahu",
+    translation: "Peace be upon all of you, O friends and dears of Allah.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكُمْ يَا أَصْفِيَاءَ ٱللَّهِ وَأَوِدَّاءَهُ",
+    transliteration: "alssalamu `alaykum ya asfiya'a allahi wa awidda'ahu",
+    translation: "Peace be upon all of you, O choice of Allah and sincerely attached to Him.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكُمْ يَا أَنْصَارَ دِينِ ٱللَّهِ",
+    transliteration: "alssalamu `alaykum ya ansara dini allahi",
+    translation: "Peace be upon all of you, O supporters of Allah's religion.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكُمْ يَا أَنْصَارَ رَسُولِ ٱللَّهِ",
+    transliteration: "alssalamu `alaykum ya ansara rasuli allahi",
+    translation: "Peace be upon all of you, O supporters of the Messenger of Allah.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكُمْ يَا أَنْصَارَ أَمِيرِ ٱلْمُؤْمِنِينَ",
+    transliteration: "alssalamu `alaykum ya ansara amiri almu'minina",
+    translation: "Peace be upon all of you, O supporters of the Commander of the Faithful.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكُمْ يَا أَنْصَارَ فَاطِمَةَ سَيِّدَةِ نِسَاءِ ٱلْعَالَمِينَ",
+    transliteration: "alssalamu `alaykum ya ansara fatimata sayyidati nisa'i al`alamina",
+    translation: "Peace be upon all of you, O supporters of Fatimah the doyenne of the women of this world.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكُمْ يَا أَنْصَارَ أَبِي مُحَمَّدٍ",
+    transliteration: "alssalamu `alaykum ya ansara abi muhammadin",
+    translation: "Peace be upon all of you, O supporters of Abu Muhammad,",
+  },
+  {
+    type: "segment",
+    arabic: "ٱلْحَسَنِ بْنِ عَلِيٍّ ٱلْوَلِيِّ ٱلنَّاصِحِ",
+    transliteration: "alhasani ibni `aliyyin alwaliyyi alnnasihi",
+    translation: "al-Hasan the son of `Ali, the saintly and sincere.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكُمْ يَا أَنْصَارَ أَبِي عَبْدِ ٱللَّهِ",
+    transliteration: "alssalamu `alaykum ya ansara abi `abdillahi",
+    translation: "Peace be upon all of you, O supporters of Abu-`Abdullah.",
+  },
+  {
+    type: "segment",
+    arabic: "بِأَبِي أَنْتُمْ وَأُمِّي",
+    transliteration: "bi'abi antum wa ummi",
+    translation: "My father and mother be sacrificed for you.",
+  },
+  {
+    type: "segment",
+    arabic: "طِبْتُمْ وَطَابَتِ ٱلأَرْضُ ٱلَّتِي فِيهَا دُفِنْتُمْ",
+    transliteration: "tibtum wa tabat al-ardu allati fiha dufintum",
+    translation: "Verily, pure be you and pure be the soil in which you were buried.",
+  },
+  {
+    type: "segment",
+    arabic: "وَفُزْتُمْ فَوْزاً عَظيماً",
+    transliteration: "wa fuztum fawzan `aziman",
+    translation: "You attained great success.",
+  },
+  {
+    type: "segment",
+    arabic: "فَيَا لَيْتَنِي كُنْتُ مَعَكُمْ فَأَفُوزَ مَعَكُمْ",
+    transliteration: "fayalaytani kuntu ma`akum fa'afuza ma`akum",
+    translation: "Would that I were with you so that I could also share the accomplishment with you.",
+  },
+
+  // ── Ziyarah of Abal Fadhl Abbas (ع) ──────────────────────────────────────────
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ يَا بْنَ امِيرِ ٱلْمُؤْمِنِينَ",
+    transliteration: "alssalamu `alayka yabna amiri almu'minina",
+    translation: "Peace be upon you, O son of the Commander of the Faithful.",
+  },
+  {
+    type: "segment",
+    arabic: "اَلسَّلاَمُ عَلَيْكَ ايُّهَا ٱلْعَبْدُ ٱلصَّالِحُ",
+    transliteration: "alssalamu `alayka ayyuha al`abdu alssalihu",
+    translation: "Peace be upon you, O righteous servant (of Allah)",
+  },
+  {
+    type: "segment",
+    arabic: "ٱلْمُطِيعُ لِلَّهِ وَلِرَسُولِهِ",
+    transliteration: "almuti`u lillahi wa lirasulihi",
+    translation: "and obedient to Allah and to His Messenger.",
+  },
+  {
+    type: "segment",
+    arabic: "اشْهَدُ انَّكَ قَدْ جَاهَدْتَ وَنَصَحْتَ",
+    transliteration: "ashhadu annaka qad jahadta wa nasahta",
+    translation: "I bear witness that you strove (in the way of Allah), acted sincerely,",
+  },
+  {
+    type: "segment",
+    arabic: "وَصَبَرْتَ حَتَّىٰ اتَاكَ ٱلْيَقِينُ",
+    transliteration: "wa sabarta hatta ataka alyaqinu",
+    translation: "and tolerated (harm) until death came upon you.",
+  },
+  {
+    type: "segment",
+    arabic: "لَعَنَ ٱللَّهُ ٱلظَّالِمِينَ لَكُمْ مِنَ ٱلاوَّلِينَ وَٱلآخِرِينَ",
+    transliteration: "la`ana allahu alzzalimina lakum min al-awwalina wal-akhirina",
+    translation: "May Allah curse those who wronged you from the past and the present generations",
+  },
+  {
+    type: "segment",
+    arabic: "وَالْحَقَهُمْ بِدَرْكِ ٱلْجَحِيمِ",
+    transliteration: "wa alhaqahum bidarki aljahimi",
+    translation: "and may He send them to the lowest layer of the blazing Hell.",
+  },
+
+] as const;

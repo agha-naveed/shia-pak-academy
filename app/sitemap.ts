@@ -7,13 +7,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 1. STATIC PARENT ROUTES
   const staticRoutes = [
     '',
-    '/pricing',
     '/about-shia-quran-pak-academy',
-    '/contact-us',
     '/teachers',
     '/ziyarat',
     '/courses',
-    '/blogs'
+    '/blogs',
+    "/more"
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
@@ -29,7 +28,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
+    changeFrequency: 'yearly' as const,
     priority: 0.9,
   }));
 
@@ -39,34 +38,35 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // =====================================================================
 
   // 3. NESTED COURSES
-  const courseSlugs = ['qaida-and-tajweed', 'hifz', 'tafseer-and-translation', 'fiqh-and-ahkam'];
+  const courseSlugs = ['nahjul-balagha-course', 'online-shia-quran-memorization-course', 'online-shia-quran-tajweed-course', 'online-shia-quran-translation-course', "online-shia-tafseer-e-quran-course", "online-shia-yassarnal-quran-course", "shia-islamic-studies-course"];
   const courseRoutes = courseSlugs.map((slug) => ({
     url: `${baseUrl}/courses/${slug}`,
     lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
+    changeFrequency: 'yearly' as const,
     priority: 0.8,
   }));
 
   // 4. NESTED BLOGS
-  const blogSlugs = ['importance-of-tajweed', 'how-to-memorize-quran-fast', 'understanding-ziyarat-ashura'];
+  const blogSlugs = ['how-to-connect-with-quran', "life-lessons-from-ahlulbayt", "ramadan-a-month-of-transformation", "the-importance-of-taqwa-in-todays-world", "what-imam-ali-sermons-teach-modern-society"];
   const blogRoutes = blogSlugs.map((slug) => ({
     url: `${baseUrl}/blogs/${slug}`,
     lastModified: new Date(),
-    changeFrequency: 'weekly' as const, // Blogs change more frequently
+    changeFrequency: 'yearly' as const, // Blogs change more frequently
     priority: 0.7,
   }));
 
   // 5. NESTED TEACHERS
-  const teacherIds = ['scholar-ali-raza', 'aalima-fatima', 'qari-hussain'];
-  const teacherRoutes = teacherIds.map((id) => ({
-    url: `${baseUrl}/teachers/${id}`,
+  const teacherIds = ["shia-male-teacher", "shia-female-teacher", "online-shia-tutors"];
+
+  const teacherRoutes = teacherIds.map((slug) => ({
+    url: `${baseUrl}/teachers/${slug}`,
     lastModified: new Date(),
     changeFrequency: 'yearly' as const, // Teacher profiles rarely change
     priority: 0.6,
   }));
 
   // 6. NESTED ZIYARATS
-  const ziyaratSlugs = ['ashura', 'warith', 'aminullah', 'nahiya'];
+  const ziyaratSlugs = ['ziyarat-e-ashura', 'ziyarat-e-warisa', 'ziyarat-e-ameenullah', 'ziyarat-e-nahiya', "ziyarat-e-arbaeen"];
   const ziyaratRoutes = ziyaratSlugs.map((slug) => ({
     url: `${baseUrl}/ziyarat/${slug}`,
     lastModified: new Date(),

@@ -4,46 +4,18 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { ArrowLeft, Play, Pause, RotateCcw, FastForward, Volume2 } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
-import { ZIYARAT_AMEENULLAH, ZIYARAT_E_ASHURA, ZIYARAT_E_NAHIYA, ARBAEEN_ZIYARAT } from "./ZIYARAT";
+import { ARBAEEN_ZIYARAT } from "../ZIYARAT";
 
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
-const ZYARAT_DATABASE: Record<string, { title: string, data: any[] }> = {
-    "ziyarat-e-ashura": {
-        title: "Ziyarat e Ashura",
-        data: ZIYARAT_E_ASHURA
-    },
-    "ziyarat-e-ameenullah": {
-      title: "Ziyarat e Ameenullah",
-      data: ZIYARAT_AMEENULLAH
-    },
-    "ziyarat-e-arbaeen": {
-      title: "Ziyarat e Arbaeen",
-      data: ARBAEEN_ZIYARAT
-    },
-    "ziyarat-e-nahiya": {
-      title: "Ziyarat e Nahiya",
-      data: ZIYARAT_E_NAHIYA
-    },
-    "ziyarat-e-warisa": {
-      title: "Ziyarat e Warisa",
-      data: ARBAEEN_ZIYARAT
-    }
-}
 
 
-export default function ZiyaratAshuraPage() {
+export default function ZiyaratArbaeenPage() {
   const [fontSize, setFontSize] = useState("text-2xl");
   const [showTransliteration, setShowTransliteration] = useState(true);
   
-  const params = useParams();
-  const slug = params.slug as string;
-  const router = useRouter();
-
-  const ziyarat = ZYARAT_DATABASE[slug];
-  console.log(params.slug)
-
-  if (!ziyarat) return <div className="p-10 text-center">Ziyarat not found.</div>;
+  const router = useRouter()
+  
   
   // Audio Controls State
   const [isPlaying, setIsPlaying] = useState(false);
@@ -101,7 +73,7 @@ export default function ZiyaratAshuraPage() {
     <div className="min-h-screen bg-gray-50 dark:bg-[#030102] transition-colors duration-300">
       {/* <audio   /> */}
       <audio ref={audioRef} controls className="hidden" preload="none">
-        <source src={`/audio/${slug}.mp3`} />
+        <source src={`/audio/ziyarat-e-arbaeen.mp3`} />
       </audio>
 
       {/* ── HERO SECTION ── */}
@@ -110,7 +82,7 @@ export default function ZiyaratAshuraPage() {
           <Link href="/ziyarat" className="mb-4 inline-flex items-center gap-1.5 text-sm text-emerald-200 hover:text-white transition">
             <ArrowLeft className="h-4 w-4" onClick={() => router.push("/ziyarat")} /> Back to Ziyarats
           </Link>
-          <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl">{ziyarat.title}</h1>
+          <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl">Ziyarat e Arbaeen</h1>
         </div>
       </section>
 
@@ -150,7 +122,7 @@ export default function ZiyaratAshuraPage() {
 
       {/* ── Main Content ── */}
       <main className="mx-auto max-w-4xl px-4 py-10">
-        {ziyarat.data.map((segment, index) => {
+        {ARBAEEN_ZIYARAT.map((segment:any, index:number) => {
           if (segment.type === "note") {
             return (
               <div key={index} className="my-8 rounded-xl bg-emerald-50 px-6 py-4 dark:bg-emerald-900/10 border border-emerald-100 dark:border-emerald-900/30">
