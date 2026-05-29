@@ -32,7 +32,7 @@ const scheherazade = Scheherazade_New({
 // ─── SEO METADATA ─────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
   // IMPORTANT: Change this to your actual deployed domain
-  metadataBase: new URL("https://shiaquranpak.com"), 
+  metadataBase: new URL("http://shiaquranpak.com"), 
   title: {
     default: "Shia Quran Pak Academy | Learn. Believe. Practice.",
     template: "%s | Shia Quran Pak Academy",
@@ -103,7 +103,7 @@ export default function RootLayout({
             {children}
           </main>
             <Link href={"https://wa.me/+923394022926"} target="_blank" className="fixed bottom-7 right-7">
-              <Image src={whatsapp} alt="Whatsapp Icon" width={40} height={40} />
+              <Image src={whatsapp} alt="Whatsapp Icon" width={46} height={46} />
             </Link>
           <Footer />
         </ThemeProvider>

@@ -71,7 +71,7 @@ export default function Navbar() {
           <div className="flex shrink-0 items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
               <div className="flex h-10 w-10 items-center">
-                <Image src={logo} alt="Shia Quran Pak Academy Logo" width={200} height={200} />
+                <Image src={logo} alt="Shia Quran Pak Academy Logo" width={100} height={100} />
               </div>
               <span className="text-lg font-bold leading-4 text-gray-900 dark:text-gray-100">
                 Shia Quran <br /> <span className="text-[13px] tracking-[1.10px] dark:text-gray-400 text-black/70 font-medium">Pak Academy</span>

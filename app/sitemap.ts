@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Replace with your actual production URL
-  const baseUrl = 'https://shiaquranpak.com'
+  const baseUrl = 'http://shiaquranpak.com'
 
   // 1. STATIC PARENT ROUTES
   const staticRoutes = [
