@@ -1,4 +1,3 @@
-"use client";
 
 import Link from "next/link";
 import {
@@ -7,12 +6,12 @@ import {
   ChevronRight,
   Users,
   BookMarked,
-  Landmark,
   GraduationCap,
   Volume2,
   Smartphone,
   ShieldCheck,
   BookOpenText,
+  ChevronDown,
 } from "lucide-react";
 import Image from "next/image";
 import Pricing from "./components/Pricing";
@@ -20,6 +19,46 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import CtaSection from "./components/CtaSection";
 import Testimonials from "./components/Testimonials";
 
+import type { Metadata } from "next";
+import Faq from "./components/Faq";
+
+export const metadata: Metadata = {
+  title:
+    "Shia Quran Pak Academy | Online Quran Classes, Tajweed, Tafseer & Islamic Studies",
+
+  description:
+    "Learn Quran online with qualified male and female teachers. Join Tajweed, Tafseer, Nahjul Balagha, Hifz Quran, Ziyarat and Shia Islamic Studies classes worldwide.",
+
+  keywords: [
+    "Shia Quran Academy",
+    "Online Quran Classes",
+    "Quran with Tajweed",
+    "Tafseer Quran",
+    "Nahjul Balagha Course",
+    "Female Quran Teacher",
+    "Hifz Quran Online",
+    "Shia Islamic Studies",
+    "Learn Quran Online",
+  ],
+
+  alternates: {
+    canonical: "http://shiaquranpak.com",
+  },
+
+  openGraph: {
+    title: "Shia Quran Pak Academy",
+    description:
+      "Online Quran Classes, Tajweed, Tafseer, Hifz and Islamic Studies.",
+    url: "http://shiaquranpak.com",
+    siteName: "Shia Quran Pak Academy",
+    type: "website",
+    images: ["/og-image.jpg"],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+  },
+};
 // ─── DATA ────────────────────────────────────────────────────────────────────
 const CATEGORIES = [
   { label: "Quran", sub: "Read, Learn & Reflect", href: "/courses" },
@@ -67,6 +106,13 @@ const ARTICLES = [
   { title: "The Importance of Taqwa in Today's World", desc: "Understanding Taqwa and how it guides us through modern-day challenges.", image: "/images/blogs/taqwa.jpg", url: "/blogs/the-importance-of-taqwa-in-todays-world" },
 ];
 
+const FAQS = [
+  { q: "What software do you use for the online classes?", a: "We primarily conduct our classes via WhatsApp, Zoom, or Google Meet, depending on what is most comfortable for the student and ensures the best audio/video quality." },
+  { q: "Do I need any prior knowledge to join?", a: "Not at all. We have classes for absolute beginners starting from the Qaida (Arabic alphabet) all the way to advanced Tafseer." },
+  { q: "Are there classes for children?", a: "Yes, the majority of our students are children. Our teachers use patient, engaging, and interactive methods to keep kids focused and instill a love for Islam." },
+  { q: "Can I reschedule a class if I am busy?", a: "Yes, we offer highly flexible scheduling. If you need to miss a class, simply inform your teacher beforehand, and we will do our best to arrange a makeup session." },
+];
+
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
 export default function HomePage() {
   return (
@@ -78,7 +124,7 @@ export default function HomePage() {
         <div className="absolute inset-0 lg:hidden">
           <Image
             src="/karbala-bg.jpg"
-            alt="Karbala Image"
+            alt="Shia Quran Pak Academy Online Quran Classes"
             fill
             priority
             className="object-cover object-center opacity-50"
@@ -93,13 +139,14 @@ export default function HomePage() {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
             <div className="relative z-10">
               <h1 className="mb-3 text-4xl font-extrabold leading-tight text-white sm:text-5xl">
-                Learn. Understand.
-                <br />
-                <span className="text-emerald-400">Live the Truth.</span>
+                Online Classes with <br />
+                <span className="text-emerald-400">Shia Islamic Scholars</span>
               </h1>
               <p className="mb-8 max-w-md text-sm leading-relaxed text-gray-300">
-                A complete platform to learn Quran, Shia Islamic Study, Ziyarat and
-                the teachings of Ahlulbayt&nbsp;(عليهم السلام).
+                Learn Quran online with qualified male and female teachers.
+                Join Tajweed, Tafseer, Nahjul Balagha, Hifz Quran,
+                Ziyarat and Shia Islamic Studies classes from anywhere
+                in the world.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/courses" className="flex items-center gap-2 rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-emerald-700">
@@ -153,6 +200,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
 
       {/* ══════════════════════════════════════════
           CATEGORIES
@@ -334,8 +382,26 @@ export default function HomePage() {
         </div>
       </section>
 
+    {/* ══════════════════════════════════════════
+          FAQ
+      ══════════════════════════════════════════ */}
+      <Faq FAQS={FAQS} />
       
       <CtaSection />
+
+      <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        name: "Shia Quran Pak Academy",
+        url: "http://shiaquranpak.com",
+        description:
+          "Online Quran Classes, Tajweed, Tafseer, Hifz and Shia Islamic Studies.",
+      }),
+    }}
+  />
 
     </div>
   );

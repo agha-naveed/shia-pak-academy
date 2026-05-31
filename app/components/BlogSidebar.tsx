@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
 import {
   Search,
   BookOpen,
@@ -67,8 +66,6 @@ const POPULAR_ARTICLES = [
 ];
 
 export default function BlogSidebar() {
-  const searchParams = useSearchParams();
-  const activeCategory = searchParams.get("category") || "All Articles";
 
   return (
     <aside className="w-full xl:w-[320px] 2xl:w-[360px]">

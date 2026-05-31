@@ -1,4 +1,3 @@
-"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -50,8 +49,61 @@ const STATS = [
 
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "About Shia Quran Pak Academy | Online Shia Quran Classes Worldwide",
+
+  description:
+    "Learn about Shia Quran Pak Academy. We provide online Quran classes, Tajweed, Tafseer, Fiqh, Nahjul Balagha and Islamic studies for children and adults worldwide.",
+
+  keywords: [
+    "Shia Quran Academy",
+    "Online Quran Classes",
+    "Shia Islamic Studies",
+    "Learn Quran Online",
+    "Quran Teacher",
+    "Shia Quran Pak Academy",
+    "Online Tajweed Classes",
+    "Fiqh Classes",
+    "Nahjul Balagha",
+  ],
+
+  alternates: {
+    canonical: "http://shiaquranpak.com/about-shia-quran-pak-academy",
+  },
+
+  openGraph: {
+    title: "About Shia Quran Pak Academy",
+    description:
+      "Authentic online Shia Quran education with qualified male and female teachers.",
+    url: "http://shiaquranpak.com/about-shia-quran-pak-academy",
+    siteName: "Shia Quran Pak Academy",
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "About Shia Quran Pak Academy",
+    description:
+      "Online Quran, Tajweed, Tafseer and Islamic Studies classes worldwide.",
+  },
+};
+
 export default function AboutPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    name: "Shia Quran Pak Academy",
+    url: "https://www.shiaquranpak.com",
+    logo: "http://shiaquranpak.com/_next/static/media/logo.01aui41hmld7~.png",
+    description:
+      "Online Shia Quran Academy offering Quran reading, Tajweed, Tafseer, Fiqh and Islamic studies.",
+  };
   return (
+    <>
     <div className="bg-white dark:bg-[#030102] transition-colors duration-300">
 
       {/* ══════════════════════════════════════════
@@ -106,7 +158,7 @@ export default function AboutPage() {
                 In today's fast-paced, digital world, finding authentic, reliable, and accessible Shia Islamic education can be a challenge. <strong>Shia Quran Pak Academy</strong> was founded with a single, profound goal: to connect Momineen and their children with the true essence of Islam, right from the comfort of their homes.
               </p>
               <p>
-                We believe that learning the Quran is not just about reading Arabic text; it is about understanding the message, reciting it beautifully with Tajweed, and living by the ethics (Akhlaq) demonstrated by Prophet Muhammad (ﷺ) and his pure Household (ع).
+                We believe that learning the Quran is not just about reading Arabic text; it is about understanding the message, reciting it beautifully with <Link href={"/courses/online-shia-quran-tajweed-course/"}>Tajweed</Link>, and living by the ethics (Akhlaq) demonstrated by Prophet Muhammad (ﷺ) and his pure Household (ع).
               </p>
               <p>
                 Whether you are a parent looking for a patient tutor for your child, a sister seeking a comfortable learning environment with an Aalima, or an adult wanting to deeply study Nahjul Balagha and Fiqh, we have tailored our academy to meet your exact needs.
@@ -184,7 +236,7 @@ export default function AboutPage() {
               </div>
               <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Our Vision</h3>
               <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-                To become the most trusted global online academy for Shia Muslims. We envision a future where geographical boundaries do not prevent any Momin from learning authentic Fiqh, Tajweed, and Dinyaat directly from verified scholars and highly qualified teachers.
+                To become the most trusted global online academy for Shia Muslims. We envision a future where geographical boundaries do not prevent any Momin from learning authentic Fiqh, <Link href={"/courses/online-shia-quran-tajweed-course/"}>Tajweed</Link>, and Dinyaat directly from verified scholars and highly qualified teachers.
               </p>
             </div>
 
@@ -235,10 +287,12 @@ export default function AboutPage() {
                 </p>
                 <ul className="space-y-4">
                   {[
-                    "Live 1-on-1 or small group sessions",
-                    "Choice of Male or Female teachers",
-                    "Customized pace and curriculum",
-                    "Flexible scheduling across all timezones",
+                    "Qualified Hawza Scholars",
+                    "Certified Quran Teachers",
+                    "Male & Female Instructors",
+                    "Worldwide Students",
+                    "One-on-One Classes",
+                    'Flexible Timings'
                   ].map((feature, i) => (
                     <li key={i} className="flex items-center gap-3">
                       <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-400">
@@ -310,5 +364,11 @@ export default function AboutPage() {
       </section>
 
     </div>
+    <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(schema),
+  }}
+/></>
   );
 }
