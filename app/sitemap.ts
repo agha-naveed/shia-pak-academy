@@ -12,6 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/teachers',
     '/ziyarat',
     '/courses',
+    '/pricing-online-quran-pak-academy',
     '/blogs',
     "/more"
   ].map((route) => ({

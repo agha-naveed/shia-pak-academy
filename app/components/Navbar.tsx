@@ -32,6 +32,7 @@ const NAV_ITEMS = [
       { label: "Shia Quran Tutors Online", href: "/teachers/online-shia-tutors" },
     ],
   },
+  { label: "Fees", href: "/course-pricing-online-quran-pak-academy" },
   { label: "Blogs", href: "/blogs" },
   { label: "About", href: "/about-shia-quran-pak-academy" },
   {
